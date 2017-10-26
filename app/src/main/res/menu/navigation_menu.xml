@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/o_que_e"
+        android:icon="@mipmap/ic_chevron_right_white_24dp"
+        android:title="@string/o_que_lupus" />
+
+    <item android:id="@+id/o_que_causa"
+        android:icon="@mipmap/ic_chevron_right_white_24dp"
+        android:title="@string/o_que_causa_lupus"/>
+
+    <item android:id="@+id/como_e_diagnosticado"
+        android:icon="@mipmap/ic_chevron_right_white_24dp"
+        android:title="@string/como_e_diagnosticado"/>
+</menu>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Lupus-tcc</string>
+    <string name="title_activity_side_menu">SideMenuActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="nuvem_de_palavras">Nuvem de Palavras</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="o_que_lupus">O que é Lúpus?</string>
+    <string name="o_que_causa_lupus">O que causa Lúpus?</string>
+    <string name="como_e_diagnosticado">Como é diagnosticado?</string>
+
+</resources>

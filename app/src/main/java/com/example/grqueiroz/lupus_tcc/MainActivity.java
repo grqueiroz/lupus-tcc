@@ -35,13 +35,19 @@ public class MainActivity extends AppCompatActivity {
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem){
+                TextView textView = (TextView) findViewById(R.id.textView);
                 switch (menuItem.getItemId()){
                     case(R.id.o_que_e):
-                        TextView textView = (TextView) findViewById(R.id.textView);
-                        textView.setText("O que é Lúpus?");
-                        mDrawerLayout.closeDrawer(mNavigationView, true);
+                        textView.setText(R.string.o_que_lupus);
+                        break;
+                    case(R.id.o_que_causa):
+                        textView.setText(R.string.o_que_causa_lupus);
+                        break;
+                    case(R.id.como_e_diagnosticado):
+                        textView.setText(R.string.como_e_diagnosticado);
                         break;
                 }
+                mDrawerLayout.closeDrawer(mNavigationView, true);
                 return true;
             }
         });

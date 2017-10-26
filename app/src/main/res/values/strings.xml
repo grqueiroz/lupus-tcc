@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Lupus-tcc</string>
+    <string name="app_name">Lúpus</string>
     <string name="title_activity_side_menu">SideMenuActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>

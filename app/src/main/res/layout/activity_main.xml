@@ -20,6 +20,7 @@
             android:layout_weight="0.27"
             android:text="@string/nuvem_de_palavras"
             android:textAlignment="center" />
+
     </LinearLayout>
 
     <android.support.design.widget.NavigationView

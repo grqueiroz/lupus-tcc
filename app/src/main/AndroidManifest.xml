@@ -16,7 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Topic1Activity"></activity>
+        <activity android:name=".Topic1Activity" android:label="@string/o_que_lupus"/>
+        <activity android:name=".Topic2Activity" android:label="@string/o_que_causa_lupus"/>
+        <activity android:name=".Topic3Activity" android:label="@string/como_e_diagnosticado"/>
+        <activity android:name=".Topic4Activity" android:label="@string/como_afeta_corpo"/>
+        <activity android:name=".Topic5Activity" android:label="@string/como_vou_melhorar"/>
+        <activity android:name=".Topic6Activity" android:label="@string/como_sera_dia_a_dia"/>
     </application>
 
 </manifest>

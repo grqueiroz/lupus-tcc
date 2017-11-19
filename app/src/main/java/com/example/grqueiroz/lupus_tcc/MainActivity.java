@@ -36,25 +36,31 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem){
                 TextView textView = (TextView) findViewById(R.id.textView);
+                Intent intent = new Intent();
                 switch (menuItem.getItemId()){
                     case(R.id.o_que_e):
-                        Intent intent = new Intent(MainActivity.this, Topic1Activity.class);
+                        intent.setClass(MainActivity.this, Topic1Activity.class);
                         startActivity(intent);
                         break;
                     case(R.id.o_que_causa):
-                        textView.setText(R.string.o_que_causa_lupus);
+                        intent.setClass(MainActivity.this, Topic2Activity.class);
+                        startActivity(intent);
                         break;
                     case(R.id.como_e_diagnosticado):
-                        textView.setText(R.string.como_e_diagnosticado);
+                        intent.setClass(MainActivity.this, Topic3Activity.class);
+                        startActivity(intent);
                         break;
                     case(R.id.como_afeta_corpo):
-                        textView.setText(R.string.como_afeta_corpo);
+                        intent.setClass(MainActivity.this, Topic4Activity.class);
+                        startActivity(intent);
                         break;
                     case(R.id.como_vou_melhorar):
-                        textView.setText(R.string.como_vou_melhorar);
+                        intent.setClass(MainActivity.this, Topic5Activity.class);
+                        startActivity(intent);
                         break;
                     case(R.id.como_sera_dia_a_dia):
-                        textView.setText(R.string.como_sera_dia_a_dia);
+                        intent.setClass(MainActivity.this, Topic6Activity.class);
+                        startActivity(intent);
                         break;
                 }
                 mDrawerLayout.closeDrawer(mNavigationView, true);

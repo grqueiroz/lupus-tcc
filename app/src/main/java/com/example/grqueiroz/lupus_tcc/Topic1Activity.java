@@ -1,5 +1,7 @@
 package com.example.grqueiroz.lupus_tcc;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -7,6 +9,9 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class Topic1Activity extends AppCompatActivity {
@@ -26,6 +31,8 @@ public class Topic1Activity extends AppCompatActivity {
         mToggle.syncState();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        Button button = (Button) findViewById(R.id.subtopico1);
 
         final NavigationView mNavigationView = (NavigationView) findViewById(R.id.nav_menu);
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
@@ -62,6 +69,22 @@ public class Topic1Activity extends AppCompatActivity {
             }
         });
 
+        RelativeLayout fragmentContainer = findViewById(R.id.fragment_container);
+        fragmentContainer.setVisibility(View.GONE);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final View fragmentContainer = findViewById(R.id.fragment_container);
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                CardFragment cardFragment = new CardFragment();
+                fragmentTransaction.add(R.id.fragment_container, cardFragment);
+                fragmentTransaction.commit();
+                fragmentContainer.setVisibility(View.VISIBLE);
+
+            }
+        });
     }
 
     @Override

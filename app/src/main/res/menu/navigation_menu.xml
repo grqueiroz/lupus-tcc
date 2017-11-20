@@ -13,4 +13,16 @@
     <item android:id="@+id/como_e_diagnosticado"
         android:icon="@mipmap/ic_chevron_right_white_24dp"
         android:title="@string/como_e_diagnosticado"/>
+
+    <item android:id="@+id/como_afeta_corpo"
+        android:icon="@mipmap/ic_chevron_right_white_24dp"
+        android:title="@string/como_afeta_corpo"/>
+
+    <item android:id="@+id/como_vou_melhorar"
+        android:icon="@mipmap/ic_chevron_right_white_24dp"
+        android:title="@string/como_vou_melhorar"/>
+
+    <item android:id="@+id/como_sera_dia_a_dia"
+        android:icon="@mipmap/ic_chevron_right_white_24dp"
+        android:title="@string/como_sera_dia_a_dia"/>
 </menu>

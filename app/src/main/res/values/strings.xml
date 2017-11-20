@@ -12,5 +12,12 @@
     <string name="o_que_lupus">O que é Lúpus?</string>
     <string name="o_que_causa_lupus">O que causa Lúpus?</string>
     <string name="como_e_diagnosticado">Como é diagnosticado?</string>
+    <string name="como_afeta_corpo">Como o Lúpus afeta o corpo?</string>
+    <string name="como_vou_melhorar">Como vou melhorar?</string>
+    <string name="como_sera_dia_a_dia">Como será meu dia-a-dia?</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="card_dentro_activity">Card dentro da activity</string>
 
 </resources>

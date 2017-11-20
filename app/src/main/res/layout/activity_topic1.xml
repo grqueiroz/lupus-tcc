@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.grqueiroz.lupus_tcc.MainActivity"
+    tools:context="com.example.grqueiroz.lupus_tcc.Topic1Activity"
     android:id="@+id/drawer_layout">
 
     <LinearLayout
@@ -18,20 +18,38 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_weight="0.27"
-            android:text="@string/nuvem_de_palavras"
+            android:text="@string/o_que_lupus"
             android:textAlignment="center" />
+
+        <RelativeLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/subtopico1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Link para subtopico" />
 
     </LinearLayout>
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_menu"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
         android:layout_gravity="start"
+        android:layout_marginRight="245dp"
+        android:layout_weight="0.27"
         android:background="@color/colorPrimary"
         android:onClick="onClickItem()"
         app:itemIconTint="@android:color/white"
         app:itemTextColor="@android:color/white"
         app:menu="@menu/navigation_menu" />
-
 </android.support.v4.widget.DrawerLayout>

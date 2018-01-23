@@ -20,4 +20,19 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="card_dentro_activity">Card dentro da activity</string>
 
+    <!--Activities Titles-->
+    <string name="title_topic4">4. Como o Lúpus afeta meu corpo?\n</string>
+
+    <!--Topic 4 texts-->
+    <string name="topic4_paragraph1">O desenvolvimento do Lúpus varia muito de pessoa para pessoa,
+        a doença pode afetar praticamente qualquer parte do corpo, mas algumas das regiões mais
+        comumente afetadas são: pele, articulações, vasos sanguíneos e órgãos como os rins e o
+        coração. A maioria dos pacientes de Lúpus convivem em algum estágio da doença com febre,
+        dores no corpo semelhantes às de um resfriado e vermelhidões na pele.\n</string>
+
+    <string name="topic4_paragraph2">É difícil predizer o que cada paciente vai sentir, por isso é
+        importante levar as consultas com seu médico à sério: acompanhando os exames seu médico
+        poderá prevenir que a doença atinja órgãos importantes e evitar dores e problemas maiores.\n</string>
+
+
 </resources>

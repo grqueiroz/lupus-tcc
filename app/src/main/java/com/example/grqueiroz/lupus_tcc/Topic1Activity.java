@@ -38,7 +38,6 @@ public class Topic1Activity extends AppCompatActivity {
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem){
-                TextView textView = (TextView) findViewById(R.id.textView);
                 Intent intent = new Intent();
                 switch (menuItem.getItemId()){
                     case(R.id.o_que_e):
@@ -69,7 +68,7 @@ public class Topic1Activity extends AppCompatActivity {
             }
         });
 
-        RelativeLayout fragmentContainer = findViewById(R.id.fragment_container);
+        RelativeLayout fragmentContainer = (RelativeLayout) findViewById(R.id.fragment_container);
         fragmentContainer.setVisibility(View.GONE);
 
         button.setOnClickListener(new View.OnClickListener() {

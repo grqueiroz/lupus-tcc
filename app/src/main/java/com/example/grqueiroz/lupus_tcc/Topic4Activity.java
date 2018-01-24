@@ -19,6 +19,8 @@ public class Topic4Activity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
+    private FragmentManager fragmentManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,7 @@ public class Topic4Activity extends AppCompatActivity {
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
+        fragmentManager = getFragmentManager();
 
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
@@ -101,7 +104,6 @@ public class Topic4Activity extends AppCompatActivity {
 
     public void onClick(View view, int layout) {
         final View fragmentContainer = findViewById(R.id.fragment_container4);
-        FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         CardFragment cardFragment = new CardFragment();
 
@@ -110,6 +112,7 @@ public class Topic4Activity extends AppCompatActivity {
 
         cardFragment.setArguments(bundle);
 
+        fragmentTransaction.addToBackStack("card");
         fragmentTransaction.add(R.id.fragment_container4, cardFragment);
         fragmentTransaction.commit();
 
@@ -117,5 +120,15 @@ public class Topic4Activity extends AppCompatActivity {
         scrollView.setVisibility(View.GONE);
 
         fragmentContainer.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (fragmentManager.getBackStackEntryCount() > 0) {
+            fragmentManager.popBackStackImmediate();
+            View scrollView = findViewById(R.id.topic4_content);
+            scrollView.setVisibility(View.VISIBLE);
+        }
+        else super.onBackPressed();
     }
 }

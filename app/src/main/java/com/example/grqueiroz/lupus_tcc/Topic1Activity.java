@@ -11,8 +11,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.widget.LinearLayout;
 
 public class Topic1Activity extends AppCompatActivity {
 
@@ -32,7 +31,7 @@ public class Topic1Activity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Button button = (Button) findViewById(R.id.subtopico1);
+        Button button = (Button) findViewById(R.id.subtopic1);
 
         final NavigationView mNavigationView = (NavigationView) findViewById(R.id.nav_menu);
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
@@ -68,7 +67,7 @@ public class Topic1Activity extends AppCompatActivity {
             }
         });
 
-        RelativeLayout fragmentContainer = (RelativeLayout) findViewById(R.id.fragment_container);
+        LinearLayout fragmentContainer = (LinearLayout) findViewById(R.id.fragment_container);
         fragmentContainer.setVisibility(View.GONE);
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -78,8 +77,18 @@ public class Topic1Activity extends AppCompatActivity {
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 CardFragment cardFragment = new CardFragment();
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("layout", R.layout.card_riscos_orgaos);
+
+                cardFragment.setArguments(bundle);
+
                 fragmentTransaction.add(R.id.fragment_container, cardFragment);
                 fragmentTransaction.commit();
+
+                View scrollView = findViewById(R.id.topic1_content);
+                scrollView.setVisibility(View.GONE);
+
                 fragmentContainer.setVisibility(View.VISIBLE);
 
             }

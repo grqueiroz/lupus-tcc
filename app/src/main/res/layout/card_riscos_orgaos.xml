@@ -1,0 +1,59 @@
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context="com.example.grqueiroz.lupus_tcc.CardFragment">
+
+    <LinearLayout
+        android:id="@+id/card_riscos_orgaos_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <me.biubiubiu.justifytext.library.JustifyTextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="84dp"
+            android:text="@string/title_topic4"
+            android:textColor="@color/colorAccent"
+            android:textSize="26sp"
+            tools:layout_editor_absoluteY="8dp" />
+
+        <me.biubiubiu.justifytext.library.JustifyTextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/topic4_paragraph1"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteY="812dp" />
+
+        <me.biubiubiu.justifytext.library.JustifyTextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/topic4_paragraph2"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteY="525dp" />
+
+        <!--<Button-->
+            <!--android:id="@+id/subtopic1"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="Link para subtopico1" />-->
+
+        <!--<Button-->
+            <!--android:id="@+id/subtopic2"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="Link para subtopico2" />-->
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

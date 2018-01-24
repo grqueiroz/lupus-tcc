@@ -7,50 +7,102 @@
     tools:context="com.example.grqueiroz.lupus_tcc.Topic1Activity"
     android:id="@+id/drawer_layout">
 
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:layout_weight="0.27"
-            android:text="@string/o_que_lupus"
-            android:textAlignment="center" />
-
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:orientation="vertical"
             android:visibility="gone">
+        </LinearLayout>
 
-        </RelativeLayout>
-
-        <Button
-            android:id="@+id/subtopico1"
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/topic1_content"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:text="Link para subtopico" />
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:fillViewport="true"
+            app:layout_constraintTop_toTopOf="parent">
 
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <me.biubiubiu.justifytext.library.JustifyTextView
+                    android:id="@+id/title_topic1"
+                    android:layout_width="match_parent"
+                    android:layout_height="84dp"
+                    android:text="@string/title_topic1"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="26sp"
+                    tools:layout_editor_absoluteY="8dp" />
+
+                <me.biubiubiu.justifytext.library.JustifyTextView
+                    android:id="@+id/topic1_paragraph1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/topic1_paragraph1"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20sp"
+                    tools:layout_editor_absoluteY="812dp" />
+
+                <me.biubiubiu.justifytext.library.JustifyTextView
+                    android:id="@+id/topic1_paragraph2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/topic1_paragraph2"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20sp"
+                    tools:layout_editor_absoluteY="525dp" />
+
+                <me.biubiubiu.justifytext.library.JustifyTextView
+                    android:id="@+id/topic1_paragraph3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/topic1_paragraph3"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20sp"
+                    tools:layout_editor_absoluteY="525dp" />
+
+                <me.biubiubiu.justifytext.library.JustifyTextView
+                    android:id="@+id/topic1_paragraph4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/topic1_paragraph4"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20sp"
+                    tools:layout_editor_absoluteY="525dp" />
+
+                <Button
+                    android:id="@+id/subtopic1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:text="Link para subtopico" />
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+    </android.support.constraint.ConstraintLayout>
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_menu"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
         android:layout_gravity="start"
-        android:layout_marginRight="245dp"
-        android:layout_weight="0.27"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorPrimaryDark"
         android:onClick="onClickItem()"
         app:itemIconTint="@android:color/white"
         app:itemTextColor="@android:color/white"
-        app:menu="@menu/navigation_menu" />
+        app:menu="@menu/navigation_menu" >
+
+    </android.support.design.widget.NavigationView>
 </android.support.v4.widget.DrawerLayout>

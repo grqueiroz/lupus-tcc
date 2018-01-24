@@ -17,22 +17,55 @@
     <string name="como_sera_dia_a_dia">Como será meu dia-a-dia?</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="card_dentro_activity">Card dentro da activity</string>
+    <string name="card_dentro_activity2">OUTRO card dentro da activity</string>
+
 
     <!--Activities Titles-->
+    <string name="title_topic1">1. O que é Lúpus?\n</string>
     <string name="title_topic4">4. Como o Lúpus afeta meu corpo?\n</string>
 
+    <!--Topic 1 texts-->
+    <string name="topic1_paragraph1">
+        Todos nós temos no nosso corpo um sistema imunológico, que é conjunto de células que servem
+        para nos defender de vários tipos de doença, causadas por invasores externos ou
+        adversidades.\n
+    </string>
+
+    <string name="topic1_paragraph2">
+        O Lúpus Eritematoso Sistêmico é uma doença considerada uma doença autoimune, nas quais o
+        sistema imunológico se torna mais ativo do que o normal, atacando células saudáveis do
+        corpo, esse nome “Lúpus” vem do latim, desde a antiguidade, porque às vezes as feridas que
+        a doença ocasiona na pele se parecem com as mordidas de um lobo.\n
+    </string>
+
+    <string name="topic1_paragraph3">
+        Pacientes com Lúpus podem ter vermelhidões na pele, dores e inchaço articulares, cansaço e
+        inflamações em diferentes órgãos internos. Essas inflamações devem ser tratadas o mais cedo
+        possível para evitar danos permanentes.\n
+    </string>
+
+    <string name="topic1_paragraph4">
+        Lúpus é uma doença crônica, o que significa que ela não tem cura; de intensidade variável,
+        às vezes causando mais mal estar (período ativo) e às vezes adormecida (período remissivo).
+        Porém, seguindo as orientações você poderá se sentir bem, evitando que a doença se manifeste
+        de formas agressivas, e vivendo sua vida normalmente.\n
+    </string>
+
     <!--Topic 4 texts-->
-    <string name="topic4_paragraph1">O desenvolvimento do Lúpus varia muito de pessoa para pessoa,
+    <string name="topic4_paragraph1">
+        O desenvolvimento do Lúpus varia muito de pessoa para pessoa,
         a doença pode afetar praticamente qualquer parte do corpo, mas algumas das regiões mais
         comumente afetadas são: pele, articulações, vasos sanguíneos e órgãos como os rins e o
         coração. A maioria dos pacientes de Lúpus convivem em algum estágio da doença com febre,
-        dores no corpo semelhantes às de um resfriado e vermelhidões na pele.\n</string>
+        dores no corpo semelhantes às de um resfriado e vermelhidões na pele.\n
+    </string>
 
-    <string name="topic4_paragraph2">É difícil predizer o que cada paciente vai sentir, por isso é
+    <string name="topic4_paragraph2">
+        É difícil predizer o que cada paciente vai sentir, por isso é
         importante levar as consultas com seu médico à sério: acompanhando os exames seu médico
-        poderá prevenir que a doença atinja órgãos importantes e evitar dores e problemas maiores.\n</string>
+        poderá prevenir que a doença atinja órgãos importantes e evitar dores e problemas maiores.\n
+    </string>
 
 
 </resources>

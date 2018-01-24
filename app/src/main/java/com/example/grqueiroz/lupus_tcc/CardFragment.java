@@ -14,12 +14,16 @@ import android.view.ViewGroup;
  */
 public class CardFragment extends Fragment {
 
+    int layout;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        layout = getArguments().getInt("layout");
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_card, container, false);
+        return inflater.inflate(layout, container, false);
     }
 
 }

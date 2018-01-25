@@ -12,28 +12,48 @@
         android:orientation="vertical">
 
         <me.biubiubiu.justifytext.library.JustifyTextView
-            android:id="@+id/textView2"
+            android:id="@+id/title_card_riscos_internos"
             android:layout_width="match_parent"
             android:layout_height="84dp"
-            android:text="@string/title_topic4"
+            android:text="@string/title_card_riscos_internos"
             android:textColor="@color/colorAccent"
             android:textSize="26sp"
             tools:layout_editor_absoluteY="8dp" />
 
         <me.biubiubiu.justifytext.library.JustifyTextView
-            android:id="@+id/textView4"
+            android:id="@+id/card_riscos_orgaos_paragraph1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/topic4_paragraph1"
+            android:text="@string/card_riscos_orgaos_paragraph1"
             android:textColor="@color/colorPrimary"
             android:textSize="20sp"
             tools:layout_editor_absoluteY="812dp" />
 
         <me.biubiubiu.justifytext.library.JustifyTextView
-            android:id="@+id/textView5"
+            android:id="@+id/card_riscos_orgaos_paragraph2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/topic4_paragraph2"
+            android:text="@string/card_riscos_orgaos_paragraph2"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteY="525dp" />
+
+        <me.biubiubiu.justifytext.library.JustifyTextView
+            android:id="@+id/card_riscos_orgaos_paragraph3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/card_riscos_orgaos_paragraph3"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteY="525dp" />
+
+        <me.biubiubiu.justifytext.library.JustifyTextView
+            android:id="@+id/card_riscos_orgaos_paragraph4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/card_riscos_orgaos_paragraph4"
             android:textAlignment="viewStart"
             android:textColor="@color/colorPrimary"
             android:textSize="20sp"

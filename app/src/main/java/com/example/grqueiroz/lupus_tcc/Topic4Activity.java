@@ -1,18 +1,26 @@
 package com.example.grqueiroz.lupus_tcc;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class Topic4Activity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
+    private FragmentManager fragmentManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +29,15 @@ public class Topic4Activity extends AppCompatActivity {
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
+        fragmentManager = getFragmentManager();
 
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        Button button1 = (Button) findViewById(R.id.subtopic1);
+        Button button2 = (Button) findViewById(R.id.subtopic2);
 
         final NavigationView mNavigationView = (NavigationView) findViewById(R.id.nav_menu);
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
@@ -62,6 +74,22 @@ public class Topic4Activity extends AppCompatActivity {
             }
         });
 
+        View fragmentContainer = findViewById(R.id.fragment_container4);
+        fragmentContainer.setVisibility(View.GONE);
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Topic4Activity.this.onClick(view, R.layout.card_riscos_orgaos);
+            }
+        });
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Topic4Activity.this.onClick(view, R.layout.fragment_card2);
+            }
+        });
     }
 
     @Override
@@ -72,5 +100,35 @@ public class Topic4Activity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onClick(View view, int layout) {
+        final View fragmentContainer = findViewById(R.id.fragment_container4);
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        CardFragment cardFragment = new CardFragment();
+
+        Bundle bundle = new Bundle();
+        bundle.putInt("layout", layout);
+
+        cardFragment.setArguments(bundle);
+
+        fragmentTransaction.addToBackStack("card");
+        fragmentTransaction.add(R.id.fragment_container4, cardFragment);
+        fragmentTransaction.commit();
+
+        View scrollView = findViewById(R.id.topic4_content);
+        scrollView.setVisibility(View.GONE);
+
+        fragmentContainer.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (fragmentManager.getBackStackEntryCount() > 0) {
+            fragmentManager.popBackStackImmediate();
+            View scrollView = findViewById(R.id.topic4_content);
+            scrollView.setVisibility(View.VISIBLE);
+        }
+        else super.onBackPressed();
     }
 }

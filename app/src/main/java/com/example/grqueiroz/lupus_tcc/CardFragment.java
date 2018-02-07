@@ -1,12 +1,15 @@
 package com.example.grqueiroz.lupus_tcc;
 
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 
 /**
@@ -14,16 +17,47 @@ import android.view.ViewGroup;
  */
 public class CardFragment extends Fragment {
 
-    int layout;
+    private Button button1;
+    private FragmentManager fragmentManager;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        layout = getArguments().getInt("layout");
+        int layout = getArguments().getInt("layout");
 
         // Inflate the layout for this fragment
-        return inflater.inflate(layout, container, false);
+        View view = inflater.inflate(layout, container, false);
+        button1 = (Button) view.findViewById(R.id.subtopic1);
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CardFragment.this.onClick(view, R.layout.card_riscos_orgaos);
+            }
+        });
+
+        return view;
+    }
+
+    public void onClick(View view, int layout) {
+        final View fragmentContainer = view.findViewById(R.id.fragment_container4);
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        CardFragment cardFragment = new CardFragment();
+
+        Bundle bundle = new Bundle();
+        bundle.putInt("layout", layout);
+
+        cardFragment.setArguments(bundle);
+
+        fragmentTransaction.addToBackStack("card");
+        fragmentTransaction.add(R.id.fragment_container4, cardFragment);
+        fragmentTransaction.commit();
+
+        View scrollView = view.findViewById(R.id.topic4_content);
+        scrollView.setVisibility(View.GONE);
+
+        fragmentContainer.setVisibility(View.VISIBLE);
     }
 
 }

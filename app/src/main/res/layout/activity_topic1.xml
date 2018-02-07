@@ -62,6 +62,12 @@
                     android:textSize="20sp"
                     tools:layout_editor_absoluteY="525dp" />
 
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    app:srcCompat="@drawable/t1f1" />
+
                 <me.biubiubiu.justifytext.library.JustifyTextView
                     android:id="@+id/topic1_paragraph3"
                     android:layout_width="match_parent"

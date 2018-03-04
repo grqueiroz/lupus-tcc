@@ -26,6 +26,8 @@ public class CardFragment extends Fragment {
                              Bundle savedInstanceState) {
         int layout = getArguments().getInt("layout");
 
+        fragmentManager = getFragmentManager();
+
         // Inflate the layout for this fragment
         View view = inflater.inflate(layout, container, false);
         button1 = (Button) view.findViewById(R.id.subtopic1);
@@ -41,7 +43,7 @@ public class CardFragment extends Fragment {
     }
 
     public void onClick(View view, int layout) {
-        final View fragmentContainer = view.findViewById(R.id.fragment_container4);
+        View fragmentContainer = getView().findViewById(R.id.fragment_container_card);
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         CardFragment cardFragment = new CardFragment();
 
@@ -50,11 +52,11 @@ public class CardFragment extends Fragment {
 
         cardFragment.setArguments(bundle);
 
-        fragmentTransaction.addToBackStack("card");
-        fragmentTransaction.add(R.id.fragment_container4, cardFragment);
+        fragmentTransaction.addToBackStack("subcard");
+        fragmentTransaction.add(R.id.fragment_container_card, cardFragment);
         fragmentTransaction.commit();
 
-        View scrollView = view.findViewById(R.id.topic4_content);
+        View scrollView = getView().findViewById(R.id.card_riscos_orgaos_content);
         scrollView.setVisibility(View.GONE);
 
         fragmentContainer.setVisibility(View.VISIBLE);

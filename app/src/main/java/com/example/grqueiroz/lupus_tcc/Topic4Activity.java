@@ -87,7 +87,7 @@ public class Topic4Activity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Topic4Activity.this.onClick(view, R.layout.fragment_card2);
+                Topic4Activity.this.onClick(view, R.layout.card_fadiga);
             }
         });
     }

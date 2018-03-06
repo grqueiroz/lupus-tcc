@@ -16,19 +16,22 @@
 
         <LinearLayout
             android:id="@+id/fragment_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="gone"
+            tools:layout_editor_absoluteY="8dp"
+            tools:layout_editor_absoluteX="8dp">
         </LinearLayout>
 
         <android.support.v4.widget.NestedScrollView
             android:id="@+id/topic1_content"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="336dp"
+            android:layout_height="495dp"
             android:layout_marginTop="8dp"
             android:fillViewport="true"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -61,6 +64,12 @@
                     android:textColor="@color/colorPrimary"
                     android:textSize="20sp"
                     tools:layout_editor_absoluteY="525dp" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    app:srcCompat="@drawable/t1f1" />
 
                 <me.biubiubiu.justifytext.library.JustifyTextView
                     android:id="@+id/topic1_paragraph3"

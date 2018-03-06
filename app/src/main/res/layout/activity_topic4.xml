@@ -16,24 +16,28 @@
 
         <LinearLayout
             android:id="@+id/fragment_container4"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="495dp"
             android:orientation="vertical"
-            android:visibility="visible"/>
+            android:visibility="visible"
+            tools:layout_editor_absoluteY="8dp"
+            tools:layout_editor_absoluteX="8dp" />
 
         <android.support.v4.widget.NestedScrollView
             android:id="@+id/topic4_content"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="336dp"
+            android:layout_height="495dp"
             android:layout_marginTop="8dp"
             android:fillViewport="true"
             android:visibility="visible"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:weightSum="1">
 
                 <me.biubiubiu.justifytext.library.JustifyTextView
                     android:id="@+id/textView2"
@@ -52,6 +56,13 @@
                     android:textColor="@color/colorPrimary"
                     android:textSize="20sp"
                     tools:layout_editor_absoluteY="812dp" />
+
+                <ImageView
+                    android:id="@+id/t4f1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_weight="0.26"
+                    app:srcCompat="@drawable/t4f1" />
 
                 <me.biubiubiu.justifytext.library.JustifyTextView
                     android:id="@+id/textView5"

@@ -65,6 +65,7 @@
 
     <!--Card Titles-->
     <string name="title_card_riscos_internos">4.1 Riscos aos órgãos internos\n</string>
+    <string name="title_card_fadiga">4.2 Fadiga\n</string>
 
     <!--Card "Riscos aos órgãos internos" texts -->
     <string name="card_riscos_orgaos_paragraph1">
@@ -87,7 +88,30 @@
     <string name="card_riscos_orgaos_paragraph4">
         Casos em que os órgãos internos são atingidos são preocupantes; para minimizar este risco o
         paciente deve sempre fazer as consultas e seus exames de rotina, acompanhando com seu médico
-        qualquer progresso da doença.
+        qualquer progresso da doença.\n
+    </string>
+
+    <!--Card "Fadiga" texts -->
+    <string name="card_fadiga_paragraph1">
+        Fadiga é uma sensação de estar muito cansado, e muitos pacientes de Lúpus possuem esse
+        sintoma. Imagine que todas as pessoas possuem um potinho com uma quantidade de energia para
+        gastar no dia, quando uma pessoa tem uma doença, o corpo precisa de uma parte dessa energia
+        do potinho para combater a doença e se manter funcionando, por isso é normal que pacientes
+        tenham menos energia para gastar do que estavam acostumados a ter.\n
+    </string>
+    <string name="card_fadiga_paragraph2">
+        Para lidar com a fadiga é importante aprender os limites do seu corpo, fazendo as coisas com
+        calma, parando para descansar quando e se necessário.\n
+    </string>
+    <string name="card_fadiga_paragraph3">
+        O segredo está em não deixar a energia do potinho acabar toda de uma vez. Se você tem uma
+        festa à noite que quer muito ir, descanse um pouco de tarde para garantir que o potinho de
+        energia vai estar mais cheio para a hora da festa.\n
+    </string>
+    <string name="card_fadiga_paragraph4">
+        Outro ponto importante é contar para o seu médico e para seus pais/responsáveis quando está
+        se sentindo cansado, eles vão poder te ajudar a se sentir melhor e a não abusar do seu
+        corpo.\n
     </string>
 
 </resources>

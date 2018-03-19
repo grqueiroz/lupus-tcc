@@ -1,5 +1,6 @@
 package com.example.grqueiroz.lupus_tcc;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -39,6 +40,10 @@ public class Login extends AppCompatActivity {
                 else
                 {
                     Toast.makeText(Login.this,"Bem vindo(a)!",Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent();
+                    intent.setClass(Login.this, MainActivity.class);
+                    startActivity(intent);
                 }
             }
         });

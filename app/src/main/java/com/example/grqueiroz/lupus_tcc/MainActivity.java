@@ -1,6 +1,7 @@
 package com.example.grqueiroz.lupus_tcc;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.TextViewCompat;
@@ -17,11 +18,14 @@ public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
@@ -67,6 +71,10 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this, Login.class);
+        startActivity(intent);
 
     }
 

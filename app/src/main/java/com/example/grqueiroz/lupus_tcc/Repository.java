@@ -1,5 +1,6 @@
 package com.example.grqueiroz.lupus_tcc;
 
+import com.example.grqueiroz.lupus_tcc.entity.CardContent;
 import com.example.grqueiroz.lupus_tcc.entity.Content;
 import com.example.grqueiroz.lupus_tcc.entity.ImageContent;
 import com.example.grqueiroz.lupus_tcc.entity.Session;
@@ -23,6 +24,7 @@ public class Repository {
         contentList.add(new ImageContent(R.drawable.t1f1));
         contentList.add(new TextContent(R.string.topic1_paragraph3));
         contentList.add(new TextContent(R.string.topic1_paragraph4));
+        contentList.add(new CardContent("card1", "topic4", new ImageContent(R.drawable.t4f1), new TextContent(R.string.title_topic4)));
         sessionList.add(new Session("topic1", contentList, "url"));
     }
 

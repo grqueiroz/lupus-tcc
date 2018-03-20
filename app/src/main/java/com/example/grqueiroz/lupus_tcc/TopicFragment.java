@@ -1,19 +1,17 @@
 package com.example.grqueiroz.lupus_tcc;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
-import com.example.grqueiroz.lupus_tcc.entity.ButtonContent;
+import com.example.grqueiroz.lupus_tcc.entity.CardContent;
 import com.example.grqueiroz.lupus_tcc.entity.Content;
 import com.example.grqueiroz.lupus_tcc.entity.ImageContent;
 import com.example.grqueiroz.lupus_tcc.entity.Session;
@@ -70,15 +68,15 @@ public class TopicFragment extends Fragment {
                 return new ImageViewHolder(view);
             }
             if (viewType == 2) {
-                View view = inflater.inflate(R.layout.topic_screen_item_text, parent, false);
-                return new TextViewHolder(view);
+                View view = inflater.inflate(R.layout.topic_screen_item_card, parent, false);
+                return new CardViewHolder(view);
             }
             return null;
         }
 
         @Override
         public void onBindViewHolder(AdapterViewHolder holder, int position) {
-            Content content = session.getContentList().get(position);
+            final Content content = session.getContentList().get(position);
             if (content instanceof TextContent) {
                 TextViewHolder textViewHolder = (TextViewHolder) holder;
 
@@ -87,6 +85,18 @@ public class TopicFragment extends Fragment {
                 ImageViewHolder imageViewHolder = (ImageViewHolder) holder;
 
                 imageViewHolder.imageView.setImageResource(((ImageContent) content).getDrawableResId());
+            } else if (content instanceof CardContent) {
+                CardViewHolder cardViewHolder = (CardViewHolder) holder;
+
+                cardViewHolder.imageView.setImageResource(((CardContent) content).getCardImage().getDrawableResId());
+                cardViewHolder.textView.setText(((CardContent) content).getCardText().getTextId());
+
+                cardViewHolder.cardView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        navigate(((CardContent) content).getDestinationId());
+                    }
+                });
             }
         }
 
@@ -95,13 +105,18 @@ public class TopicFragment extends Fragment {
             Content content = session.getContentList().get(position);
             if (content instanceof TextContent) return 0;
             if (content instanceof ImageContent) return 1;
-            if (content instanceof ButtonContent) return 2;
+            if (content instanceof CardContent) return 2;
             throw new IllegalStateException("Invalid content");
         }
 
         @Override
         public int getItemCount() {
             return session.getContentList().size();
+        }
+
+        private void navigate(String topicId) {
+            TopicFragment fragment = TopicFragment.newInstance(topicId);
+            getFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
         }
     }
 
@@ -118,8 +133,6 @@ public class TopicFragment extends Fragment {
             super(itemView);
             textView = itemView.findViewById(R.id.text);
         }
-
-
     }
 
     private class ImageViewHolder extends AdapterViewHolder {
@@ -131,12 +144,17 @@ public class TopicFragment extends Fragment {
         }
     }
 
-    class ButtonViewHolder extends AdapterViewHolder {
+    class CardViewHolder extends AdapterViewHolder {
         CardView cardView;
+        ImageView imageView;
+        TextView textView;
 
-        public ButtonViewHolder(View itemView) {
+        public CardViewHolder(View itemView) {
             super(itemView);
-
+            cardView = itemView.findViewById(R.id.card);
+            imageView = itemView.findViewById(R.id.card_image);
+            textView = itemView.findViewById(R.id.card_text);
         }
     }
+
 }

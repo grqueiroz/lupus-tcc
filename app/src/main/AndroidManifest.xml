@@ -22,6 +22,7 @@
         <activity android:name=".Topic4Activity" android:label="@string/como_afeta_corpo"/>
         <activity android:name=".Topic5Activity" android:label="@string/como_vou_melhorar"/>
         <activity android:name=".Topic6Activity" android:label="@string/como_sera_dia_a_dia"/>
+        <activity android:name=".Login" android:label="@string/login"/>
     </application>
 
 </manifest>

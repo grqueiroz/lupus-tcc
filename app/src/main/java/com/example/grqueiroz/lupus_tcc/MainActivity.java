@@ -1,17 +1,11 @@
 package com.example.grqueiroz.lupus_tcc;
 
-import android.content.Intent;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v4.widget.TextViewCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
@@ -35,32 +31,24 @@ public class MainActivity extends AppCompatActivity {
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem){
-                TextView textView = (TextView) findViewById(R.id.textView);
-                Intent intent = new Intent();
                 switch (menuItem.getItemId()){
                     case(R.id.o_que_e):
-                        intent.setClass(MainActivity.this, Topic1Activity.class);
-                        startActivity(intent);
+                        navigate("topic1");
                         break;
                     case(R.id.o_que_causa):
-                        intent.setClass(MainActivity.this, Topic2Activity.class);
-                        startActivity(intent);
+                        navigate("topic2");
                         break;
                     case(R.id.como_e_diagnosticado):
-                        intent.setClass(MainActivity.this, Topic3Activity.class);
-                        startActivity(intent);
+                        navigate("topic3");
                         break;
                     case(R.id.como_afeta_corpo):
-                        intent.setClass(MainActivity.this, Topic4Activity.class);
-                        startActivity(intent);
+                        navigate("topic4");
                         break;
                     case(R.id.como_vou_melhorar):
-                        intent.setClass(MainActivity.this, Topic5Activity.class);
-                        startActivity(intent);
+                        navigate("topic5");
                         break;
                     case(R.id.como_sera_dia_a_dia):
-                        intent.setClass(MainActivity.this, Topic6Activity.class);
-                        startActivity(intent);
+                        navigate("topic6");
                         break;
                 }
                 mDrawerLayout.closeDrawer(mNavigationView, true);
@@ -68,6 +56,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void navigate(String topicId) {
+        TopicFragment fragment = TopicFragment.newInstance(topicId);
+        NavigationStackManager.stackSession(topicId);
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
+    }
+
+    private void navigateBack(String topicId){
+        TopicFragment fragment = TopicFragment.newInstance(topicId);
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
     }
 
     @Override
@@ -78,5 +77,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        NavigationStackManager.popPresentSession();
+        if (!NavigationStackManager.isStackEmpty()) {
+            navigateBack(NavigationStackManager.getPresentSession());
+        }
+        else super.onBackPressed();
     }
 }

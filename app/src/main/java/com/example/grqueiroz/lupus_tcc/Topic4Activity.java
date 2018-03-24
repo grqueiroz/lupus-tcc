@@ -126,8 +126,6 @@ public class Topic4Activity extends AppCompatActivity {
     public void onBackPressed() {
         if (fragmentManager.getBackStackEntryCount() > 0) {
             fragmentManager.popBackStackImmediate();
-            View scrollView = findViewById(R.id.topic4_content);
-            scrollView.setVisibility(View.VISIBLE);
         }
         else super.onBackPressed();
     }

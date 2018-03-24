@@ -29,12 +29,11 @@ public class TopicFragment extends Fragment {
     Adapter adapter;
 
     public static TopicFragment newInstance(String sessionId) {
-//        Intent intent = new Intent(context, TopicFragment.class);
-//        intent.putExtra(ARGUMENT_ID, sessionId);
-//        return intent;
         TopicFragment fragment = new TopicFragment();
+
         Bundle args = new Bundle();
         args.putString(ARGUMENT_ID, sessionId);
+
         fragment.setArguments(args);
         return fragment;
     }
@@ -81,6 +80,11 @@ public class TopicFragment extends Fragment {
                 TextViewHolder textViewHolder = (TextViewHolder) holder;
 
                 textViewHolder.textView.setText(((TextContent) content).getTextId());
+
+                if(((TextContent) content).getIsTitle()){
+                    textViewHolder.textView.setTextSize(getResources().getDimension(R.dimen.title_size));
+                    textViewHolder.textView.setTextColor(getResources().getColor(R.color.colorPrimary));
+                }
             } else if (content instanceof ImageContent) {
                 ImageViewHolder imageViewHolder = (ImageViewHolder) holder;
 
@@ -116,6 +120,7 @@ public class TopicFragment extends Fragment {
 
         private void navigate(String topicId) {
             TopicFragment fragment = TopicFragment.newInstance(topicId);
+            NavigationStackManager.stackSession(topicId);
             getFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
         }
     }

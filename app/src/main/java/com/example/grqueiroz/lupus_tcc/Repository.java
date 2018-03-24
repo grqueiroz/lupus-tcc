@@ -19,6 +19,7 @@ public class Repository {
     //Topic 1
     static {
         ArrayList<Content> contentList = new ArrayList<>();
+        contentList.add(new TextContent(R.string.title_topic1, true));
         contentList.add(new TextContent(R.string.topic1_paragraph1));
         contentList.add(new TextContent(R.string.topic1_paragraph2));
         contentList.add(new ImageContent(R.drawable.t1f1));
@@ -31,9 +32,11 @@ public class Repository {
     //Topic 4
     static {
         ArrayList<Content> contentList = new ArrayList<>();
+        contentList.add(new TextContent(R.string.title_topic4, true));
         contentList.add(new TextContent(R.string.topic4_paragraph1));
         contentList.add(new ImageContent(R.drawable.t4f1));
         contentList.add(new TextContent(R.string.topic4_paragraph2));
+        contentList.add(new CardContent("card4", "topic1", new ImageContent(R.drawable.t1f1), new TextContent(R.string.title_topic1)));
         sessionList.add(new Session("topic4", contentList, "url"));
     }
 

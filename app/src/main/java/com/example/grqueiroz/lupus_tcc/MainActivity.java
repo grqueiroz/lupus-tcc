@@ -1,18 +1,11 @@
 package com.example.grqueiroz.lupus_tcc;
 
-import android.content.Intent;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v4.widget.TextViewCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
@@ -36,8 +31,6 @@ public class MainActivity extends AppCompatActivity {
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem){
-                TextView textView = (TextView) findViewById(R.id.textView);
-                Intent intent = new Intent();
                 switch (menuItem.getItemId()){
                     case(R.id.o_que_e):
                         navigate("topic1");
@@ -67,6 +60,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void navigate(String topicId) {
         TopicFragment fragment = TopicFragment.newInstance(topicId);
+        NavigationStackManager.stackSession(topicId);
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
+    }
+
+    private void navigateBack(String topicId){
+        TopicFragment fragment = TopicFragment.newInstance(topicId);
         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
     }
 
@@ -78,5 +77,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        NavigationStackManager.popPresentSession();
+        if (!NavigationStackManager.isStackEmpty()) {
+            navigateBack(NavigationStackManager.getPresentSession());
+        }
+        else super.onBackPressed();
     }
 }

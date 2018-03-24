@@ -1,5 +1,7 @@
 package com.example.grqueiroz.lupus_tcc.entity;
 
+import android.support.annotation.StringRes;
+
 import java.util.List;
 
 /**
@@ -9,6 +11,7 @@ import java.util.List;
 public class Session {
 
     private String id;
+    private String originScreenid;
     private List<Content> contentList;
     private String videoUrl;
 
@@ -40,5 +43,13 @@ public class Session {
 
     public void setVideoUrl(String videoUrl) {
         this.videoUrl = videoUrl;
+    }
+
+    public String getOriginScreenid() {
+        return originScreenid;
+    }
+
+    public void setOriginScreenid(String originScreenid) {
+        this.originScreenid = originScreenid;
     }
 }

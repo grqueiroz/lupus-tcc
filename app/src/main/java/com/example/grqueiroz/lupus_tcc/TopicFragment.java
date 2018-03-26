@@ -17,8 +17,6 @@ import com.example.grqueiroz.lupus_tcc.entity.ImageContent;
 import com.example.grqueiroz.lupus_tcc.entity.Session;
 import com.example.grqueiroz.lupus_tcc.entity.TextContent;
 
-import me.biubiubiu.justifytext.library.JustifyTextView;
-
 /**
  * Created by gabriel-queiroz on 09/03/18.
  */
@@ -43,6 +41,7 @@ public class TopicFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         String sessionId = this.getArguments().getString(ARGUMENT_ID);
         session = Repository.getSession(sessionId);
+        getActivity().setTitle(session.getTitle());
         adapter = new Adapter();
 
         View rootView =inflater.inflate(R.layout.topic_screen, container, false);
@@ -132,7 +131,7 @@ public class TopicFragment extends Fragment {
     }
 
     private class TextViewHolder extends AdapterViewHolder {
-        JustifyTextView textView;
+        TextView textView;
 
         public TextViewHolder(View itemView) {
             super(itemView);

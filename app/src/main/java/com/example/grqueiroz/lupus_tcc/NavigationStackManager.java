@@ -12,15 +12,15 @@ public class NavigationStackManager {
 
     private static ArrayList<String> navigationSessionStack = new ArrayList<>();
 
-    public static void stackSession(String originSessionId){
+    static void stackSession(String originSessionId){
         navigationSessionStack.add(originSessionId);
     }
 
-    public static Boolean isStackEmpty(){
+    static Boolean isStackEmpty(){
         return navigationSessionStack.isEmpty();
     }
 
-    public static String getPresentSession(){
+    static String getPresentSession(){
         try {
             return navigationSessionStack.get(navigationSessionStack.size() - 1);
         } catch (IndexOutOfBoundsException e){
@@ -28,7 +28,7 @@ public class NavigationStackManager {
         }
     }
 
-    public static String getPreviousSession(){
+    static String getPreviousSession(){
         try {
             return navigationSessionStack.get(navigationSessionStack.size() - 2);
         } catch (IndexOutOfBoundsException e){
@@ -36,7 +36,7 @@ public class NavigationStackManager {
         }
     }
 
-    public static void popPresentSession(){
+    static void popPresentSession(){
         try {
             navigationSessionStack.remove(navigationSessionStack.size() - 1);
         } catch (IndexOutOfBoundsException e){

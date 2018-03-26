@@ -21,9 +21,16 @@
     <string name="card_dentro_activity2">OUTRO card dentro da activity</string>
 
 
-    <!--Activities Titles-->
+    <!--Session Titles-->
     <string name="title_topic1">1. O que é Lúpus?\n</string>
+    <string name="title_topic2">2. O que causa Lúpus?\n</string>
+    <string name="title_topic3">3. Como é diagnosticado?\n</string>
+    <string name="title_topic3_friendly">3. Como é diagnos- ticado?\n</string>
     <string name="title_topic4">4. Como o Lúpus afeta meu corpo?\n</string>
+    <string name="title_topic4_friendly">4. Como afeta meu corpo?\n</string>
+    <string name="title_topic5">5. Como vou melhorar?\n</string>
+    <string name="title_topic6">6. Como será meu dia-a-dia?\n</string>
+
 
     <!--Topic 1 texts-->
     <string name="topic1_paragraph1">
@@ -49,6 +56,51 @@
         de formas agressivas, e vivendo sua vida normalmente.\n
     </string>
 
+    <!--Topic 2 texts-->
+    <string name="topic2_paragraph1">
+        Os pesquisadores ainda estão estudando o que faz com que o sistema imunológico de algumas
+        pessoas se comporte atingindo tecidos saudáveis. Muitos cientistas acreditam que o Lúpus é
+        uma resposta a uma série de fatores que incluem os <b>hormônios</b>, a <b>genética</b> e o
+        <b>ambiente</b> de uma pessoa.\n
+    </string>
+    <string name="topic2_paragraph2">
+        <b>Hormônios</b> são os mensageiros do corpo, que promovem o funcionamento das células e dos
+        órgãos.\n
+    </string>
+    <string name="topic2_paragraph3">
+        <b>Genética</b> é o código, herdado de nossos pais, presente em todas as nossas células que,
+        por exemplo, define a cor dos nossos olhos ou nosso tipo sanguíneo, e influencia de maneira
+        importante na nossa altura e muitas outras características do nosso corpo, incluindo nossa
+        propensão a desenvolver certas doenças como o Lúpus.\n
+    </string>
+    <string name="topic2_paragraph4">
+        Fatores <b>ambientais</b> como a exposição aos raios UV da luz solar e alguns medicamentos
+        podem ser agentes que incentivam o desenvolvimento do Lúpus. Agentes infecciosos como os
+        vírus, fumo, poluição, alimentação e estresse também são fatores coadjuvantes.\n
+    </string>
+    <string name="topic2_paragraph5">
+        Assim, vários fatores podem ter feito com que o Lúpus se desenvolva no seu corpo, mas nada
+        que você fez, ou deixou de fazer causou o Lúpus no seu corpo. É importante saber que o Lúpus
+        não é contagioso, você não o pegou de alguém, nem o transmitirá para outra pessoa.\n
+    </string>
+
+
+    <!--Topic 3 texts-->
+    <string name="topic3_paragraph1">
+        Lúpus pode ser difícil de diagnosticar, alguns sintomas comuns são: vermelhidão na região do
+        nariz e nas maçãs do rosto ou bochechas abaixo dos olhos, cansaço, febre, perda de apetite,
+        perda de peso e dores e inflamação nas articulações.\n
+    </string>
+    <string name="topic3_paragraph2">
+        Não existe um exame específico que comprove o diagnóstico de Lúpus. Para diagnosticar a
+        doença é necessário fazer uma série de exames e o paciente deve ter sintomas ou exames
+        laboratoriais que se encaixam em critérios da Sociedade Americana de Reumatologia.\n
+    </string>
+    <string name="topic3_paragraph3">
+        Uma vez a doença diagnosticada, seu médico vai poder te explicar como você pode se sentir
+        melhor, e indicar os remédios que irá precisar.\n
+    </string>
+
     <!--Topic 4 texts-->
     <string name="topic4_paragraph1">
         O desenvolvimento do Lúpus varia muito de pessoa para pessoa,
@@ -62,6 +114,35 @@
         importante levar as consultas com seu médico a sério: acompanhando os exames seu médico
         poderá prevenir que a doença atinja órgãos importantes e evitar dores e problemas maiores.\n
     </string>
+
+    <!--Topic 5 texts-->
+    <string name="topic5_paragraph1">
+        Quando se fala de doenças crônicas, a palavra chave é <b>controle</b>. Não sabemos se algum
+        dia será descoberta uma cura para o Lúpus, mas sabemos que é possível organizar a sua vida de
+        forma a viver com qualidade e evitar sofrimento.\n
+    </string>
+    <string name="topic5_paragraph2">
+        Para se sentir bem o paciente precisa prestar atenção às restrições que a doença impõe,
+        ir ao médico com a frequência recomendada e respeitar os limites de seu corpo.\n
+    </string>
+
+    <!--Topic 6 texts-->
+    <string name="topic6_paragraph1">
+        Como você quiser que seja! Cada pessoa se sente melhor levando a vida de um jeito, e entre
+        pacientes de Lúpus não é diferente. Porém você deve sempre estar atento às suas limitações.\n
+    </string>
+    <string name="topic6_paragraph2">
+        Todos nós devemos nos alimentar de forma saudável, fazer nossas atividades, ir ao médico,
+        nas consultas programadas e reagendar novas consultas se não pudermos comparecer. Manter
+        atividades como ler, ouvir música e, se souber, tocar algum instrumento, etc. Cada um é
+        responsável pelas escolhas que toma para a sua vida e pelas consequências dessas escolhas.\n
+    </string>
+    <string name="topic6_paragraph3">
+        Dessa forma, quem convive com Lúpus deve se atentar a alguns pontos específicos para ter um
+        dia-a-dia equilibrado e com qualidade de vida. Cabe a cada um a forma como se organiza para
+        lidar com essas adversidades.\n
+    </string>
+
 
     <!--Card Titles-->
     <string name="title_card_riscos_internos">4.1 Riscos aos órgãos internos\n</string>

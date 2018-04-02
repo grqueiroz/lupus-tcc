@@ -22,34 +22,60 @@
 
 
     <!--Session Titles-->
-    <string name="title_topic1">1. O que é Lúpus?\n</string>
-    <string name="title_topic2">2. O que causa Lúpus?\n</string>
-    <string name="title_topic3">3. Como é diagnosticado?\n</string>
-    <string name="title_topic3_friendly">3. Como é diagnos- ticado?\n</string>
-    <string name="title_topic4">4. Como o Lúpus afeta meu corpo?\n</string>
-    <string name="title_topic4_friendly">4. Como afeta meu corpo?\n</string>
-    <string name="title_topic5">5. Como vou melhorar?\n</string>
-    <string name="title_topic6">6. Como será meu dia-a-dia?\n</string>
+    <string name="title_topic1">O que é Lúpus?\n</string>
+    <string name="title_topic2">O que causa Lúpus?\n</string>
+    <string name="title_topic3">Como é diagnosticado?\n</string>
+    <string name="title_topic3_friendly">Como é diagnos- ticado?\n</string>
+    <string name="title_topic4">Como o Lúpus afeta meu corpo?\n</string>
+    <string name="title_topic4_friendly">Como afeta meu corpo?\n</string>
+    <string name="title_topic5">Como vou melhorar?\n</string>
+    <string name="title_topic6">Como será meu dia-a-dia?\n</string>
+
+    <string name="title_topic3_1">Critérios da Sociedade Americana de Reumatologia\n</string>
+    <string name="title_topic3_2">FAN - Fator antinuclear\n</string>
+    <string name="title_topic3_3">Outros Exames\n</string>
+    <string name="title_topic4_1">Riscos aos órgãos internos\n</string>
+    <string name="title_topic4_2">Fadiga\n</string>
+    <string name="title_topic4_3">Vermelhidão\n</string>
+    <string name="title_topic4_4">Sensibilidade à luz\n</string>
+    <string name="title_topic4_5">Perda de Cabelo\n</string>
+
+    <!--Card Titles-->
+    <string name="title_card_topic1">O que é Lúpus?</string>
+    <string name="title_card_topic2">O que causa Lúpus?</string>
+    <string name="title_card_topic3">Como é diagnosticado?</string>
+    <string name="title_card_topic4">Como o Lúpus afeta meu corpo?</string>
+    <string name="title_card_topic5">Como vou melhorar?</string>
+    <string name="title_card_topic6">Como será meu dia-a-dia?</string>
+
+    <string name="title_card_topic3_1">Critérios da Sociedade Americana de Reumatologia</string>
+    <string name="title_card_topic3_2">FAN - Fator antinuclear</string>
+    <string name="title_card_topic3_3">Outros Exames</string>
+    <string name="title_card_topic4_1">Riscos aos órgãos internos</string>
+    <string name="title_card_topic4_2">Fadiga</string>
+    <string name="title_card_topic4_3">Vermelhidão</string>
+    <string name="title_card_topic4_4">Sensibilidade à luz</string>
+    <string name="title_card_topic4_5">Perda de Cabelo</string>
 
 
     <!--Topic 1 texts-->
-    <string name="topic1_paragraph1">
+    <string name="topic1_par1">
         Todos nós temos no nosso corpo um sistema imunológico, que é conjunto de células que servem
         para nos defender de vários tipos de doença, causadas por invasores externos ou
         adversidades.\n
     </string>
-    <string name="topic1_paragraph2">
+    <string name="topic1_par2">
         O Lúpus Eritematoso Sistêmico é uma doença considerada uma doença autoimune, nas quais o
         sistema imunológico se torna mais ativo do que o normal, atacando células saudáveis do
         corpo, esse nome “Lúpus” vem do latim, desde a antiguidade, porque às vezes as feridas que
         a doença ocasiona na pele se parecem com as mordidas de um lobo.\n
     </string>
-    <string name="topic1_paragraph3">
+    <string name="topic1_par3">
         Pacientes com Lúpus podem ter vermelhidões na pele, dores e inchaço articulares, cansaço e
         inflamações em diferentes órgãos internos. Essas inflamações devem ser tratadas o mais cedo
         possível para evitar danos permanentes.\n
     </string>
-    <string name="topic1_paragraph4">
+    <string name="topic1_par4">
         Lúpus é uma doença crônica, o que significa que ela não tem cura; de intensidade variável,
         às vezes causando mais mal estar (período ativo) e às vezes adormecida (período remissivo).
         Porém, seguindo as orientações você poderá se sentir bem, evitando que a doença se manifeste
@@ -57,28 +83,28 @@
     </string>
 
     <!--Topic 2 texts-->
-    <string name="topic2_paragraph1">
+    <string name="topic2_par1">
         Os pesquisadores ainda estão estudando o que faz com que o sistema imunológico de algumas
         pessoas se comporte atingindo tecidos saudáveis. Muitos cientistas acreditam que o Lúpus é
         uma resposta a uma série de fatores que incluem os <b>hormônios</b>, a <b>genética</b> e o
         <b>ambiente</b> de uma pessoa.\n
     </string>
-    <string name="topic2_paragraph2">
+    <string name="topic2_par2">
         <b>Hormônios</b> são os mensageiros do corpo, que promovem o funcionamento das células e dos
         órgãos.\n
     </string>
-    <string name="topic2_paragraph3">
+    <string name="topic2_par3">
         <b>Genética</b> é o código, herdado de nossos pais, presente em todas as nossas células que,
         por exemplo, define a cor dos nossos olhos ou nosso tipo sanguíneo, e influencia de maneira
         importante na nossa altura e muitas outras características do nosso corpo, incluindo nossa
         propensão a desenvolver certas doenças como o Lúpus.\n
     </string>
-    <string name="topic2_paragraph4">
+    <string name="topic2_par4">
         Fatores <b>ambientais</b> como a exposição aos raios UV da luz solar e alguns medicamentos
         podem ser agentes que incentivam o desenvolvimento do Lúpus. Agentes infecciosos como os
         vírus, fumo, poluição, alimentação e estresse também são fatores coadjuvantes.\n
     </string>
-    <string name="topic2_paragraph5">
+    <string name="topic2_par5">
         Assim, vários fatores podem ter feito com que o Lúpus se desenvolva no seu corpo, mas nada
         que você fez, ou deixou de fazer causou o Lúpus no seu corpo. É importante saber que o Lúpus
         não é contagioso, você não o pegou de alguém, nem o transmitirá para outra pessoa.\n
@@ -86,113 +112,237 @@
 
 
     <!--Topic 3 texts-->
-    <string name="topic3_paragraph1">
+    <string name="topic3_par1">
         Lúpus pode ser difícil de diagnosticar, alguns sintomas comuns são: vermelhidão na região do
         nariz e nas maçãs do rosto ou bochechas abaixo dos olhos, cansaço, febre, perda de apetite,
         perda de peso e dores e inflamação nas articulações.\n
     </string>
-    <string name="topic3_paragraph2">
+    <string name="topic3_par2">
         Não existe um exame específico que comprove o diagnóstico de Lúpus. Para diagnosticar a
         doença é necessário fazer uma série de exames e o paciente deve ter sintomas ou exames
         laboratoriais que se encaixam em critérios da Sociedade Americana de Reumatologia.\n
     </string>
-    <string name="topic3_paragraph3">
+    <string name="topic3_par3">
         Uma vez a doença diagnosticada, seu médico vai poder te explicar como você pode se sentir
         melhor, e indicar os remédios que irá precisar.\n
     </string>
 
+    <!--Topic 3.1 texts-->
+    <string name="topic3_1_par1">
+        Como o Lúpus pode se manifestar de formas diferentes em cada indivíduo, e como não existe um
+        exame que define por si só quem possui a doença, a Sociedade Americana de Reumatologia
+        elencou os sintomas mais comuns que podem indicar que o paciente tem Lúpus.\n
+    </string>
+    <string name="topic3_1_par2">
+        Os critérios são:\n
+    </string>
+    <string name="topic3_1_par3">
+        - vermelhidão na região do nariz e bochechas\n\n
+        - vermelhidões na pele\n\n
+        - fotossensibilidade (sensibilidade ao sol)\n
+    </string>
+    <string name="topic3_1_par4">
+        - feridas no céu da boca\n\n
+        - inflamação nas articulações (artrite)\n\n
+        - inflamação nos tecidos em volta do pulmão ou do coração (pleurite ou pericardite)\n\n
+        - problemas nos rins (sangue ou proteína na urina)\n\n
+        - problemas neurológicos (convulsões ou alterações psiquiátricas)\n\n
+        - alterações imunológicas (presença de alguns anticorpos)\n\n
+        - resultado positivo no exame de FAN (fatores antinucleares)\n
+    </string>
+
+    <!--Topic 3.2 texts-->
+    <string name="topic3_2_par1">
+        O exame de fatores antinucleares é um exame normalmente solicitado para pacientes com
+        suspeita de doenças autoimunes.\n
+    </string>
+    <string name="topic3_2_par2">
+Em condições normais, quando nosso organismo é atacado por invasores o sistema imunológico responde
+        produzindo anticorpos para combatê-los. Quando uma pessoa tem uma doença autoimune, o
+        organismo age de forma inapropriada e passa a produzir anticorpos contra as células de
+        tecidos saudáveis.\n
+    </string>
+    <string name="topic3_2_par3">
+        O FAN é um desses autoanticorpos que são produzidos nas doenças autoimunes. A grande maioria
+        dos pacientes de Lúpus possui FAN positivo, porém é possível ter Lúpus e ser negativo no
+        teste de fatores antinucleares.\n
+    </string>
+
+    <!--Topic 3.3 texts-->
+    <string name="topic3_3_par1">
+        No Lúpus, além do FAN, outros autoanticorpos podem ser encontrados, como o anti-Sm e o
+        anti-DNA. Outros indícios de presença de uma doença autoimune são: baixo número de glóbulos
+        brancos (leucopenia), baixo número de plaquetas (plaquetopenia) e anemia, que podem ser
+        encontrados no hemograma. Os valores dos complementos (C3 e C4) também podem estar baixos.\n
+    </string>
+    <string name="topic3_3_par2">
+        É importante avaliar através de exames de sangue se o rim está funcionando bem e se há algum
+        tipo de inflamação, que pode ser avaliada no exame de urina de 24 horas ou através de um
+        exame chamado “pesquisa de proteína isolada”.\n
+    </string>
+
     <!--Topic 4 texts-->
-    <string name="topic4_paragraph1">
+    <string name="topic4_par1">
         O desenvolvimento do Lúpus varia muito de pessoa para pessoa,
         a doença pode afetar praticamente qualquer parte do corpo, mas algumas das regiões mais
         comumente afetadas são: pele, articulações, vasos sanguíneos e órgãos como os rins e o
         coração. A maioria dos pacientes de Lúpus convivem em algum estágio da doença com febre,
         dores no corpo semelhantes às de um resfriado e vermelhidões na pele.\n
     </string>
-    <string name="topic4_paragraph2">
+    <string name="topic4_par2">
         É difícil predizer o que cada paciente vai sentir, por isso é
         importante levar as consultas com seu médico a sério: acompanhando os exames seu médico
         poderá prevenir que a doença atinja órgãos importantes e evitar dores e problemas maiores.\n
     </string>
 
-    <!--Topic 5 texts-->
-    <string name="topic5_paragraph1">
-        Quando se fala de doenças crônicas, a palavra chave é <b>controle</b>. Não sabemos se algum
-        dia será descoberta uma cura para o Lúpus, mas sabemos que é possível organizar a sua vida de
-        forma a viver com qualidade e evitar sofrimento.\n
-    </string>
-    <string name="topic5_paragraph2">
-        Para se sentir bem o paciente precisa prestar atenção às restrições que a doença impõe,
-        ir ao médico com a frequência recomendada e respeitar os limites de seu corpo.\n
-    </string>
-
-    <!--Topic 6 texts-->
-    <string name="topic6_paragraph1">
-        Como você quiser que seja! Cada pessoa se sente melhor levando a vida de um jeito, e entre
-        pacientes de Lúpus não é diferente. Porém você deve sempre estar atento às suas limitações.\n
-    </string>
-    <string name="topic6_paragraph2">
-        Todos nós devemos nos alimentar de forma saudável, fazer nossas atividades, ir ao médico,
-        nas consultas programadas e reagendar novas consultas se não pudermos comparecer. Manter
-        atividades como ler, ouvir música e, se souber, tocar algum instrumento, etc. Cada um é
-        responsável pelas escolhas que toma para a sua vida e pelas consequências dessas escolhas.\n
-    </string>
-    <string name="topic6_paragraph3">
-        Dessa forma, quem convive com Lúpus deve se atentar a alguns pontos específicos para ter um
-        dia-a-dia equilibrado e com qualidade de vida. Cabe a cada um a forma como se organiza para
-        lidar com essas adversidades.\n
-    </string>
-
-
-    <!--Card Titles-->
-    <string name="title_card_riscos_internos">4.1 Riscos aos órgãos internos\n</string>
-    <string name="title_card_fadiga">4.2 Fadiga\n</string>
-
-    <!--Card "Riscos aos órgãos internos" texts -->
-    <string name="card_riscos_orgaos_paragraph1">
+    <!--Topic 4.1 texts-->
+    <string name="topic4_1_par1">
         Em alguns casos, apesar do tratamento, a doença continua difícil de controlar. Nestes casos
         o Lúpus pode atacar os rins (Nefrite Lúpica), o coração (Cardite Lúpica) ou o sistema
         nervoso, causando danos mais severos à saúde do paciente.\n
     </string>
-    <string name="card_riscos_orgaos_paragraph2">
+    <string name="topic4_1_par2">
         Na Nefrite Lúpica, os pequenos vasos sanguíneos que filtram o sangue eliminando os resíduos
         na urina e, às vezes, outras estruturas dos rins, são afetados pelo sistema imunológico e
         sofrem inflamação. Alguns sintomas, além do aumento da pressão arterial, que pode se
         manifestar como dor de cabeça, são sangue ou proteínas na urina, ganho de peso, ou edemas
-        (acúmulo de líquido) em regiões como pernas, tornozelos ou envolta dos olhos.\n
+        (acúmulo de líquido) em regiões como pernas, tornozelos ou em volta dos olhos.\n
     </string>
-    <string name="card_riscos_orgaos_paragraph3">
+    <string name="topic4_1_par3">
         Os casos de inflamação do sistema vascular (que envolve o coração) e do sistema nervoso são
         menos comuns, mas ocorrem de forma semelhante. Os vasos ou os órgãos são atingidos pelo
         sistema imunológico, sofrendo inflamação e deixando de funcionar como o esperado.\n
     </string>
-    <string name="card_riscos_orgaos_paragraph4">
+    <string name="topic4_1_par4">
         Casos em que os órgãos internos são atingidos são preocupantes; para minimizar este risco o
         paciente deve sempre fazer as consultas e seus exames de rotina, acompanhando com seu médico
         qualquer progresso da doença.\n
     </string>
 
-    <!--Card "Fadiga" texts -->
-    <string name="card_fadiga_paragraph1">
+    <!--Topic 4.2 texts-->
+    <string name="topic4_2_par1">
         Fadiga é uma sensação de estar muito cansado, e muitos pacientes de Lúpus possuem esse
         sintoma. Imagine que todas as pessoas possuem um potinho com uma quantidade de energia para
         gastar no dia, quando uma pessoa tem uma doença, o corpo precisa de uma parte dessa energia
         do potinho para combater a doença e se manter funcionando, por isso é normal que pacientes
         tenham menos energia para gastar do que estavam acostumados a ter.\n
     </string>
-    <string name="card_fadiga_paragraph2">
+    <string name="topic4_2_par2">
         Para lidar com a fadiga é importante aprender os limites do seu corpo, fazendo as coisas com
         calma, parando para descansar quando e se necessário.\n
     </string>
-    <string name="card_fadiga_paragraph3">
-        O segredo está em não deixar a energia do potinho acabar toda de uma vez. Se você tem uma
-        festa à noite que quer muito ir, descanse um pouco de tarde para garantir que o potinho de
-        energia vai estar mais cheio para a hora da festa.\n
-    </string>
-    <string name="card_fadiga_paragraph4">
-        Outro ponto importante é contar para o seu médico e para seus pais/responsáveis quando está
-        se sentindo cansado, eles vão poder te ajudar a se sentir melhor e a não abusar do seu
+    <string name="topic4_2_par3">
+       Outro ponto importante é contar para o seu médico e para seus pais ou responsáveis quando
+        está se sentindo cansado, eles vão poder te ajudar a se sentir melhor e a não abusar do seu
         corpo.\n
+    </string>
+    <string name="topic4_2_par4">
+        Casos em que os órgãos internos são atingidos são preocupantes; para minimizar este risco o
+        paciente deve sempre fazer as consultas e seus exames de rotina, acompanhando com seu médico
+        qualquer progresso da doença.\n
+    </string>
+
+    <!--Topic 4.3 texts-->
+    <string name="topic4_3_par1">
+        As células da pele também podem ser atacadas pelas células do sistema imunológico, isso
+        ocorre porque a pele sofreu algum estímulo, como os raios do sol, ou algum ferimento, e este
+        estímulo confunde o sistema imunológico, que ataca a pele, fazendo com que surjam manchas
+        vermelhas no paciente. Marcas no rosto, na região do nariz e abaixo dos olhos, são comuns,
+        mas podem surgir em outros lugares também.\n
+    </string>
+    <string name="topic4_3_par2">
+        Lembre-se de dizer ao seu médico se as manchas estão incomodando, ele vai receitar os
+        remédios corretos para tratá-las. É importante passar os remédios na frequência indicada e
+        evitar exposição ao sol, para evitar que as manchas piorem com o efeito dos raios solares na
+        pele. Protetor solar é fundamental em pacientes com Lúpus e deve ser passado várias vezes
+        ao dia.\n
+    </string>
+    <string name="topic4_3_par3">
+        Se as manchas te incomodam ou fazem se sentir mal, existem produtos que podem ajudar a
+        cobrir a vermelhidão, mas é importante que eles não piorem a inflamação, portanto pergunte
+        ao seu médico qual produto seria indicado.\n
+    </string>
+
+    <!--Topic 4.4 texts-->
+    <string name="topic4_4_par1">
+        Fotossensibilidade é o termo usado para descrever a sensibilidade que pacientes com Lúpus
+        desenvolvem aos raios ultravioleta, que podem vir do sol ou de alguns tipos de iluminação
+        artificial, como lâmpadas fluorescentes.\n
+    </string>
+    <string name="topic4_4_par2">
+        Nestes pacientes a sensibilidade aos raios UV pode causar inflamações na pele, febre,
+        cansaço, piorar alguns sintomas da doença ou até fazer com que a doença se manifeste mais
+        agressivamente.\n
+    </string>
+    <string name="topic4_4_par3">
+        É importante para o paciente entender que a exposição ao sol é perigosa, mas não o impede de
+        sair ao ar livre. Basta prestar bastante atenção às dicas abaixo.\n
+    </string>
+    <string name="topic4_4_par4">
+        - Usar protetor solar com fator FPS 30 ou maior sempre que for sair, mesmo em dias nublados\n\n
+        - A quantidade de protetor recomendada a ser aplicada em um adulto (no 	corpo todo) é de
+        aproximadamente duas colheres de sopa, não passar 	a quantidade correta reduz a eficácia do
+        protetor e dessa forma 	reduz o quanto o paciente está protegido\n\n
+        - Lembrar de reaplicar o protetor pelo menos a cada hora enquanto estiver diretamente exposto
+        ao sol\n
+    </string>
+    <string name="topic4_4_par5">
+        - Lembrar de passar protetor no pescoço, atrás do pescoço, nas orelhas e nos lábios
+        (o próprio creme ou em forma de batom )\n\n
+        - Aplicar o protetor pelo menos 20 minutos antes de sair, pois esse é o tempo que ele demora
+        para ser absorvido e fazer efeito\n\n
+        - Usar chapéu e roupas leves, mas que evitem a exposição direta da pele ao Sol.\n\n
+        - Há roupas de tecidos que já vem com proteção aos raios UV, são mais caras mas funcionam
+        bem e podem ser encontradas à venda em lojas de artigos esportivos.\n\n
+        - Evitar exposição ao Sol entre 10h e 14h, quando o sol é mais forte\n
+    </string>
+
+    <!--Topic 4.5 texts-->
+    <string name="topic4_5_par1">
+        Em alguns pacientes, nos estágios agressivos da doença, pode haver queda ou afinamento do
+        cabelo. Normalmente depois que a doença volta ao estado controlado o cabelo volta a crescer,
+        portanto o melhor a se fazer é cuidar dos cabelos e não exigir demais deles enquanto
+        estiverem sensíveis.\n
+    </string>
+    <string name="topic4_5_par2">
+        Algumas dicas são:\n
+    </string>
+    <string name="topic4_5_par3">
+        - Evitar de lavar demais os cabelos, e trocar seu shampoo para um mais leve, sem sal na
+        composição. Uma sugestão seriam os shampoos de bebê\n\n
+        - Usar condicionador com protetor solar\n\n
+        - Evitar estressar ainda mais o cabelo, usando secadores, babyliss, química ou prendendo com
+        presilhas muito apertadas, que podem quebrar ainda mais os fios.\n\n
+        - Aproveite para tentar um estilo novo para o seu cabelo, mais curto, que dê volume e menos
+        trabalho de cuidar.\n
+    </string>
+
+    <!--Topic 5 texts-->
+    <string name="topic5_par1">
+        Quando se fala de doenças crônicas, a palavra chave é <b>controle</b>. Não sabemos se algum
+        dia será descoberta uma cura para o Lúpus, mas sabemos que é possível organizar a sua vida de
+        forma a viver com qualidade e evitar sofrimento.\n
+    </string>
+    <string name="topic5_par2">
+        Para se sentir bem o paciente precisa prestar atenção às restrições que a doença impõe,
+        ir ao médico com a frequência recomendada e respeitar os limites de seu corpo.\n
+    </string>
+
+    <!--Topic 6 texts-->
+    <string name="topic6_par1">
+        Como você quiser que seja! Cada pessoa se sente melhor levando a vida de um jeito, e entre
+        pacientes de Lúpus não é diferente. Porém você deve sempre estar atento às suas limitações.\n
+    </string>
+    <string name="topic6_par2">
+        Todos nós devemos nos alimentar de forma saudável, fazer nossas atividades, ir ao médico,
+        nas consultas programadas e reagendar novas consultas se não pudermos comparecer. Manter
+        atividades como ler, ouvir música e, se souber, tocar algum instrumento, etc. Cada um é
+        responsável pelas escolhas que toma para a sua vida e pelas consequências dessas escolhas.\n
+    </string>
+    <string name="topic6_par3">
+        Dessa forma, quem convive com Lúpus deve se atentar a alguns pontos específicos para ter um
+        dia-a-dia equilibrado e com qualidade de vida. Cabe a cada um a forma como se organiza para
+        lidar com essas adversidades.\n
     </string>
 
 </resources>

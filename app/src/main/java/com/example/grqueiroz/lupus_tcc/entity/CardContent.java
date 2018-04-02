@@ -5,20 +5,14 @@ package com.example.grqueiroz.lupus_tcc.entity;
  */
 
 public class CardContent implements Content {
-    private String title;
     private String destinationId;
     private ImageContent cardImage;
     private TextContent cardText;
 
-    public CardContent(String title, String destinationId, ImageContent cardImage, TextContent cardText) {
-        this.title = title;
+    public CardContent(String destinationId, ImageContent cardImage, TextContent cardText) {
         this.destinationId = destinationId;
         this.cardImage = cardImage;
         this.cardText = cardText;
-    }
-
-    public String getTitle() {
-        return title;
     }
 
     public String getDestinationId() {

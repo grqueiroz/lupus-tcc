@@ -1,4 +1,4 @@
-package com.example.grqueiroz.lupus_tcc;
+package com.example.grqueiroz.lupus_tcc.manager;
 
 import android.app.FragmentManager;
 
@@ -12,15 +12,15 @@ public class NavigationStackManager {
 
     private static ArrayList<String> navigationSessionStack = new ArrayList<>();
 
-    static void stackSession(String originSessionId){
+    public static void stackSession(String originSessionId){
         navigationSessionStack.add(originSessionId);
     }
 
-    static Boolean isStackEmpty(){
+    public static Boolean isStackEmpty(){
         return navigationSessionStack.isEmpty();
     }
 
-    static String getPresentSession(){
+    public static String getPresentSession(){
         try {
             return navigationSessionStack.get(navigationSessionStack.size() - 1);
         } catch (IndexOutOfBoundsException e){
@@ -28,7 +28,7 @@ public class NavigationStackManager {
         }
     }
 
-    static String getPreviousSession(){
+    public static String getPreviousSession(){
         try {
             return navigationSessionStack.get(navigationSessionStack.size() - 2);
         } catch (IndexOutOfBoundsException e){
@@ -36,7 +36,7 @@ public class NavigationStackManager {
         }
     }
 
-    static void popPresentSession(){
+    public static void popPresentSession(){
         try {
             navigationSessionStack.remove(navigationSessionStack.size() - 1);
         } catch (IndexOutOfBoundsException e){

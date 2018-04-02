@@ -11,15 +11,21 @@ import java.util.List;
 public class Session {
 
     private String id;
-    private @StringRes int title;
+    private @StringRes int mainTopicTitle;
     private List<Content> contentList;
     private String videoUrl;
 
-    public Session(String id, @StringRes int title, List<Content> contentList, String videoUrl) {
+    public Session(String id, @StringRes int mainTopicTitle, List<Content> contentList, String videoUrl) {
         this.id = id;
-        this.title = title;
+        this.mainTopicTitle = mainTopicTitle;
         this.contentList = contentList;
         this.videoUrl = videoUrl;
+    }
+
+    public Session(String id, @StringRes int mainTopicTitle, List<Content> contentList) {
+        this.id = id;
+        this.mainTopicTitle = mainTopicTitle;
+        this.contentList = contentList;
     }
 
     public String getId() {
@@ -30,12 +36,12 @@ public class Session {
         this.id = id;
     }
 
-    public @StringRes int getTitle() {
-        return title;
+    public @StringRes int getMainTopicTitle() {
+        return mainTopicTitle;
     }
 
-    public void setTitle(@StringRes int title) {
-        this.title = title;
+    public void setMainTopicTitle(@StringRes int mainTopicTitle) {
+        this.mainTopicTitle = mainTopicTitle;
     }
 
     public List<Content> getContentList() {

@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.grqueiroz.lupus_tcc.manager.NavigationStackManager;
+
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
@@ -58,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void navigate(String topicId) {
+    public void navigate(String topicId) {
         TopicFragment fragment = TopicFragment.newInstance(topicId);
         NavigationStackManager.stackSession(topicId);
         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();

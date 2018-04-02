@@ -9,5 +9,4 @@
     android:text="@string/topic1_par1"
     android:textStyle="normal"
     android:fontFamily="@font/aleo"
-    android:justificationMode="inter_word"
     tools:layout_editor_absoluteY="8dp" />

@@ -1,4 +1,4 @@
-package com.example.grqueiroz.lupus_tcc;
+package com.example.grqueiroz.lupus_tcc.manager;
 
 import android.app.FragmentManager;
 

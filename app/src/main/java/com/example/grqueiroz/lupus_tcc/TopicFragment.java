@@ -1,10 +1,14 @@
 package com.example.grqueiroz.lupus_tcc;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +20,9 @@ import com.example.grqueiroz.lupus_tcc.entity.Content;
 import com.example.grqueiroz.lupus_tcc.entity.ImageContent;
 import com.example.grqueiroz.lupus_tcc.entity.Session;
 import com.example.grqueiroz.lupus_tcc.entity.TextContent;
-
-import me.biubiubiu.justifytext.library.JustifyTextView;
+import com.example.grqueiroz.lupus_tcc.manager.NavigationStackManager;
+import com.example.grqueiroz.lupus_tcc.manager.PreCachingLayoutManager;
+import com.example.grqueiroz.lupus_tcc.util.DeviceUtils;
 
 /**
  * Created by gabriel-queiroz on 09/03/18.
@@ -43,11 +48,18 @@ public class TopicFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         String sessionId = this.getArguments().getString(ARGUMENT_ID);
         session = Repository.getSession(sessionId);
+        getActivity().setTitle(session.getMainTopicTitle());
+
+        PreCachingLayoutManager layoutManager = new PreCachingLayoutManager(getActivity());
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        layoutManager.setExtraLayoutSpace(DeviceUtils.getScreenHeight(getActivity()));
+
         adapter = new Adapter();
 
         View rootView =inflater.inflate(R.layout.topic_screen, container, false);
         RecyclerView recyclerView = rootView.findViewById(R.id.list);
 
+        recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
         return rootView;
     }
@@ -73,6 +85,7 @@ public class TopicFragment extends Fragment {
             return null;
         }
 
+        @RequiresApi(api = Build.VERSION_CODES.O)
         @Override
         public void onBindViewHolder(AdapterViewHolder holder, int position) {
             final Content content = session.getContentList().get(position);
@@ -83,7 +96,10 @@ public class TopicFragment extends Fragment {
 
                 if(((TextContent) content).getIsTitle()){
                     textViewHolder.textView.setTextSize(getResources().getDimension(R.dimen.title_size));
-                    textViewHolder.textView.setTextColor(getResources().getColor(R.color.colorPrimary));
+                    textViewHolder.textView.setTextColor(getResources().getColor(R.color.colorAccent));
+                }
+                if(((TextContent) content).getJustify() && DeviceUtils.isVersionOver26()){
+                    textViewHolder.textView.setJustificationMode(Layout.JUSTIFICATION_MODE_INTER_WORD);
                 }
             } else if (content instanceof ImageContent) {
                 ImageViewHolder imageViewHolder = (ImageViewHolder) holder;
@@ -132,7 +148,7 @@ public class TopicFragment extends Fragment {
     }
 
     private class TextViewHolder extends AdapterViewHolder {
-        JustifyTextView textView;
+        TextView textView;
 
         public TextViewHolder(View itemView) {
             super(itemView);

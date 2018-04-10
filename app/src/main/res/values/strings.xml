@@ -39,6 +39,21 @@
     <string name="title_topic4_3">Vermelhidão\n</string>
     <string name="title_topic4_4">Sensibilidade à luz\n</string>
     <string name="title_topic4_5">Perda de Cabelo\n</string>
+    <string name="title_topic5_1">Orientações gerais e tratamento\n</string>
+    <string name="title_topic5_2">Anti-inflamatórios, Corticoides e Imunosupressores\n</string>
+    <string name="title_topic5_3">Medicamentos e efeitos colaterais\n</string>
+    <string name="title_topic5_4">Comparecimento às consultas e exames\n</string>
+    <string name="title_topic5_5">O que fazer se eu piorar?\n</string>
+    <string name="title_topic6_1">Visitas ao médico\n</string>
+    <string name="title_topic6_2">Dieta\n</string>
+    <string name="title_topic6_3">Exercícios\n</string>
+    <string name="title_topic6_4">Influência na Gravidez / Fertilidade\n</string>
+    <string name="title_topic6_5">Vacinas\n</string>
+    <string name="title_topic6_6">Evitar infecções\n</string>
+    <string name="title_topic6_7">Álcool, drogas, cigarro e saúde sexual\n</string>
+
+
+
 
     <!--Card Titles-->
     <string name="title_card_topic1">O que é Lúpus?</string>
@@ -56,6 +71,18 @@
     <string name="title_card_topic4_3">Vermelhidão</string>
     <string name="title_card_topic4_4">Sensibilidade à luz</string>
     <string name="title_card_topic4_5">Perda de Cabelo</string>
+    <string name="title_card_topic5_1">Orientações gerais e tratamento</string>
+    <string name="title_card_topic5_2">Anti-inflamatórios, Corticoides e Imunosupressores</string>
+    <string name="title_card_topic5_3">Medicamentos e efeitos colaterais</string>
+    <string name="title_card_topic5_4">Comparecimento às consultas e exames</string>
+    <string name="title_card_topic5_5">O que fazer se eu piorar?</string>
+    <string name="title_card_topic6_1">Visitas ao médico</string>
+    <string name="title_card_topic6_2">Dieta</string>
+    <string name="title_card_topic6_3">Exercícios</string>
+    <string name="title_card_topic6_4">Influência na Gravidez / Fertilidade</string>
+    <string name="title_card_topic6_5">Vacinas</string>
+    <string name="title_card_topic6_6">Evitar infecções</string>
+    <string name="title_card_topic6_7">Álcool, drogas, cigarro e saúde sexual</string>
 
 
     <!--Topic 1 texts-->
@@ -328,6 +355,161 @@ Em condições normais, quando nosso organismo é atacado por invasores o sistem
         ir ao médico com a frequência recomendada e respeitar os limites de seu corpo.\n
     </string>
 
+    <!--Topic 5.1 texts-->
+    <string name="topic5_1_par1">
+        Normalmente os remédios a serem tomados são determinados pelos médicos, que levam em conta
+        os sintomas associados a alguma restrição que o paciente apresente. Às vezes é necessário
+        mudar a medicação até encontrar aquela à qual o paciente se adapta melhor, obtendo melhores
+        resultados.\n
+    </string>
+    <string name="topic5_1_par2">
+        É muito importante seguir corretamente as orientações dadas pelo médico, anotando e
+        relatando qualquer efeito colateral que seja incômodo, para que juntos, o paciente e o
+        médico, possam encontrar a forma mais confortável de lidar com a doença.\n
+    </string>
+
+    <!--Topic 5.2 texts-->
+    <string name="topic5_2_par1">
+        Ao longo da jornada com o Lúpus, é possível que pacientes ouçam com bastante frequência
+        esses termos, que se referem aos tipos de remédio utilizados para amenizar os sintomas e
+        diminuir a atividade da doença. Vamos entender melhor como cada tipo funciona:\n
+    </string>
+    <string name="topic5_2_par2">
+        <b>Anti-inflamatórios</b> são remédios que, como já diz o nome, reduzem as inflamações no corpo e
+        amenizam alguns sintomas, como artrite, febre e dores no peito; estes medicamentos começam a
+        fazer efeito depois de alguns dias de tratamento. Os antiinflamatórios devem ser utilizados
+        com orientação médica pois podem afetar o funcionamento adequado dos rins, e não são os
+        melhores indicados em todos os casos. Por exemplo, durante infecções como a dengue o uso de
+        antiinflamatorios é contra-indicado.\n
+    </string>
+    <string name="topic5_2_par3">
+        <b>Corticoides</b> são medicamentos produzidos para se comportarem como os hormônios do
+        nosso corpo. Hormônios são os mensageiros, que dão o sinal quando o corpo precisa exercer
+        alguma função, como disparar ou recolher anticorpos. O tratamento com corticoides consiste
+        basicamente em produzir “mensagens” para o corpo, fazendo com que ele reduza as inflamações
+        e pare de mandar anticorpos atacarem as regiões afetadas. O corticoide mais comum de ser
+        receitado para combater o Lúpus é a Prednisona ou prednisolona. Eles atuam rapidamente e
+        fazem você se sentir melhor rapidamente. Porém estão associados a uma série de efeitos
+        colaterais como ganho de peso, estrias, pressão alta, diabetes, alteração no colesterol,
+        perda de massa óssea, fraqueza muscular, catarata. No início podem ser necessárias doses
+        altas de prednisona, que serão diminuídas com a melhora dos sintomas; seu médico vai tentar
+        manter a dosagem mais baixa o possível.\n
+    </string>
+    <string name="topic5_2_par4">
+        <b>Imunossupressores</b> são remédios que reduzem a atividade do sistema imunológico, mas de uma
+        forma mais agressiva. No corpo de um paciente de doença autoimune o sistema imunológico
+        tenta se defender de invasores e acaba atacando também as células do próprio corpo. Para
+        reduzir esse efeito, os imunossupressores reduzem a capacidade do corpo de se defender,
+        deixando o paciente mais vulnerável a possíveis invasores. Estes medicamentos também são
+        mais fortes que os anti-inflamatórios, e cada um causa alguns efeitos colaterais, mas podem
+        ajudar bastante no controle da doença.\n
+    </string>
+    <string name="topic5_2_par5">
+        No tratamento de cada paciente o médico vai sempre tentar conciliar os medicamentos que
+        ajudem mais no controle da doença, evitando efeitos colaterais. Nem sempre existe uma solução
+        perfeita, mas se o paciente e o médico trabalharem em equipe, sendo sinceros, podem encontrar
+        boas soluções.\n
+    </string>
+
+    <!--Topic 5.3 texts-->
+    <string name="topic5_3_par1">
+        <b>Prednisona:</b>\n
+        A prednisona é atualmente um dos remédios mais efetivos para tratar o Lúpus, reduzindo as
+        inflamações causadas pela doença. Os efeitos colaterais dependem da dose que o paciente toma.
+        Normalmente no início do tratamento as doses a serem tomadas são maiores, mas conforme a
+        doença estabiliza as doses são reduzidas. Entre os efeitos colaterais que podem surgir
+        frequentemente estão aumento no apetite, aumento de peso, inchaço no rosto, espinhas,
+        alteração de humor, diminuição no crescimento, estrias e aumento dos pelos.\n
+    </string>
+    <string name="topic5_3_par2">
+        <b>Hidroxicloroquina:</b>\n
+        É um medicamento menos forte que ajuda bastante no tratamento. É utilizado pela maioria dos
+        pacientes com Lúpus, mas normalmente o remédio leva alguns meses para fazer efeito. Entre os
+        efeitos colaterais, pouco frequentes, estão distúrbios visuais, perda de peso, mudança de
+        humor, dores de cabeça, náuseas e manchas na pele.\n
+    </string>
+    <string name="topic5_3_par3">
+        <b>Azatioprina:</b>\n
+        Reduz a inflamação de órgãos. Pode ser utilizada para evitar que o paciente tenha que tomar
+        doses altas de prednisona. Esse medicamento atua como um imunossupressor, ou seja, reduz a
+        atividade do sistema imunológico, por isso o paciente deve fazer exames de sangue com
+        frequência. Entre os efeitos colaterais estão náuseas, diminuição dos glóbulos sanguíneos e
+        infecções.\n
+    </string>
+    <string name="topic5_3_par4">
+        <b>Micofenolato de Mofetila:</b>\n
+        Similar à Azatioprina, pode ser usado no combate à inflamação dos rins e do cérebro. Os
+        efeitos colaterais mais frequentes são, diarreia, náuseas, infecções e diminuição de células
+        brancas em seu sangue. Este medicamento não deve ser utilizado por pacientes que desejam
+        engravidar, pois pode estar associado a malformações no feto.\n
+    </string>
+    <string name="topic5_3_par5">
+        <b>Metotrexato:</b>\n
+        Outro imunossupressor, que age diretamente nos leucócitos (células brancas), mas pode afetar
+        também as enzimas do fígado, portanto o paciente deve fazer exames de sangue regularmente.
+        Alguns dos efeitos colaterais são: náusea, vômito, diarréia, anorexia, fraqueza, tontura,
+        febre, etc. Este medicamento não deve ser utilizado por pacientes que desejam engravidar,
+        pois pode estar associado a malformações no feto.\n
+    </string>
+    <string name="topic5_3_par6">
+        <b>Ciclofosfamida:</b>\n
+        A ciclofosfamida também é um imunossupressor que age nas células causadoras de inflamação.
+        Normalmente o paciente vai ao hospital uma vez ao mês e toma o remédio na veia, fica em
+        observação por um tempo, e pode ir para casa. Os efeitos colaterais mais comuns são: queda
+        de cabelo (que volta a crescer depois), anorexia, náusea e vômitos. Pode estar associado com
+        dificuldade de engravidar depois do tratamento.\n
+    </string>
+    <string name="topic5_3_par7">
+        <b>Rituximabe:</b>\n
+        É um remédio mais forte, normalmente receitado quando a doença continua na fase ativa apesar
+        dos tratamentos anteriormente tentados; é aplicado na veia, no hospital. O paciente toma duas
+        doses, com intervalo de duas semanas. Se necessário a dose poderá ser repetida após seis ou
+        mais meses. Os efeitos colaterais são semelhantes aos dos outros imunossupressores, com
+        destaque para os quadros infecciosos.\n
+    </string>
+    <string name="topic5_3_par8">
+        <b>Belimumabe:</b>\n
+        É um medicamento relativamente novo; é um anticorpo sintético que costuma ser utilizado
+        associado aos medicamentos tradicionais, quando a atividade do Lúpus, principalmente na
+        pele, se mantém. Sua eficácia não foi comprovada em Lúpus grave (renal e neurológico). O
+        tratamento é de uma dose aplicada na veia mensalmente, no hospital. Os efeitos colaterais
+        são semelhantes aos dos outros imunossupressores.\n
+    </string>
+
+    <!--Topic 5.4 texts-->
+    <string name="topic5_4_par1">
+        Seguir o tratamento e as orientações do seu médico, comparecer às consultas, realizar os
+        exames necessários e tomar a medicação prescrita é essencial para manter a sua saúde e
+        controlar a doença.\n
+    </string>
+    <string name="topic5_4_par2">
+        Os médicos farão de tudo para apoiá-lo em sua jornada com o Lúpus, porém a escolha de se
+        organizar e levar o tratamento a sério é sua, e vai definir os resultados obtidos. O
+        importante é não ficar parado esperando que as mudanças aconteçam, seja um agente de mudança!
+        Se não pode comparecer a uma consulta ou exame, remarque. Se está com algum problema com
+        seus remédios ou sentiu algo diferente em seu corpo, avise seu médico.  Tenha  consciência
+        de que você é responsável pelo sucesso do seu tratamento. \n
+    </string>
+
+    <!--Topic 5.5 texts-->
+    <string name="topic5_5_par1">
+        É importante entender a natureza imprevisível do Lúpus. É uma doença na qual você pode estar
+        estável e de repente ter uma recaída, devido a algum fator ambiental, ou alguma alteração no
+        seu corpo.\n
+    </string>
+    <string name="topic5_5_par2">
+        Tenha sempre o contato do seu médico à mão, caso passe a sentir que seus sintomas estão
+        piorando, ou esteja sentindo algum sintoma novo, ligue comunicando e, se necessário, marque
+        uma consulta.\n
+    </string>
+    <string name="topic5_5_par3">
+        Não faça alterações na sua medicação por conta própria, mesmo que já tenha passado por uma
+        situação parecida e ache que sabe o que o médico vai indicar. Cada situação é única, seu
+        corpo pode reagir de forma diferente agora, o contexto do tratamento pode ser outro, e o
+        resultado de um remédio que você pensa que conhece pode ser completamente diferente do
+        esperado.\n
+    </string>
+
     <!--Topic 6 texts-->
     <string name="topic6_par1">
         Como você quiser que seja! Cada pessoa se sente melhor levando a vida de um jeito, e entre
@@ -344,5 +526,168 @@ Em condições normais, quando nosso organismo é atacado por invasores o sistem
         dia-a-dia equilibrado e com qualidade de vida. Cabe a cada um a forma como se organiza para
         lidar com essas adversidades.\n
     </string>
+
+    <!--Topic 6.1 texts-->
+    <string name="topic6_1_par1">
+        É muito importante entender que para estar saudável e evitar que a doença se manifeste de
+        forma grave, o paciente e o seu médico devem estar sempre se comunicando, com
+        sinceridade e proatividade.\n
+    </string>
+    <string name="topic6_1_par2">
+        Quando for visitar seu médico lembre-se de contar a ele tudo o que achar relevante, sintomas
+        diferentes que você tem sentido, como está o tratamento com o remédio receitado, como está o
+        seu dia-a-dia, sua disposição, seu apetite e etc.\n
+    </string>
+    <string name="topic6_1_par3">
+        Não deixe de dar alguma informação por vergonha, às vezes exatamente aquilo que você está
+        evitando contar pode ajudar seu médico a encontrar um tratamento mais adequado. Da mesma
+        forma, se esforce para que o seu médico entenda o que você está querendo explicar a ele.
+        Uma boa comunicação vai ajudar muito a relação de vocês.\n
+    </string>
+    <string name="topic6_1_par4">
+        Algumas dicas para se preparar para as consultas são:\n
+    </string>
+    <string name="topic6_1_par5">
+        - Anote suas dúvidas antes da consulta para não se esquecer de perguntar nada na hora.\n\n
+        - Se não entendeu algo que seu médico disse, peça para ele explicar novamente de outra forma.\n\n
+        - Saiba quais os remédios você está tomando, em que hora e em que dosagem.\n\n
+        - Anote qualquer coisa anormal que tenha notado recentemente em seu corpo ou em como se sente
+        e informe seu médico.\n\n
+        - Seja sincero sobre como está se sentindo com o tratamento, não tome decisões, baseadas em
+        fatos relatados por outras pessoas que disseram ter tido bons resultados, sem conversar com
+        seu médico.\n\n
+        - Peça instruções do que fazer daqui em diante, caso sua medicação tenha mudado, ou se você
+        precisa fazer algum exame, tenha certeza de que anotou tudo o que precisa fazer.\n\n
+        - Diga se está tomando todos os remédios. Se não, explique o porquê.\n
+    </string>
+
+    <!--Topic 6.2 texts-->
+    <string name="topic6_2_par1">
+        Apesar de muitas discussões sobre o assunto, ainda não existem garantias de que alguma
+        restrição específica na dieta possa melhorar a atividade do Lúpus. Pacientes devem
+        se preocupar em ter uma dieta balanceada e variada, assim como qualquer outra pessoa.\n
+    </string>
+    <string name="topic6_2_par2">
+        Isso quer dizer: evitar doces, alimentos gordurosos e frituras, comer verduras e legumes em
+        todas as refeições, tentar comer frango e peixe além de carne vermelha durante a semana e
+        fazer lanches saudáveis, como frutas ou castanhas.\n
+    </string>
+    <string name="topic6_2_par3">
+        Evite ao máximo os produtos industrializados pois estes contém excesso de sal, gorduras e
+        açúcar, além de várias substâncias químicas como os conservantes, estabilizantes,
+        antioxidantes, edulcorantes, aromatizantes, etc.\n
+    </string>
+    <string name="topic6_2_par4">
+        Caso você esteja tomando prednisona a preocupação com manter o peso deve ser aumentada.
+        Tente fazer boas escolhas, se comer um doce ou algo gorduroso tente compensar fazendo uma
+        próxima refeição mais saudável.\n
+    </string>
+    <string name="topic6_2_par5">
+        Caso tenha qualquer dúvida ou pretenda fazer alguma alteração na sua dieta, converse sempre
+        com seu médico.\n
+    </string>
+
+    <!--Topic 6.3 texts-->
+    <string name="topic6_3_par1">
+         Praticar exercícios pode trazer vários benefícios como fortalecimento dos músculos e ossos,
+        redução em inflamações, aumento da flexibilidade nas articulações, controle do peso e combate
+        ao stress. Pacientes com Lúpus não são proibidos de se exercitar, muito pelo contrário, basta
+        estar atento aos sinais que o corpo dá, não tente se exercitar se estiver muito cansado ou
+        com dores.\n
+    </string>
+    <string name="topic6_3_par2">
+        Procure fazer uma adaptação gradual à atividade física, se puder orientado por um
+        profissional, e fique atento às suas limitações. Nos períodos de atividade da doença pode
+        ser um pouco mais difícil de praticar esportes, mas sempre há tempo para retomar, ou mudar
+        o tipo de exercício.\n
+    </string>
+    <string name="topic6_3_par3">
+        Algumas dicas são:\n
+    </string>
+    <string name="topic6_3_par4">
+        - Se for se exercitar ao ar livre (evitando ao máximo o sol forte) lembre-se de passar protetor
+        solar 20 minutos antes.\n\n
+        - Converse com seu médico sobre o tipo de exercício que pretende praticar e se ele pode causar
+        alguma dor.\n\n
+        - Caso um exercício esteja te deixando muito cansado ou com dores, tente mudar o tipo de
+        exercício, existem vários meios de se exercitar sem causar impactos no corpo, como dançando,
+        praticando ioga, natação, etc\n\n
+        - Pense no que vai comer antes do exercício, para não estar com o estômago muito cheio e nem
+        muito vazio durante a atividade.\n
+    </string>
+
+    <!--Topic 6.4 texts-->
+    <string name="topic6_4_par1">
+        Mulheres com Lúpus podem sim engravidar, mas a gravidez possui certo risco e deve ser
+        corretamente planejada. Normalmente recomenda-se que a doença esteja controlada em um período
+        de pelo menos seis meses antes da concepção,e a mulher deve conversar com seu médico com
+        antecedência porque, dependendo da medicação que estiver usando, ela deverá ser trocada.
+        O médico vai pedir alguns exames para planejar a gravidez. Dependendo do quadro da doença
+        da paciente a gravidez pode ser mais ou menos arriscada.\n
+    </string>
+    <string name="topic6_4_par2">
+        Apesar de o fator genético ter influência no desenvolvimento de Lúpus, os filhos de mulheres
+        com Lúpus não necessariamente vão contrair a doença, a chance de isso acontecer é pequena.\n
+    </string>
+    <string name="topic6_4_par3">
+        Caso uma gravidez esteja nos seus planos, converse desde cedo sobre isso com seu médico, e
+        juntos vocês vão analisar a melhor opção.\n
+    </string>
+
+    <!--Topic 6.5 texts-->
+    <string name="topic6_5_par1">
+        Algumas vacinas devem ser usadas por quem tem LES porque aumentam as defesas do corpo. As
+        vacinas mais importantes são as contra a pneumonia pneumocócica e as contra o vírus da gripe.
+        Se o paciente estiver usando imunossupressores, incluindo os corticóides, não deve receber
+        as vacinas com vírus vivos atenuados como as da febre amarela, varicela, rotavírus e Sabin.\n
+    </string>
+    <string name="topic6_5_par2">
+        Antes de decidir tomar qualquer vacina sempre consulte o seu médico se a vacina é recomendada
+        para pacientes com Lúpus.\n
+    </string>
+
+    <!--Topic 6.6 texts-->
+    <string name="topic6_6_par1">
+        A forma como o sistema imunológico se comporta em pacientes com Lúpus faz com que o corpo
+        não consiga se defender tão bem contra invasores externos como vírus e bactérias. Além disso,
+        pacientes com Lúpus normalmente tomam remédios que reduzem a atividade do sistema imunológico
+        para evitar inflamações.\n
+    </string>
+    <string name="topic6_6_par2">
+        Então, é como se o corpo estivesse menos protegido. Por isso é importante se prevenir,
+        garantindo que seu corpo está saudável, e avisando seu médico quando achar que uma doença ou
+        machucado está demorando mais do que deveria para sarar. \n
+    </string>
+
+    <!--Topic 6.7 texts-->
+    <string name="topic6_7_par1">
+        Como o corpo de pessoas com Lúpus já é mais vulnerável, é importante evitar situações que
+        façam mal a ele.\n
+    </string>
+    <string name="topic6_7_par2">
+        <b>Álcool</b>: O consumo excessivo de álcool pode causar sérios problemas no fígado, rins e
+        até estômago, além de estar associado ao câncer.\n
+        <b>Cigarro:</b> O cigarro por sua vez é conhecido por causar danos nos pulmões, garganta e
+        sistema respiratório como um todo, também estando associado ao câncer.\n
+        <b>Drogas:</b> Drogas, além de ilegais, causam diversos tipos de danos ao corpo, no cérebro,
+        nos rins, pulmões, coração.\n
+        <b>Saúde Sexual:</b> doenças sexualmente transmissíveis são um perigo real, que pacientes
+        com Lúpus não podem correr. Além do fato de que a gravidez de mulheres com Lúpus é de risco,
+        principalmente se não for planejada. Portanto, caso não esteja planejando ter um bebê e mesmo
+        que conheça seu parceiro, sempre mantenha relações sexuais com camisinha. Anticoncepcionais
+        podem ser utilizados pelas pacientes com Lúpus mas vai depender da atividade de doença e da
+        presença de anticorpos antifosfolípideos. Pergunte ao seu médico.\n
+    </string>
+    <string name="topic6_7_par3">
+        Resumindo, todos nós devemos nos preocupar em ter uma vida saudável, consumir álcool com
+        moderação, não fumar, não se envolver com drogas e ter precaução nas nossas relações sexuais,
+        mas para pacientes com Lúpus as consequências podem ser mais graves.\n
+    </string>
+    <string name="topic6_7_par4">
+        Evitando fragilizar o corpo o paciente com Lúpus diminui as chances de uma doença que já é
+        difícil de cuidar, ficar ainda pior de lidar. \n
+    </string>
+
+
 
 </resources>

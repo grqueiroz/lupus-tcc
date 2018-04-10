@@ -52,7 +52,7 @@ public class TopicFragment extends Fragment {
 
         PreCachingLayoutManager layoutManager = new PreCachingLayoutManager(getActivity());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        layoutManager.setExtraLayoutSpace(DeviceUtils.getScreenHeight(getActivity()));
+        //layoutManager.setExtraLayoutSpace(DeviceUtils.getScreenHeight(getActivity()));
 
         adapter = new Adapter();
 

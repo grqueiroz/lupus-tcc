@@ -21,7 +21,12 @@ public class DbHandler extends SQLiteOpenHelper{
     private static final String Table_Name="user";
     //Creating mycontacts Columns
     private static final String User_id="id";
-    private static final String User_email="email";
+    private static final String User_shaid="id";
+    private static final String User_name="name";
+    private static final String User_age="age";
+    private static final String User_type="user_type";
+    private static final String User_gender="gender";
+
     //constructor here
     public DbHandler(Context context)
     {
@@ -32,7 +37,7 @@ public class DbHandler extends SQLiteOpenHelper{
     public void onCreate(SQLiteDatabase db) {
         // writing command for sqlite to create table with required columns
         String Create_Table="CREATE TABLE " + Table_Name + "(" + User_id
-                + " INTEGER PRIMARY KEY," + User_email + " TEXT" + ")";
+                + " INTEGER PRIMARY KEY," + User_shaid + " TEXT" + User_name + " TEXT" + User_type + " TEXT" + User_gender + " TEXT" + User_age + " TEXT" +")";
         db.execSQL(Create_Table);
     }
     //Upgrading the Db
@@ -49,8 +54,11 @@ public class DbHandler extends SQLiteOpenHelper{
         // getting db instance for writing the user
         SQLiteDatabase db=this.getWritableDatabase();
         ContentValues cv=new ContentValues();
-        // cv.put(User_id,usr.getId());
-        cv.put(User_email,usr.getEmail());
+        cv.put(User_shaid,usr.getShaid());
+        cv.put(User_name,usr.getName());
+        cv.put(User_type,usr.getType());
+        cv.put(User_age,usr.getAge());
+        cv.put(User_gender,usr.getGender());
         //inserting row
         db.insert(Table_Name, null, cv);
         //close the database to avoid any leak
@@ -60,12 +68,30 @@ public class DbHandler extends SQLiteOpenHelper{
     {
         int id=-1;
         SQLiteDatabase db=this.getReadableDatabase();
-        Cursor cursor=db.rawQuery("SELECT id FROM user WHERE email=? ",new String[]{us.getEmail(),});
+        Cursor cursor=db.rawQuery("SELECT id FROM user WHERE name=?",new String[]{us.getName()});
         if(cursor.getCount()>0) {
             cursor.moveToFirst();
             id=cursor.getInt(0);
             cursor.close();
         }
         return id;
+    }
+
+    public String[] getAllUsers(){
+        SQLiteDatabase db=this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("Select * in User_name from user", null);
+        ArrayList<String> allusers = new ArrayList<String>();
+        if(cursor.moveToFirst()){
+            do{
+                String word = cursor.getString(cursor.getColumnIndexOrThrow("user"));
+                allusers.add(word);
+            }while(cursor.moveToNext());
+        }
+        cursor.close();
+
+        String[] listUsers = new String[allusers.size()];
+        listUsers = allusers.toArray(listUsers);
+
+        return listUsers;
     }
 }

@@ -114,5 +114,21 @@
         se sentindo cansado, eles vão poder te ajudar a se sentir melhor e a não abusar do seu
         corpo.\n
     </string>
+    <string name="hint_gender">Sexo</string>
+    <string name="hint_name">Nome Completo</string>
+    <string name="hint_type">Tipo de usuário</string>
+    <string name="male">Masculino</string>
+    <string name="female">Feminino</string>
+    <string name="gender_other">Outra ident.</string>
+    <string name="type_other">Outro tipo</string>
+    <string name="parent">Familiar</string>
+    <string name="patient">Paciente</string>
+    <string name="hint_age">Idade</string>
+    <string name="hint_signup">Primeira vez usando o app?</string>
+    <string name="signup">Cadastre-se aqui</string>
+    <string name="hint_login">Entrar</string>
+    <string name="hint_register">Entrar</string>
+    <string name="signin">Cadastre-se aqui</string>
+    <string name="hint_selectuser">Selecione seu usuário na lista abaixo</string>
 
 </resources>

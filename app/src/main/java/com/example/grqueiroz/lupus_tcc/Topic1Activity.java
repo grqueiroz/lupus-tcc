@@ -44,7 +44,9 @@ public class Topic1Activity extends AppCompatActivity {
                     case(R.id.o_que_e):
                         break;
                     case(R.id.o_que_causa):
-                        intent.setClass(Topic1Activity.this, Topic2Activity.class);
+                        //colocando o login aqui pra testar
+                        //intent.setClass(Topic1Activity.this, Topic2Activity.class);
+                        intent.setClass(Topic1Activity.this, LoginActivity.class);
                         startActivity(intent);
                         break;
                     case(R.id.como_e_diagnosticado):

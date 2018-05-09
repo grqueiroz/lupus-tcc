@@ -3,58 +3,57 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.grqueiroz.lupus_tcc.Login">
+    android:layout_height="match_parent">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        tools:context=".MainActivity"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="287dp">
 
-        <TextView
-            android:id="@+id/totalcount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="Email" />
+    <TextView
+        android:id="@+id/selecione"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:text="@string/hint_selectuser"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
 
-        <EditText
-            android:id="@+id/email"
-            android:layout_width="fill_parent"
-            android:layout_height="50dp" />
-        <Button
-            android:id="@+id/login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="20dp"
-            android:text="Entrar"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="124dp" />
+    <Spinner
+        android:id="@+id/spinner_users"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="61dp" />
 
-        <TextView
-            android:id="@+id/primeira"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="Primeira vez usando o app? " />
+    <Button
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:text="@string/hint_register"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="113dp" />
 
-        <Button
-            android:id="@+id/signin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="20dp"
-            android:text="Cadastre-se aqui"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="415dp" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/signin"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:padding="17dp"
+        android:text="@string/signin"
+        tools:layout_editor_absoluteX="178dp"
+        tools:layout_editor_absoluteY="287dp" />
 
+    <TextView
+        android:id="@+id/primeira"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/signin"
+        android:layout_alignBottom="@+id/signin"
+        android:layout_alignParentStart="true"
+        android:text="@string/hint_signup"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="303dp" />
 
 </android.support.constraint.ConstraintLayout>

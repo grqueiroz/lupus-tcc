@@ -158,7 +158,7 @@ public class Repository {
     }
     //Topic 4.3
     static {
-        ArrayList<Content> contentList = new ArrayList<>();g
+        ArrayList<Content> contentList = new ArrayList<>();
         contentList.add(new TitleContent(R.string.title_topic4_3));
         contentList.add(new TextContent(R.string.topic4_3_par1));
         contentList.add(new TextContent(R.string.topic4_4_par2));

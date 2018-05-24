@@ -133,7 +133,7 @@ public class TopicFragment extends Fragment {
                 videoViewHolder.videoView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = YouTubeStandalonePlayer.createVideoIntent(getActivity(), "AIzaSyDzyaGtzk-gDKeq-4dmVjMkuTt8tADUYkk", ((VideoContent) content).getUrl(), 0, true, false);
+                        Intent intent = YouTubeStandalonePlayer.createVideoIntent(getActivity(), "aaaaaaaateste", ((VideoContent) content).getUrl(), 0, true, false);
                         startActivity(intent);
                     }
                 });

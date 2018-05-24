@@ -1,5 +1,6 @@
 package com.example.grqueiroz.lupus_tcc;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -20,9 +21,12 @@ import com.example.grqueiroz.lupus_tcc.entity.Content;
 import com.example.grqueiroz.lupus_tcc.entity.ImageContent;
 import com.example.grqueiroz.lupus_tcc.entity.Session;
 import com.example.grqueiroz.lupus_tcc.entity.TextContent;
+import com.example.grqueiroz.lupus_tcc.entity.TitleContent;
+import com.example.grqueiroz.lupus_tcc.entity.VideoContent;
 import com.example.grqueiroz.lupus_tcc.manager.NavigationStackManager;
 import com.example.grqueiroz.lupus_tcc.manager.PreCachingLayoutManager;
 import com.example.grqueiroz.lupus_tcc.util.DeviceUtils;
+import com.google.android.youtube.player.YouTubeStandalonePlayer;
 
 /**
  * Created by gabriel-queiroz on 09/03/18.
@@ -82,6 +86,10 @@ public class TopicFragment extends Fragment {
                 View view = inflater.inflate(R.layout.topic_screen_item_card, parent, false);
                 return new CardViewHolder(view);
             }
+            if (viewType == 3) {
+                View view =inflater.inflate(R.layout.topic_screen_item_video, parent, false);
+                return new VideoViewHolder(view);
+            }
             return null;
         }
 
@@ -94,13 +102,15 @@ public class TopicFragment extends Fragment {
 
                 textViewHolder.textView.setText(((TextContent) content).getTextId());
 
-                if(((TextContent) content).getIsTitle()){
+                if (content instanceof TitleContent && position == 0) {
                     textViewHolder.textView.setTextSize(getResources().getDimension(R.dimen.title_size));
                     textViewHolder.textView.setTextColor(getResources().getColor(R.color.colorAccent));
                 }
+
                 if(((TextContent) content).getJustify() && DeviceUtils.isVersionOver26()){
                     textViewHolder.textView.setJustificationMode(Layout.JUSTIFICATION_MODE_INTER_WORD);
                 }
+
             } else if (content instanceof ImageContent) {
                 ImageViewHolder imageViewHolder = (ImageViewHolder) holder;
 
@@ -117,6 +127,16 @@ public class TopicFragment extends Fragment {
                         navigate(((CardContent) content).getDestinationId());
                     }
                 });
+            } else if (content instanceof VideoContent) {
+                VideoViewHolder videoViewHolder = (VideoViewHolder) holder;
+
+                videoViewHolder.videoView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = YouTubeStandalonePlayer.createVideoIntent(getActivity(), "AIzaSyDzyaGtzk-gDKeq-4dmVjMkuTt8tADUYkk", ((VideoContent) content).getUrl(), 0, true, false);
+                        startActivity(intent);
+                    }
+                });
             }
         }
 
@@ -126,6 +146,7 @@ public class TopicFragment extends Fragment {
             if (content instanceof TextContent) return 0;
             if (content instanceof ImageContent) return 1;
             if (content instanceof CardContent) return 2;
+            if (content instanceof VideoContent) return 3;
             throw new IllegalStateException("Invalid content");
         }
 
@@ -175,6 +196,16 @@ public class TopicFragment extends Fragment {
             cardView = itemView.findViewById(R.id.card);
             imageView = itemView.findViewById(R.id.card_image);
             textView = itemView.findViewById(R.id.card_text);
+        }
+    }
+
+    class VideoViewHolder extends AdapterViewHolder {
+        ImageView videoView;
+
+        public VideoViewHolder(View itemView){
+            super(itemView);
+
+            videoView = itemView.findViewById(R.id.button);
         }
     }
 

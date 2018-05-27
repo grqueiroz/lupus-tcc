@@ -15,6 +15,7 @@
     <string name="como_afeta_corpo">Como o Lúpus afeta o corpo?</string>
     <string name="como_vou_melhorar">Como vou melhorar?</string>
     <string name="como_sera_dia_a_dia">Como será meu dia-a-dia?</string>
+    <string name="login">Login</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="card_dentro_activity">Card dentro da activity</string>
@@ -268,6 +269,23 @@ Em condições normais, quando nosso organismo é atacado por invasores o sistem
         paciente deve sempre fazer as consultas e seus exames de rotina, acompanhando com seu médico
         qualquer progresso da doença.\n
     </string>
+    <string name="hint_gender">Sexo</string>
+    <string name="hint_name">Nome Completo</string>
+    <string name="hint_type">Tipo de usuário</string>
+    <string name="male">Masculino</string>
+    <string name="female">Feminino</string>
+    <string name="gender_other">Outra ident.</string>
+    <string name="type_other">Outro tipo</string>
+    <string name="parent">Familiar</string>
+    <string name="patient">Paciente</string>
+    <string name="hint_age">Idade</string>
+    <string name="hint_signup">Primeira vez usando o app?</string>
+    <string name="signup">Cadastre-se aqui</string>
+    <string name="hint_login">Entrar</string>
+    <string name="hint_register">Entrar</string>
+    <string name="signin">Cadastre-se aqui</string>
+    <string name="hint_selectuser">Selecione seu usuário na lista abaixo</string>
+    <string name="register_activity">Registre-se</string>
 
     <!--Topic 4.3 texts-->
     <string name="topic4_3_par1">

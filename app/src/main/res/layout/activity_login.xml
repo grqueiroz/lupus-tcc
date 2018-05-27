@@ -51,6 +51,7 @@
         android:layout_marginStart="8dp"
         android:padding="17dp"
         android:text="@string/signin"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintBaseline_toBaselineOf="@+id/primeira"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/primeira" />

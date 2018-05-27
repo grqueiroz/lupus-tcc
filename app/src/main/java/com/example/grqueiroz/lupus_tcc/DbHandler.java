@@ -90,7 +90,7 @@ public class DbHandler extends SQLiteOpenHelper{
             do{
                 String word = cursor.getString(cursor.getColumnIndexOrThrow(User_name));
                 allusers.add(word);
-            }while(cursor.moveToNext());
+            } while(cursor.moveToNext());
         }
         cursor.close();
 
@@ -98,6 +98,23 @@ public class DbHandler extends SQLiteOpenHelper{
         listUsers = allusers.toArray(listUsers);
 
         return listUsers;
+    }
+
+    public User getUserByName(String name) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * from user where name=?", new String[]{name});
+        cursor.moveToFirst();
+
+        User user = new User();
+        user.setShaid(cursor.getString(cursor.getColumnIndexOrThrow(User_shaid)));
+        user.setName(cursor.getString(cursor.getColumnIndexOrThrow(User_name)));
+        user.setType(cursor.getString(cursor.getColumnIndexOrThrow(User_type)));
+        user.setGender(cursor.getString(cursor.getColumnIndexOrThrow(User_gender)));
+        user.setAge(cursor.getString(cursor.getColumnIndexOrThrow(User_age)));
+
+        cursor.close();
+
+        return user;
     }
 
     public void cleanAllUsers() {
@@ -125,5 +142,39 @@ public class DbHandler extends SQLiteOpenHelper{
         db.insert(LOGGED_TABLE_NAME, null, cv);
         //close the database to avoid any leak
         db.close();
+    }
+
+    public Integer getLoggedUserId(){
+        Integer id = null;
+        SQLiteDatabase db=this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT id FROM logged", null);
+        if(cursor.getCount()>0) {
+            cursor.moveToFirst();
+            id=cursor.getInt(0);
+            cursor.close();
+        }
+        return id;
+    }
+
+    public User getLoggedUser() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * from logged", null);
+
+        if(cursor.getCount() <= 0){
+            return null;
+        }
+
+        cursor.moveToFirst();
+
+        User user = new User();
+        user.setShaid(cursor.getString(cursor.getColumnIndexOrThrow(User_shaid)));
+        user.setName(cursor.getString(cursor.getColumnIndexOrThrow(User_name)));
+        user.setType(cursor.getString(cursor.getColumnIndexOrThrow(User_type)));
+        user.setGender(cursor.getString(cursor.getColumnIndexOrThrow(User_gender)));
+        user.setAge(cursor.getString(cursor.getColumnIndexOrThrow(User_age)));
+
+        cursor.close();
+
+        return user;
     }
 }

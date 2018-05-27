@@ -3,6 +3,7 @@ package com.example.grqueiroz.lupus_tcc;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,7 +13,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class LoginActivity extends Activity {
+public class LoginActivity extends AppCompatActivity {
     Button login;
     String selected_user;
     Button signin;
@@ -54,10 +55,13 @@ public class LoginActivity extends Activity {
                 }
                 else
                 {
-                    Toast.makeText(LoginActivity.this,"Bem vindo(a)!",Toast.LENGTH_SHORT).show();
+                    User user = db.getUserByName(selected_user);
+                    db.userLogin(user);
+                    Toast.makeText(LoginActivity.this,"Bem vindo(a), " + selected_user + "!",Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent();
                     intent.setClass(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
+                    finish();
                 }
             }
         });

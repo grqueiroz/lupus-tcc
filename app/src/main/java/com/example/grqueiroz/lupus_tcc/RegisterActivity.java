@@ -3,6 +3,7 @@ package com.example.grqueiroz.lupus_tcc;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,7 +19,7 @@ import java.util.Date;
  * Created by Gabriele on 31/03/2018.
  */
 
-public class RegisterActivity extends Activity {
+public class RegisterActivity extends AppCompatActivity {
 
     EditText name_user;
     RadioGroup gender_radio_group;
@@ -64,6 +65,10 @@ public class RegisterActivity extends Activity {
                     db.addUser(user);
                     db.userLogin(user);
                     Toast.makeText(RegisterActivity.this,"Bem-vindo(a), " + user.getName() + "!",Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent();
+                    intent.setClass(RegisterActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
                 }
                 else {
                     Toast.makeText(RegisterActivity.this,"Nome já utilizado. Por favor escolha outro.",Toast.LENGTH_SHORT).show();

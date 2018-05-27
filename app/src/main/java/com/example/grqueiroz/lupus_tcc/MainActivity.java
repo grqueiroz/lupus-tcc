@@ -7,26 +7,30 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.grqueiroz.lupus_tcc.manager.NavigationStackManager;
-
-import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
-    SharedPreferences sharedPreferences;
+    private DbHandler db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        db = new DbHandler(MainActivity.this);
+        User loggedUser = db.getLoggedUser();
+        if(loggedUser == null){
+            navigteToLogin();
+            return;
+        }
 
-
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerLayout = findViewById(R.id.drawer_layout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
 
         mDrawerLayout.addDrawerListener(mToggle);
@@ -35,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         final NavigationView mNavigationView = (NavigationView) findViewById(R.id.nav_menu);
+        Menu menu = mNavigationView.getMenu();
+        MenuItem logout = menu.findItem(R.id.logout);
+        logout.setTitle("Olá, " + loggedUser.getName() + "! - " + logout.getTitle() + "?");
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem){
@@ -57,16 +64,23 @@ public class MainActivity extends AppCompatActivity {
                     case(R.id.como_sera_dia_a_dia):
                         navigate("topic6");
                         break;
+                    case(R.id.logout):
+                        db.userLogout();
+                        navigteToLogin();
+                        break;
                 }
                 mDrawerLayout.closeDrawer(mNavigationView, true);
                 return true;
             }
         });
 
+    }
+
+    public void navigteToLogin(){
         Intent intent = new Intent();
         intent.setClass(MainActivity.this, LoginActivity.class);
         startActivity(intent);
-
+        finish();
     }
 
     public void navigate(String topicId) {

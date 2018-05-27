@@ -25,4 +25,8 @@
     <item android:id="@+id/como_sera_dia_a_dia"
         android:icon="@mipmap/ic_chevron_right_white_24dp"
         android:title="@string/como_sera_dia_a_dia"/>
+
+    <item android:id="@+id/logout"
+        android:icon="@mipmap/ic_chevron_right_white_24dp"
+        android:title="@string/logout"/>
 </menu>

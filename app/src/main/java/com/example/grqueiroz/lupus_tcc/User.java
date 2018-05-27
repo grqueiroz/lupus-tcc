@@ -10,45 +10,72 @@ import java.util.Date;
 
 public class User {
     //variables
-    private String name, user_type, gender, shaString,  shaid, age;
+    private String name, type, gender, shaString,  shaid, age;
+
+    public User(){
+        super();
+    };
 
     //Parameter constructor containing id and email
-    public User(String name, String gender, String user_type, String age, Date date)
+    public User(String name, String gender, String type, String age, Date date)
     {
         Format formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String formattedDate = formatter.format(date);
-        shaString = (((name.concat(gender)).concat(user_type)).concat(age)).concat(formattedDate);
+        shaString = (((name.concat(gender)).concat(type)).concat(age)).concat(formattedDate);
         try {
             this.shaid = StringEncryption.SHA1(shaString);
         } catch (Exception e){e.printStackTrace();}
-        this.gender=gender;
-        this.age=age;
-        this.user_type=user_type;
-        this.name=name;
+        this.gender = gender;
+        this.age = age;
+        this.type = type;
+        this.name = name;
     }
-    //getting id
-    public String getShaid() {
-        return shaid;
-    }
-    //setting id
-    public void setShaid(String id) {
-        this.shaid = id;
-    }
-    //getters
+
     public String getName() {
         return name;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getType() {
-        return user_type;
+        return type;
     }
-    public String getAge() {
-        return age;
+
+    public void setType(String type) {
+        this.type = type;
     }
+
     public String getGender() {
         return gender;
     }
-    //setting name
-    public void setName(String name) {
-        this.name = name;
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getShaString() {
+        return shaString;
+    }
+
+    public void setShaString(String shaString) {
+        this.shaString = shaString;
+    }
+
+    public String getShaid() {
+        return shaid;
+    }
+
+    public void setShaid(String shaid) {
+        this.shaid = shaid;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
     }
 }

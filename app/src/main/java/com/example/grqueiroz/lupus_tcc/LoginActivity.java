@@ -28,6 +28,7 @@ public class LoginActivity extends Activity {
         Spinner spinner = (Spinner) findViewById(R.id.spinner_users);
 
         db=new DbHandler(LoginActivity.this);
+
         String[] spinnerLists = db.getAllUsers();
 
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(LoginActivity.this,android.R.layout.simple_spinner_item, spinnerLists);

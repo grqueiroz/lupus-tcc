@@ -3,8 +3,6 @@ package com.example.grqueiroz.lupus_tcc;
 import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.security.MessageDigest;
-import java.util.*;
 
 /**
  * Created by Gabriele on 18/03/2018.
@@ -12,17 +10,17 @@ import java.util.*;
 
 public class User {
     //variables
-    String name, user_type, gender, aux,  shaid, age;
+    private String name, user_type, gender, shaString,  shaid, age;
 
     //Parameter constructor containing id and email
     public User(String name, String gender, String user_type, String age, Date date)
     {
         Format formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String s = formatter.format(date);
-        aux = (((name.concat(gender)).concat(user_type)).concat(age)).concat(s);
-        try{ this.shaid = StringEncryption.SHA1(aux);
-        }
-            catch (Exception e){e.printStackTrace();}
+        String formattedDate = formatter.format(date);
+        shaString = (((name.concat(gender)).concat(user_type)).concat(age)).concat(formattedDate);
+        try {
+            this.shaid = StringEncryption.SHA1(shaString);
+        } catch (Exception e){e.printStackTrace();}
         this.gender=gender;
         this.age=age;
         this.user_type=user_type;

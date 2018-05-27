@@ -130,5 +130,6 @@
     <string name="hint_register">Entrar</string>
     <string name="signin">Cadastre-se aqui</string>
     <string name="hint_selectuser">Selecione seu usuário na lista abaixo</string>
+    <string name="register_activity">Registre-se</string>
 
 </resources>

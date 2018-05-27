@@ -18,7 +18,7 @@ import java.util.Date;
  * Created by Gabriele on 31/03/2018.
  */
 
-class RegisterActivity extends Activity {
+public class RegisterActivity extends Activity {
 
     EditText name_user;
     RadioGroup gender_radio_group;
@@ -33,50 +33,45 @@ class RegisterActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        name_user=(EditText)findViewById(R.id.name);
+        name_user = findViewById(R.id.name);
 
-        gender_radio_group = (RadioGroup) findViewById(R.id.gender_radio_group);
+        gender_radio_group = findViewById(R.id.gender_radio_group);
         int radioButtonID = gender_radio_group.getCheckedRadioButtonId();
-       // radioButton = (RadioButton);
-        gender_radio_group.findViewById(radioButtonID);
+        radioButton = gender_radio_group.findViewById(radioButtonID);
         final String selectedgender = (String) radioButton.getText();
 
-        type_radio_group = (RadioGroup) findViewById(R.id.type_radio_group);
+        type_radio_group = findViewById(R.id.type_radio_group);
         radioButtonID = type_radio_group.getCheckedRadioButtonId();
-        //radioButton2 = (RadioButton);
-        type_radio_group.findViewById(radioButtonID);
+        radioButton2 = type_radio_group.findViewById(radioButtonID);
         final String selectedtype = (String) radioButton2.getText();
 
-        age_user=(EditText)findViewById(R.id.age);
+        age_user = findViewById(R.id.age);
 
 
-        register=(Button)findViewById(R.id.register);
+        register = findViewById(R.id.register);
+
+        db=new DbHandler(RegisterActivity.this);
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name=name_user.getText().toString();
-                int id= checkUser(new User(name, "", "", "",null ));
-                if(id==-1)
-                {
-                    db=new DbHandler(RegisterActivity.this);
+                String name = name_user.getText().toString();
+                int id = checkUser(name);
+                if(id==-1) {
                     DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
                     Date date = new Date();
-                    db.addUser(new User(name_user.getText().toString(), selectedgender, selectedtype, age_user.getText().toString(), date));
+                    User user = new User(name_user.getText().toString(), selectedgender, selectedtype, age_user.getText().toString(), date);
+                    db.addUser(user);
+                    db.userLogin(user);
+                    Toast.makeText(RegisterActivity.this,"Bem-vindo(a), " + user.getName() + "!",Toast.LENGTH_SHORT).show();
                 }
-                else
-                {
+                else {
                     Toast.makeText(RegisterActivity.this,"Nome já utilizado. Por favor escolha outro.",Toast.LENGTH_SHORT).show();
                 }
             }
         });
-        db=new DbHandler(RegisterActivity.this);
-//inserting our users
-        db.addUser(new User("Gabriele", "", "", "", null));
-        db.addUser(new User("Gabriel", "", "", "", null));
     }
-    public int checkUser(User user)
-    {
-        return db.checkUser(user);
+    public int checkUser(String name) {
+        return db.checkUser(name);
     }
 }

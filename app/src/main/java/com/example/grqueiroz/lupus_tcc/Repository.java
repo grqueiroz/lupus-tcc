@@ -9,7 +9,9 @@ import com.example.grqueiroz.lupus_tcc.entity.TitleContent;
 import com.example.grqueiroz.lupus_tcc.entity.VideoContent;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by gabriel-queiroz on 05/03/18.
@@ -17,6 +19,7 @@ import java.util.List;
 
 public class Repository {
     private static List<Session> sessionList = new ArrayList<>();
+    public static HashMap<String, String> tagTopicMap = new HashMap<>();
 
     //Topic 1
     static {
@@ -468,6 +471,22 @@ public class Repository {
 
 
         sessionList.add(new Session("topic6_7", R.string.title_topic6, contentList));
+    }
+
+    static {
+        tagTopicMap.put("Lúpus", "topic1");
+        tagTopicMap.put("Gravidez", "topic6_4");
+        tagTopicMap.put("Pele", "topic4_3");
+        tagTopicMap.put("Cabelo", "topic4_5");
+        tagTopicMap.put("Órgãos", "topic4_1");
+        tagTopicMap.put("Sol", "topic4_4");
+        tagTopicMap.put("Diagnóstico", "topic3");
+        tagTopicMap.put("Atividade Física", "topic6_3");
+        tagTopicMap.put("Cansaço", "topic4_2");
+        tagTopicMap.put("Tratamento", "topic5");
+        tagTopicMap.put("Consultas", "topic6_1");
+        tagTopicMap.put("Meu Corpo", "topic4");
+
     }
 
     public static Session getSession(String sessionId) {

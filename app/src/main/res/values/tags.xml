@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tags">
+        <item>Lúpus</item>
+        <item>Gravidez</item>
+        <item>Pele</item>
+        <item>Cabelo</item>
+        <item>Órgãos</item>
+        <item>Sol</item>
+        <item>Atividade Física</item>
+        <item>Diagnóstico</item>
+        <item>Cansaço</item>
+        <item>Tratamento</item>
+        <item>Consultas</item>
+        <item>Meu Corpo</item>
+    </string-array>
+</resources>

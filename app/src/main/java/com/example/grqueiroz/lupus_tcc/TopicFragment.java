@@ -10,6 +10,7 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Layout;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -103,8 +104,13 @@ public class TopicFragment extends Fragment {
                 textViewHolder.textView.setText(((TextContent) content).getTextId());
 
                 if (content instanceof TitleContent && position == 0) {
-                    textViewHolder.textView.setTextSize(getResources().getDimension(R.dimen.title_size));
+                    int size = getResources().getDimensionPixelSize(R.dimen.text_size);
+                    textViewHolder.textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, size+size/2);
                     textViewHolder.textView.setTextColor(getResources().getColor(R.color.colorAccent));
+                } else {
+                    int size = getResources().getDimensionPixelSize(R.dimen.text_size);
+                    textViewHolder.textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, size);
+                    textViewHolder.textView.setTextColor(getResources().getColor(R.color.colorPrimary));
                 }
 
                 if(((TextContent) content).getJustify() && DeviceUtils.isVersionOver26()){

@@ -79,4 +79,12 @@ public class RegisterActivity extends AppCompatActivity {
     public int checkUser(String name) {
         return db.checkUser(name);
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent();
+        intent.setClass(RegisterActivity.this, LoginActivity.class);
+        startActivity(intent);
+        finish();
+    }
 }

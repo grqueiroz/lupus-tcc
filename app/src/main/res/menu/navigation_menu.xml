@@ -2,6 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/nuvem_palavras"
+        android:icon="@mipmap/ic_chevron_right_white_24dp"
+        android:title="@string/nuvem_de_palavras" />
+    <item
         android:id="@+id/o_que_e"
         android:icon="@mipmap/ic_chevron_right_white_24dp"
         android:title="@string/o_que_lupus" />

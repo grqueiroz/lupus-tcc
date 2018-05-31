@@ -43,4 +43,8 @@ public class NavigationStackManager {
             e.printStackTrace();
         }
     }
+
+    public static void clearStack(){
+        navigationSessionStack.clear();
+    }
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.grqueiroz.lupus_tcc">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -17,8 +18,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" android:label="@string/login"/>
-        <activity android:name=".RegisterActivity" android:label="@string/register_activity"/>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/login" />
+        <activity
+            android:name=".RegisterActivity"
+            android:label="@string/register_activity" />
+        <activity
+            android:name=".CloudActivity"
+            android:label="@string/nuvem_de_palavras" />
     </application>
 
 </manifest>

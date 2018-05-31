@@ -54,8 +54,6 @@
     <string name="title_topic6_7">Álcool, drogas, cigarro e saúde sexual\n</string>
 
 
-
-
     <!--Card Titles-->
     <string name="title_card_topic1">O que é Lúpus?</string>
     <string name="title_card_topic2">O que causa Lúpus?</string>
@@ -706,6 +704,8 @@ Em condições normais, quando nosso organismo é atacado por invasores o sistem
         difícil de cuidar, ficar ainda pior de lidar. \n
     </string>
     <string name="logout">Sair</string>
-
+    <string name="cloud_greeting_1">Olá,</string>
+    <string name="cloud_greeting_2">!</string>
+    <string name="cloud_greeting_3">Toque na palavra que mais lhe interessa para saber mais sobre o assunto! (:</string>
 
 </resources>

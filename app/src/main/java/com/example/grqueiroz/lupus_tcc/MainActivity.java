@@ -31,12 +31,12 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        FirebaseAnalytics mFirebaseAnalytics = FirebaseAnalytics.getInstance(getApplicationContext());
-        Bundle bundle = new Bundle();
-        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, loggedUser.getShaid());
-        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, loggedUser.getAge());
-        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "alow");
-        mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.LOGIN, bundle);
+        //disparando evento da home
+        FirebaseAnalytics mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        Bundle params = new Bundle();
+        params.putString("user_id", loggedUser.getShaid());
+        params.putString("user_age", loggedUser.getAge());
+        mFirebaseAnalytics.logEvent("View_Home", params);
 
         mDrawerLayout = findViewById(R.id.drawer_layout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);

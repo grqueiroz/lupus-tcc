@@ -9,20 +9,12 @@
 
     <LinearLayout
         android:id="@+id/container"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:layout_weight="0.27"
-            android:text="@string/nuvem_de_palavras"
-            android:textAlignment="center" />
-
-    </LinearLayout>
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_menu"

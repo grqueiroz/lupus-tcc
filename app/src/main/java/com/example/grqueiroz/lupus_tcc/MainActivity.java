@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.grqueiroz.lupus_tcc.manager.NavigationStackManager;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,6 +30,13 @@ public class MainActivity extends AppCompatActivity {
             navigteToLogin();
             return;
         }
+
+        FirebaseAnalytics mFirebaseAnalytics = FirebaseAnalytics.getInstance(getApplicationContext());
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, loggedUser.getShaid());
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, loggedUser.getAge());
+        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "alow");
+        mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.LOGIN, bundle);
 
         mDrawerLayout = findViewById(R.id.drawer_layout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);

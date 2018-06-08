@@ -5,6 +5,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import com.example.grqueiroz.lupus_tcc.manager.UserManager;
+
 import java.util.ArrayList;
 
 /**
@@ -129,6 +132,8 @@ public class DbHandler extends SQLiteOpenHelper{
 
     public void userLogin(User user) {
         userLogout();
+
+        UserManager.setLoggedUser(user);
 
         // getting db instance for writing the user
         SQLiteDatabase db=this.getWritableDatabase();

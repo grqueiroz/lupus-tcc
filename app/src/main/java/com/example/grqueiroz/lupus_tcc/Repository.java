@@ -138,6 +138,7 @@ public class Repository {
         contentList.add(new ImageContent(R.drawable.t4_1f1));
         contentList.add(new TextContent(R.string.topic4_1_par3));
         contentList.add(new TextContent(R.string.topic4_1_par4));
+        contentList.add(new CardContent("topic4", new ImageContent(R.drawable.t4f1), new TextContent(R.string.title_card_topic4)));
         contentList.add(new CardContent("topic4_2", new ImageContent(R.drawable.t4_2f1), new TextContent(R.string.title_card_topic4_2)));
         contentList.add(new CardContent("topic4_3", new ImageContent(R.drawable.t4_3f1), new TextContent(R.string.title_card_topic4_3)));
         contentList.add(new CardContent("topic4_4", new ImageContent(R.drawable.t4_4f1), new TextContent(R.string.title_card_topic4_4)));
@@ -153,6 +154,7 @@ public class Repository {
         contentList.add(new ImageContent(R.drawable.t4_2f1));
         contentList.add(new TextContent(R.string.topic4_2_par3));
         contentList.add(new TextContent(R.string.topic4_2_par4));
+        contentList.add(new CardContent("topic4", new ImageContent(R.drawable.t4f1), new TextContent(R.string.title_card_topic4)));
         contentList.add(new CardContent("topic4_1", new ImageContent(R.drawable.t4_1f1), new TextContent(R.string.title_card_topic4_1)));
         contentList.add(new CardContent("topic4_3", new ImageContent(R.drawable.t4_3f1), new TextContent(R.string.title_card_topic4_3)));
         contentList.add(new CardContent("topic4_4", new ImageContent(R.drawable.t4_4f1), new TextContent(R.string.title_card_topic4_4)));
@@ -167,6 +169,7 @@ public class Repository {
         contentList.add(new TextContent(R.string.topic4_4_par2));
         contentList.add(new ImageContent(R.drawable.t4_3f1));
         contentList.add(new TextContent(R.string.topic4_4_par3));
+        contentList.add(new CardContent("topic4", new ImageContent(R.drawable.t4f1), new TextContent(R.string.title_card_topic4)));
         contentList.add(new CardContent("topic4_1", new ImageContent(R.drawable.t4_1f1), new TextContent(R.string.title_card_topic4_1)));
         contentList.add(new CardContent("topic4_2", new ImageContent(R.drawable.t4_2f1), new TextContent(R.string.title_card_topic4_2)));
         contentList.add(new CardContent("topic4_4", new ImageContent(R.drawable.t4_4f1), new TextContent(R.string.title_card_topic4_4)));
@@ -184,6 +187,7 @@ public class Repository {
         contentList.add(new TextContent(R.string.topic4_4_par4, false));
         contentList.add(new ImageContent(R.drawable.t4_4f2));
         contentList.add(new TextContent(R.string.topic4_4_par5, false));
+        contentList.add(new CardContent("topic4", new ImageContent(R.drawable.t4f1), new TextContent(R.string.title_card_topic4)));
         contentList.add(new CardContent("topic4_1", new ImageContent(R.drawable.t4_1f1), new TextContent(R.string.title_card_topic4_1)));
         contentList.add(new CardContent("topic4_2", new ImageContent(R.drawable.t4_2f1), new TextContent(R.string.title_card_topic4_2)));
         contentList.add(new CardContent("topic4_3", new ImageContent(R.drawable.t4_3f1), new TextContent(R.string.title_card_topic4_3)));
@@ -198,6 +202,7 @@ public class Repository {
         contentList.add(new ImageContent(R.drawable.t4_5f1));
         contentList.add(new TextContent(R.string.topic4_5_par2));
         contentList.add(new TextContent(R.string.topic4_5_par3, false));
+        contentList.add(new CardContent("topic4", new ImageContent(R.drawable.t4f1), new TextContent(R.string.title_card_topic4)));
         contentList.add(new CardContent("topic4_1", new ImageContent(R.drawable.t4_1f1), new TextContent(R.string.title_card_topic4_1)));
         contentList.add(new CardContent("topic4_2", new ImageContent(R.drawable.t4_2f1), new TextContent(R.string.title_card_topic4_2)));
         contentList.add(new CardContent("topic4_3", new ImageContent(R.drawable.t4_3f1), new TextContent(R.string.title_card_topic4_3)));
@@ -347,7 +352,6 @@ public class Repository {
         contentList.add(new CardContent("topic6_6", new ImageContent(R.drawable.t6_6f1), new TextContent(R.string.title_card_topic6_6)));
         contentList.add(new CardContent("topic6_7", new ImageContent(R.drawable.t6_7f1), new TextContent(R.string.title_card_topic6_7)));
 
-
         sessionList.add(new Session("topic6_1", R.string.title_topic6, contentList));
     }
 
@@ -369,7 +373,6 @@ public class Repository {
         contentList.add(new CardContent("topic6_6", new ImageContent(R.drawable.t6_6f1), new TextContent(R.string.title_card_topic6_6)));
         contentList.add(new CardContent("topic6_7", new ImageContent(R.drawable.t6_7f1), new TextContent(R.string.title_card_topic6_7)));
 
-
         sessionList.add(new Session("topic6_2", R.string.title_topic6, contentList));
     }
 
@@ -390,7 +393,6 @@ public class Repository {
         contentList.add(new CardContent("topic6_6", new ImageContent(R.drawable.t6_6f1), new TextContent(R.string.title_card_topic6_6)));
         contentList.add(new CardContent("topic6_7", new ImageContent(R.drawable.t6_7f1), new TextContent(R.string.title_card_topic6_7)));
 
-
         sessionList.add(new Session("topic6_3", R.string.title_topic6, contentList));
     }
 
@@ -410,7 +412,6 @@ public class Repository {
         contentList.add(new CardContent("topic6_6", new ImageContent(R.drawable.t6_6f1), new TextContent(R.string.title_card_topic6_6)));
         contentList.add(new CardContent("topic6_7", new ImageContent(R.drawable.t6_7f1), new TextContent(R.string.title_card_topic6_7)));
 
-
         sessionList.add(new Session("topic6_4", R.string.title_topic6, contentList));
     }
 
@@ -429,7 +430,6 @@ public class Repository {
         contentList.add(new CardContent("topic6_6", new ImageContent(R.drawable.t6_6f1), new TextContent(R.string.title_card_topic6_6)));
         contentList.add(new CardContent("topic6_7", new ImageContent(R.drawable.t6_7f1), new TextContent(R.string.title_card_topic6_7)));
 
-
         sessionList.add(new Session("topic6_5", R.string.title_topic6, contentList));
     }
 
@@ -447,7 +447,6 @@ public class Repository {
         contentList.add(new CardContent("topic6_4", new ImageContent(R.drawable.t6_4f1), new TextContent(R.string.title_card_topic6_4)));
         contentList.add(new CardContent("topic6_5", new ImageContent(R.drawable.t6_5f1), new TextContent(R.string.title_card_topic6_5)));
         contentList.add(new CardContent("topic6_7", new ImageContent(R.drawable.t6_7f1), new TextContent(R.string.title_card_topic6_7)));
-
 
         sessionList.add(new Session("topic6_6", R.string.title_topic6, contentList));
     }
@@ -469,8 +468,16 @@ public class Repository {
         contentList.add(new CardContent("topic6_5", new ImageContent(R.drawable.t6_5f1), new TextContent(R.string.title_card_topic6_5)));
         contentList.add(new CardContent("topic6_6", new ImageContent(R.drawable.t6_6f1), new TextContent(R.string.title_card_topic6_6)));
 
-
         sessionList.add(new Session("topic6_7", R.string.title_topic6, contentList));
+    }
+
+    //About
+    static {
+        ArrayList<Content> contentList = new ArrayList<>();
+        contentList.add(new TitleContent(R.string.title_about));
+        contentList.add(new TextContent(R.string.about));
+
+        sessionList.add(new Session("about", R.string.about, contentList));
     }
 
     static {

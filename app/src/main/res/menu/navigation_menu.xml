@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/nuvem_palavras"
-        android:icon="@mipmap/ic_chevron_right_white_24dp"
+        android:icon="@drawable/ic_cloud"
         android:title="@string/nuvem_de_palavras" />
     <item
         android:id="@+id/o_que_e"
@@ -31,6 +31,10 @@
         android:title="@string/como_sera_dia_a_dia"/>
 
     <item android:id="@+id/logout"
-        android:icon="@mipmap/ic_chevron_right_white_24dp"
+        android:icon="@drawable/ic_person"
         android:title="@string/logout"/>
+
+    <item android:id="@+id/about"
+        android:icon="@drawable/ic_about"
+        android:title="@string/about"/>
 </menu>

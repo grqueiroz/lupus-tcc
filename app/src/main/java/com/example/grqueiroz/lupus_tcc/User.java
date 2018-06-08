@@ -78,4 +78,25 @@ public class User {
     public void setAge(String age) {
         this.age = age;
     }
+
+    public String getAgeGroup() {
+        Integer ageInt = Integer.parseInt(age);
+
+        if (ageInt <= 11) {
+            return "0-11";
+        }
+        if (ageInt <= 17) {
+            return "12-17";
+        }
+        if (ageInt <= 24) {
+            return "18-24";
+        }
+        if (ageInt <= 29) {
+            return "25-39";
+        }
+        if (ageInt <= 59) {
+            return "40-59";
+        }
+        return "60+";
+    }
 }

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Lúpus</string>
+    <string name="app_name">Lupi</string>
     <string name="title_activity_side_menu">SideMenuActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -52,6 +52,9 @@
     <string name="title_topic6_5">Vacinas\n</string>
     <string name="title_topic6_6">Evitar infecções\n</string>
     <string name="title_topic6_7">Álcool, drogas, cigarro e saúde sexual\n</string>
+
+    <string name="title_about">Sobre o Lupi\n</string>
+
 
 
     <!--Card Titles-->
@@ -267,7 +270,7 @@ Em condições normais, quando nosso organismo é atacado por invasores o sistem
         paciente deve sempre fazer as consultas e seus exames de rotina, acompanhando com seu médico
         qualquer progresso da doença.\n
     </string>
-    <string name="hint_gender">Sexo</string>
+    <string name="hint_gender">Gênero</string>
     <string name="hint_name">Nome Completo</string>
     <string name="hint_type">Tipo de usuário</string>
     <string name="male">Masculino</string>
@@ -707,5 +710,9 @@ Em condições normais, quando nosso organismo é atacado por invasores o sistem
     <string name="cloud_greeting_1">Olá,</string>
     <string name="cloud_greeting_2">!</string>
     <string name="cloud_greeting_3">Toque na palavra que mais lhe interessa para saber mais sobre o assunto! (:</string>
+    <string name="eu_li_e_aceito_os">Eu li e aceito os </string>
+    <string name="termos_e_condi_es_de_uso">termos e condições de uso.</string>
+    <string name="about">Sobre o Lupi</string>
+    <string name="health">Profissional da saúde</string>
 
 </resources>

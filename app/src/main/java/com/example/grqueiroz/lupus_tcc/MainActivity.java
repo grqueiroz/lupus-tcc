@@ -10,7 +10,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.grqueiroz.lupus_tcc.entity.Session;
+import com.example.grqueiroz.lupus_tcc.entity.TitleContent;
 import com.example.grqueiroz.lupus_tcc.manager.NavigationStackManager;
+import com.example.grqueiroz.lupus_tcc.manager.UserManager;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,18 +22,43 @@ public class MainActivity extends AppCompatActivity {
     private ActionBarDrawerToggle mToggle;
     private DbHandler db;
     private User loggedUser;
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+
         setContentView(R.layout.activity_main);
 
         db = new DbHandler(MainActivity.this);
-        loggedUser = db.getLoggedUser();
+
+        if (UserManager.getLoggedUser() == null){
+            UserManager.setLoggedUser(db.getLoggedUser());
+        }
+
+        loggedUser = UserManager.getLoggedUser();
+        db.close();
+
         if(loggedUser == null){
             navigateToLogin();
             return;
         }
+
+        mFirebaseAnalytics.setUserId(loggedUser.getShaid());
+        mFirebaseAnalytics.setUserProperty("idade", loggedUser.getAgeGroup());
+        mFirebaseAnalytics.setUserProperty("gênero", loggedUser.getGender());
+        mFirebaseAnalytics.setUserProperty("tipo", loggedUser.getType());
+
+//        //disparando evento da home
+//        FirebaseAnalytics mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+//        Bundle params = new Bundle();
+//        mFirebaseAnalytics.setUserProperty("idade", loggedUser.getAge());
+//        mFirebaseAnalytics.setUserProperty("gênero", loggedUser.getGender());
+//        mFirebaseAnalytics.setUserProperty("tipo", loggedUser.getType());
+//        mFirebaseAnalytics.setUserId(loggedUser.getShaid());
+//        mFirebaseAnalytics.logEvent("View_Home", params);
 
         Bundle bundle = getIntent().getExtras();
 
@@ -47,38 +76,44 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        final NavigationView mNavigationView = (NavigationView) findViewById(R.id.nav_menu);
+        final NavigationView mNavigationView = findViewById(R.id.nav_menu);
         Menu menu = mNavigationView.getMenu();
         MenuItem logout = menu.findItem(R.id.logout);
-        logout.setTitle("Olá, " + loggedUser.getName() + "! - " + logout.getTitle() + "?");
+
+        String firstName = loggedUser.getName().split(" ")[0];
+
+        logout.setTitle("Olá, " + firstName + "! - " + logout.getTitle() + "?");
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem){
                 switch (menuItem.getItemId()){
-                    case(R.id.nuvem_palavras):
+                    case (R.id.nuvem_palavras):
                         navigateToCloud();
                         break;
-                    case(R.id.o_que_e):
+                    case (R.id.o_que_e):
                         navigate("topic1");
                         break;
-                    case(R.id.o_que_causa):
+                    case (R.id.o_que_causa):
                         navigate("topic2");
                         break;
-                    case(R.id.como_e_diagnosticado):
+                    case (R.id.como_e_diagnosticado):
                         navigate("topic3");
                         break;
-                    case(R.id.como_afeta_corpo):
+                    case (R.id.como_afeta_corpo):
                         navigate("topic4");
                         break;
-                    case(R.id.como_vou_melhorar):
+                    case (R.id.como_vou_melhorar):
                         navigate("topic5");
                         break;
-                    case(R.id.como_sera_dia_a_dia):
+                    case (R.id.como_sera_dia_a_dia):
                         navigate("topic6");
                         break;
-                    case(R.id.logout):
+                    case (R.id.logout):
                         db.userLogout();
                         navigateToLogin();
+                        break;
+                    case (R.id.about):
+                        navigate("about");
                         break;
                 }
                 mDrawerLayout.closeDrawer(mNavigationView, true);
@@ -89,10 +124,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void navigateToCloud(){
-        Bundle bundle = new Bundle();
-        bundle.putString("loggedUser", loggedUser.getName());
         Intent intent = new Intent();
-        intent.putExtras(bundle);
         intent.setClass(MainActivity.this, CloudActivity.class);
         startActivity(intent);
         finish();
@@ -107,14 +139,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void navigate(String topicId) {
+        Bundle params = new Bundle();
+        params.putString("topic_name", getTopicNameById(topicId));
+        mFirebaseAnalytics.logEvent("View_Topic", params);
+
         TopicFragment fragment = TopicFragment.newInstance(topicId);
         NavigationStackManager.stackSession(topicId);
         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
     }
 
     private void navigateBack(String topicId){
+        Bundle params = new Bundle();
+        params.putString("topic_name", getTopicNameById(topicId));
+        mFirebaseAnalytics.logEvent("View_Topic", params);
         TopicFragment fragment = TopicFragment.newInstance(topicId);
         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
+    }
+
+    public String getTopicNameById(String topicId) {
+        Session session = Repository.getSession(topicId);
+        TitleContent title = (TitleContent) session.getContentList().get(0);
+        return getResources().getString(title.getTextId());
     }
 
     @Override

@@ -14,6 +14,8 @@ import android.widget.Toast;
 import com.adroitandroid.chipcloud.ChipCloud;
 import com.adroitandroid.chipcloud.ChipListener;
 import com.example.grqueiroz.lupus_tcc.manager.NavigationStackManager;
+import com.example.grqueiroz.lupus_tcc.manager.UserManager;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -25,13 +27,14 @@ public class CloudActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     private DbHandler db;
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cloud);
 
-        db = new DbHandler(CloudActivity.this);
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         final ChipCloud chipCloud = findViewById(R.id.chip_cloud);
 
@@ -39,12 +42,22 @@ public class CloudActivity extends AppCompatActivity {
         Collections.shuffle(tagList);
         final String[] tags = tagList.toArray(new String[tagList.size()]);
 
+        final User loggedUser = UserManager.getLoggedUser();
+
+        mFirebaseAnalytics.setUserId(loggedUser.getShaid());
+        mFirebaseAnalytics.setUserProperty("idade", loggedUser.getAgeGroup());
+        mFirebaseAnalytics.setUserProperty("gênero", loggedUser.getGender());
+        mFirebaseAnalytics.setUserProperty("tipo", loggedUser.getType());
+
         new ChipCloud.Configure()
                 .chipCloud(chipCloud)
                 .labels(tags)
                 .chipListener(new ChipListener() {
                     @Override
                     public void chipSelected(int index) {
+                        Bundle params = new Bundle();
+                        params.putString("selected_word", tags[index]);
+                        mFirebaseAnalytics.logEvent("Cloud_Selected", params);
                         navigate(Repository.tagTopicMap.get(tags[index]));
                     }
                     @Override
@@ -62,19 +75,16 @@ public class CloudActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        final NavigationView mNavigationView = (NavigationView) findViewById(R.id.nav_menu);
+        final NavigationView mNavigationView = findViewById(R.id.nav_menu);
         Menu menu = mNavigationView.getMenu();
         MenuItem logout = menu.findItem(R.id.logout);
 
-        Bundle bundle = getIntent().getExtras();
-        String loggedUserName = null;
-        if (bundle != null) {
-            loggedUserName = bundle.getString("loggedUser");
-        }
-        logout.setTitle("Olá, " + loggedUserName + "! - " + logout.getTitle() + "?");
+        String firstName = loggedUser.getName().split(" ")[0];
+
+        logout.setTitle("Olá, " + firstName + "! - " + logout.getTitle() + "?");
 
         TextView greetings = findViewById(R.id.greetings);
-        greetings.setText(String.format("%s %s%s", getResources().getString(R.string.cloud_greeting_1), loggedUserName, getResources().getString(R.string.cloud_greeting_2)));
+        greetings.setText(String.format("%s %s%s", getResources().getString(R.string.cloud_greeting_1), firstName, getResources().getString(R.string.cloud_greeting_2)));
 
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
             @Override
@@ -101,8 +111,13 @@ public class CloudActivity extends AppCompatActivity {
                         navigate("topic6");
                         break;
                     case(R.id.logout):
+                        db = new DbHandler(CloudActivity.this);
                         db.userLogout();
+                        db.close();
                         navigateToLogin();
+                        break;
+                    case (R.id.about):
+                        navigate("about");
                         break;
                 }
                 mDrawerLayout.closeDrawer(mNavigationView, true);

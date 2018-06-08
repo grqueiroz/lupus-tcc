@@ -26,8 +26,10 @@ import com.example.grqueiroz.lupus_tcc.entity.TitleContent;
 import com.example.grqueiroz.lupus_tcc.entity.VideoContent;
 import com.example.grqueiroz.lupus_tcc.manager.NavigationStackManager;
 import com.example.grqueiroz.lupus_tcc.manager.PreCachingLayoutManager;
+import com.example.grqueiroz.lupus_tcc.manager.UserManager;
 import com.example.grqueiroz.lupus_tcc.util.DeviceUtils;
 import com.google.android.youtube.player.YouTubeStandalonePlayer;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 /**
  * Created by gabriel-queiroz on 09/03/18.
@@ -61,7 +63,7 @@ public class TopicFragment extends Fragment {
 
         adapter = new Adapter();
 
-        View rootView =inflater.inflate(R.layout.topic_screen, container, false);
+        View rootView = inflater.inflate(R.layout.topic_screen, container, false);
         RecyclerView recyclerView = rootView.findViewById(R.id.list);
 
         recyclerView.setLayoutManager(layoutManager);
@@ -139,6 +141,16 @@ public class TopicFragment extends Fragment {
                 videoViewHolder.videoView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        User loggedUser = UserManager.getLoggedUser();
+
+                        FirebaseAnalytics mFirebaseAnalytics = FirebaseAnalytics.getInstance(getContext());
+                        Bundle params = new Bundle();
+                        mFirebaseAnalytics.setUserProperty("idade", loggedUser.getAgeGroup());
+                        mFirebaseAnalytics.setUserProperty("gênero", loggedUser.getGender());
+                        mFirebaseAnalytics.setUserProperty("tipo", loggedUser.getType());
+                        params.putString("video_topic", getTopicNameById(session.getId()));
+                        mFirebaseAnalytics.setUserId(loggedUser.getShaid());
+                        mFirebaseAnalytics.logEvent("View_Video", params);
                         Intent intent = YouTubeStandalonePlayer.createVideoIntent(getActivity(), "aaaaaaaateste", ((VideoContent) content).getUrl(), 0, true, false);
                         startActivity(intent);
                     }
@@ -162,6 +174,17 @@ public class TopicFragment extends Fragment {
         }
 
         private void navigate(String topicId) {
+            User loggedUser = UserManager.getLoggedUser();
+
+            FirebaseAnalytics mFirebaseAnalytics = FirebaseAnalytics.getInstance(getContext());
+            Bundle params = new Bundle();
+            mFirebaseAnalytics.setUserProperty("idade", loggedUser.getAgeGroup());
+            mFirebaseAnalytics.setUserProperty("gênero", loggedUser.getGender());
+            mFirebaseAnalytics.setUserProperty("tipo", loggedUser.getType());
+            params.putString("topic_name", getTopicNameById(topicId));
+            mFirebaseAnalytics.setUserId(loggedUser.getShaid());
+            mFirebaseAnalytics.logEvent("View_Topic", params);
+
             TopicFragment fragment = TopicFragment.newInstance(topicId);
             NavigationStackManager.stackSession(topicId);
             getFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
@@ -213,6 +236,12 @@ public class TopicFragment extends Fragment {
 
             videoView = itemView.findViewById(R.id.button);
         }
+    }
+
+    public String getTopicNameById(String topicId) {
+        Session session = Repository.getSession(topicId);
+        TitleContent title = (TitleContent) session.getContentList().get(0);
+        return getResources().getString(title.getTextId());
     }
 
 }

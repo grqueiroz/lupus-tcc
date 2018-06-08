@@ -13,24 +13,35 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+
+import java.util.Arrays;
+import java.util.Collections;
+
 public class LoginActivity extends AppCompatActivity {
-    Button login;
-    String selected_user;
-    Button signin;
-    DbHandler db;
+    private Button login;
+    private String selected_user;
+    private Button signin;
+    private DbHandler db;
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+
         setContentView(R.layout.activity_login);
 
-        login=(Button)findViewById(R.id.login);
-        signin=(Button)findViewById(R.id.signin);
-        Spinner spinner = (Spinner) findViewById(R.id.spinner_users);
+        login = findViewById(R.id.login);
+        signin = findViewById(R.id.signin);
+        Spinner spinner = findViewById(R.id.spinner_users);
 
-        db=new DbHandler(LoginActivity.this);
+        db = new DbHandler(LoginActivity.this);
 
         String[] spinnerLists = db.getAllUsers();
+
+        Arrays.sort(spinnerLists);
 
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(LoginActivity.this,android.R.layout.simple_spinner_item, spinnerLists);
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -49,18 +60,22 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(selected_user==null)
-                {
+                if (selected_user == null) {
                     Toast.makeText(LoginActivity.this,"Nenhum usuário selecionado.",Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
+                } else {
                     User user = db.getUserByName(selected_user);
                     db.userLogin(user);
+
+                    mFirebaseAnalytics.setUserId(user.getShaid());
+                    mFirebaseAnalytics.setUserProperty("idade", user.getAgeGroup());
+                    mFirebaseAnalytics.setUserProperty("gênero", user.getGender());
+                    mFirebaseAnalytics.setUserProperty("tipo", user.getType());
+
                     Toast.makeText(LoginActivity.this,"Bem vindo(a), " + selected_user + "!",Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent();
                     intent.setClass(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
+                    db.close();
                     finish();
                 }
             }
@@ -71,6 +86,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),RegisterActivity.class);
                 startActivity(i);
+                db.close();
                 finish();
             }
         });

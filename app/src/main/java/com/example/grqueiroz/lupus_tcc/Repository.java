@@ -491,8 +491,18 @@ public class Repository {
         tagTopicMap.put("Atividade Física", "topic6_3");
         tagTopicMap.put("Cansaço", "topic4_2");
         tagTopicMap.put("Tratamento", "topic5");
-        tagTopicMap.put("Consultas", "topic6_1");
-        tagTopicMap.put("Meu Corpo", "topic4");
+        tagTopicMap.put("Médico", "topic6_1");
+        tagTopicMap.put("Causa", "topic4");
+        tagTopicMap.put("Critérios", "topic3_1");
+        tagTopicMap.put("FAN", "topic3_2");
+        tagTopicMap.put("Orientações", "topic5_1");
+        tagTopicMap.put("Remédios", "topic5_2");
+        tagTopicMap.put("Consultas", "topic5_4");
+        tagTopicMap.put("Dia-a-dia", "topic6");
+        tagTopicMap.put("Alimentação", "topic6_2");
+        tagTopicMap.put("Vacinas", "topic6_5");
+        tagTopicMap.put("Infecções", "topic6_6");
+        tagTopicMap.put("E se piorar?", "topic5_5");
 
     }
 

@@ -13,5 +13,18 @@
         <item>Tratamento</item>
         <item>Consultas</item>
         <item>Meu Corpo</item>
+        <item>Causa</item>
+        <item>Critérios</item>
+        <item>FAN</item>
+        <item>Orientações</item>
+        <item>Remédios</item>
+        <item>Dia-a-dia</item>
+        <item>Alimentação</item>
+        <item>Vacinas</item>
+        <item>Infecções</item>
+        <item>E se piorar?</item>
+        <item>Médico</item>
+
+
     </string-array>
 </resources>

@@ -56,7 +56,7 @@
                 android:id="@+id/chip_cloud"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="24sp"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:selectTransitionMS="100"
                 chipcloud:deselectedColor="@color/colorPrimaryLight"
@@ -66,12 +66,12 @@
                 chipcloud:layout_constraintEnd_toEndOf="parent"
                 chipcloud:layout_constraintStart_toStartOf="parent"
                 chipcloud:layout_constraintTop_toTopOf="parent"
-                chipcloud:minHorizontalSpacing="32dp"
+                chipcloud:minHorizontalSpacing="16sp"
                 chipcloud:selectMode="required"
                 chipcloud:selectedColor="@color/colorAccent"
                 chipcloud:selectedFontColor="@color/white"
                 chipcloud:textSize="14sp"
-                chipcloud:verticalSpacing="16dp" />
+                chipcloud:verticalSpacing="14sp" />
 
         </LinearLayout>
 

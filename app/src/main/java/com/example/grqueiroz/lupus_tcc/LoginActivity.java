@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -19,11 +20,11 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class LoginActivity extends AppCompatActivity {
-    private Button login;
     private String selected_user;
-    private Button signin;
     private DbHandler db;
     private FirebaseAnalytics mFirebaseAnalytics;
+    private Boolean confirmRemoval = false;
+    private Button remove;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +34,21 @@ public class LoginActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_login);
 
-        login = findViewById(R.id.login);
-        signin = findViewById(R.id.signin);
+        Button login = findViewById(R.id.login);
+        Button signin = findViewById(R.id.signin);
+        remove = findViewById(R.id.remove);
+
+        LinearLayout loginContainer = findViewById(R.id.login_container);
+
         Spinner spinner = findViewById(R.id.spinner_users);
 
         db = new DbHandler(LoginActivity.this);
 
         String[] spinnerLists = db.getAllUsers();
+
+        if (spinnerLists == null || spinnerLists.length == 0) {
+            loginContainer.setVisibility(View.GONE);
+        }
 
         Arrays.sort(spinnerLists);
 
@@ -50,6 +59,11 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 selected_user = parent.getItemAtPosition(position).toString();
+
+                if (confirmRemoval) {
+                    remove.setText(R.string.hint_remove);
+                    confirmRemoval = false;
+                }
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -77,6 +91,30 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(intent);
                     db.close();
                     finish();
+                }
+            }
+        });
+
+        remove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!confirmRemoval) {
+                    remove.setText(R.string.hint_confirmRemoval);
+                    confirmRemoval = true;
+
+                    Toast.makeText(LoginActivity.this,"Toque novamente para remover " + selected_user,Toast.LENGTH_SHORT).show();
+                } else {
+                    db.removeUser(selected_user);
+
+                    remove.setText(R.string.hint_remove);
+                    confirmRemoval = false;
+
+                    db.close();
+                    Toast.makeText(LoginActivity.this, selected_user + " removido(a) com sucesso",Toast.LENGTH_SHORT).show();
+
+                    Intent intent = getIntent();
+                    finish();
+                    startActivity(intent);
                 }
             }
         });

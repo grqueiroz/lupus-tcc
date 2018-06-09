@@ -709,10 +709,12 @@ Em condições normais, quando nosso organismo é atacado por invasores o sistem
     <string name="logout">Sair</string>
     <string name="cloud_greeting_1">Olá,</string>
     <string name="cloud_greeting_2">!</string>
-    <string name="cloud_greeting_3">Toque na palavra que mais lhe interessa para saber mais sobre o assunto! (:</string>
+    <string name="cloud_greeting_3">Toque na palavra que mais lhe interessa para saber mais sobre o assunto!</string>
     <string name="eu_li_e_aceito_os">Eu li e aceito os </string>
     <string name="termos_e_condi_es_de_uso">termos e condições de uso.</string>
     <string name="about">Sobre o Lupi</string>
     <string name="health">Profissional da saúde</string>
+    <string name="hint_remove">Remover</string>
+    <string name="hint_confirmRemoval">Certeza?</string>
 
 </resources>

@@ -120,9 +120,14 @@ public class DbHandler extends SQLiteOpenHelper{
         return user;
     }
 
-    public void cleanAllUsers() {
+    public void removeAllUsers() {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(USER_TABLE_NAME, "", null);
+    }
+
+    public void removeUser(String user_name) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(USER_TABLE_NAME, "name = '" + user_name + "'", null);
     }
 
     public void userLogout(){

@@ -24,7 +24,9 @@ public class User {
         shaString = (((name.concat(gender)).concat(type)).concat(age)).concat(formattedDate);
         try {
             this.shaid = StringEncryption.SHA1(shaString);
-        } catch (Exception e){e.printStackTrace();}
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         this.gender = gender;
         this.age = age;
         this.type = type;

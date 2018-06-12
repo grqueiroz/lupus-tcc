@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Lupi</string>
+    <string name="app_name">MeuLupus</string>
     <string name="title_activity_side_menu">SideMenuActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -94,10 +94,10 @@
         adversidades.\n
     </string>
     <string name="topic1_par2">
-        O Lúpus Eritematoso Sistêmico é uma doença considerada uma doença autoimune, nas quais o
-        sistema imunológico se torna mais ativo do que o normal, atacando células saudáveis do
-        corpo, esse nome “Lúpus” vem do latim, desde a antiguidade, porque às vezes as feridas que
-        a doença ocasiona na pele se parecem com as mordidas de um lobo.\n
+        O Lúpus Eritematoso Sistêmico é uma doença considerada uma doença autoimune, na qual o sistema
+        imunológico se torna mais ativo do que o normal, atacando células saudáveis do corpo. Esse
+        nome “Lúpus” vem do latim, desde a antiguidade, porque às vezes as feridas que a doença
+        ocasiona na pele se parecem com as mordidas de um lobo.\n
     </string>
     <string name="topic1_par3">
         Pacientes com Lúpus podem ter vermelhidões na pele, dores e inchaço articulares, cansaço e
@@ -107,8 +107,8 @@
     <string name="topic1_par4">
         Lúpus é uma doença crônica, o que significa que ela não tem cura; de intensidade variável,
         às vezes causando mais mal estar (período ativo) e às vezes adormecida (período remissivo).
-        Porém, seguindo as orientações você poderá se sentir bem, evitando que a doença se manifeste
-        de formas agressivas, e vivendo sua vida normalmente.\n
+        Porém, seguindo as orientações evita-se que a doença se manifeste de formas agressivas, e
+        pacientes podem viver suas vidas normalmente.\n
     </string>
 
     <!--Topic 2 texts-->
@@ -134,9 +134,9 @@
         vírus, fumo, poluição, alimentação e estresse também são fatores coadjuvantes.\n
     </string>
     <string name="topic2_par5">
-        Assim, vários fatores podem ter feito com que o Lúpus se desenvolva no seu corpo, mas nada
-        que você fez, ou deixou de fazer causou o Lúpus no seu corpo. É importante saber que o Lúpus
-        não é contagioso, você não o pegou de alguém, nem o transmitirá para outra pessoa.\n
+        Assim, vários fatores podem fazer com que o Lúpus se desenvolva no corpo, mas nada que alguém
+        faz ou deixa de fazer causa o Lúpus. É importante saber que o Lúpus não é contagioso, não foi
+        “pego” de alguém, nem será transmitido para outra pessoa.\n
     </string>
 
 
@@ -219,9 +219,10 @@ Em condições normais, quando nosso organismo é atacado por invasores o sistem
         dores no corpo semelhantes às de um resfriado e vermelhidões na pele.\n
     </string>
     <string name="topic4_par2">
-        É difícil predizer o que cada paciente vai sentir, por isso é
-        importante levar as consultas com seu médico a sério: acompanhando os exames seu médico
-        poderá prevenir que a doença atinja órgãos importantes e evitar dores e problemas maiores.\n
+        É difícil predizer o que cada paciente vai sentir, por isso as consultas com seu médico devem
+        ser levadas à sério. Comparecendo às consultas regularmente com os exames solicitados, seu
+        médico poderá agir com antecedência e prevenir que a doença atinja órgãos importantes evitando
+        dores e problemas maiores.\n
     </string>
 
     <!--Topic 4.1 texts-->
@@ -261,32 +262,15 @@ Em condições normais, quando nosso organismo é atacado por invasores o sistem
         calma, parando para descansar quando e se necessário.\n
     </string>
     <string name="topic4_2_par3">
+        O segredo está em não deixar a energia do potinho acabar toda de uma vez. Se existir uma
+        festa à noite, o recomendado é descansar um pouco de tarde para garantir que o potinho de
+        energia vai estar mais cheio para a hora da festa.\n
+    </string>
+    <string name="topic4_2_par4">
        Outro ponto importante é contar para o seu médico e para seus pais ou responsáveis quando
         está se sentindo cansado, eles vão poder te ajudar a se sentir melhor e a não abusar do seu
         corpo.\n
     </string>
-    <string name="topic4_2_par4">
-        Casos em que os órgãos internos são atingidos são preocupantes; para minimizar este risco o
-        paciente deve sempre fazer as consultas e seus exames de rotina, acompanhando com seu médico
-        qualquer progresso da doença.\n
-    </string>
-    <string name="hint_gender">Gênero</string>
-    <string name="hint_name">Nome Completo</string>
-    <string name="hint_type">Tipo de usuário</string>
-    <string name="male">Masculino</string>
-    <string name="female">Feminino</string>
-    <string name="gender_other">Outra ident.</string>
-    <string name="type_other">Outro tipo</string>
-    <string name="parent">Familiar</string>
-    <string name="patient">Paciente</string>
-    <string name="hint_age">Idade</string>
-    <string name="hint_signup">Primeira vez usando o app?</string>
-    <string name="signup">Cadastre-se aqui</string>
-    <string name="hint_login">Entrar</string>
-    <string name="hint_register">Entrar</string>
-    <string name="signin">Cadastre-se aqui</string>
-    <string name="hint_selectuser">Selecione seu usuário na lista abaixo</string>
-    <string name="register_activity">Registre-se</string>
 
     <!--Topic 4.3 texts-->
     <string name="topic4_3_par1">
@@ -297,16 +281,15 @@ Em condições normais, quando nosso organismo é atacado por invasores o sistem
         mas podem surgir em outros lugares também.\n
     </string>
     <string name="topic4_3_par2">
-        Lembre-se de dizer ao seu médico se as manchas estão incomodando, ele vai receitar os
-        remédios corretos para tratá-las. É importante passar os remédios na frequência indicada e
-        evitar exposição ao sol, para evitar que as manchas piorem com o efeito dos raios solares na
-        pele. Protetor solar é fundamental em pacientes com Lúpus e deve ser passado várias vezes
-        ao dia.\n
+        Se as manchas estão incomodando, o médico deve ser informado, ele vai receitar os remédios
+        corretos para tratá-las. É importante passar os remédios na frequência indicada e evitar
+        exposição ao sol, para evitar que as manchas piorem com o efeito dos raios solares na pele.
+        Protetor solar é fundamental em pacientes com Lúpus e deve ser passado várias vezes ao dia.\n
     </string>
     <string name="topic4_3_par3">
-        Se as manchas te incomodam ou fazem se sentir mal, existem produtos que podem ajudar a
-        cobrir a vermelhidão, mas é importante que eles não piorem a inflamação, portanto pergunte
-        ao seu médico qual produto seria indicado.\n
+        Existem produtos que podem ajudar a cobrir a vermelhidão, mas é importante que eles não
+        piorem a inflamação, portanto o médico sempre deve ser consultado sobre qual produto seria
+        indicado.\n
     </string>
 
     <!--Topic 4.4 texts-->
@@ -327,16 +310,16 @@ Em condições normais, quando nosso organismo é atacado por invasores o sistem
     <string name="topic4_4_par4">
         - Usar protetor solar com fator FPS 30 ou maior sempre que for sair, mesmo em dias nublados\n\n
         - A quantidade de protetor recomendada a ser aplicada em um adulto (no 	corpo todo) é de
-        aproximadamente duas colheres de sopa, não passar 	a quantidade correta reduz a eficácia do
-        protetor e dessa forma 	reduz o quanto o paciente está protegido\n\n
+        aproximadamente duas colheres de sopa, não passar a quantidade correta reduz a eficácia do
+        protetor e dessa forma a proteção do paciente fica reduzida\n\n
         - Lembrar de reaplicar o protetor pelo menos a cada hora enquanto estiver diretamente exposto
         ao sol\n
     </string>
     <string name="topic4_4_par5">
         - Lembrar de passar protetor no pescoço, atrás do pescoço, nas orelhas e nos lábios
         (o próprio creme ou em forma de batom )\n\n
-        - Aplicar o protetor pelo menos 20 minutos antes de sair, pois esse é o tempo que ele demora
-        para ser absorvido e fazer efeito\n\n
+        - O protetor deve ser aplicado pelo menos 20 minutos antes de sair, pois esse é o tempo que
+        ele demora para ser absorvido e fazer efeito\n\n
         - Usar chapéu e roupas leves, mas que evitem a exposição direta da pele ao Sol.\n\n
         - Há roupas de tecidos que já vem com proteção aos raios UV, são mais caras mas funcionam
         bem e podem ser encontradas à venda em lojas de artigos esportivos.\n\n
@@ -346,9 +329,9 @@ Em condições normais, quando nosso organismo é atacado por invasores o sistem
     <!--Topic 4.5 texts-->
     <string name="topic4_5_par1">
         Em alguns pacientes, nos estágios agressivos da doença, pode haver queda ou afinamento do
-        cabelo. Normalmente depois que a doença volta ao estado controlado o cabelo volta a crescer,
-        portanto o melhor a se fazer é cuidar dos cabelos e não exigir demais deles enquanto
-        estiverem sensíveis.\n
+        cabelo. Normalmente, depois que a doença volta ao estado controlado, o cabelo volta a
+        crescer. Portanto, o melhor a se fazer é cuidar dos cabelos e não exigir demais deles
+        enquanto estiverem sensíveis.\n
     </string>
     <string name="topic4_5_par2">
         Algumas dicas são:\n
@@ -365,9 +348,9 @@ Em condições normais, quando nosso organismo é atacado por invasores o sistem
 
     <!--Topic 5 texts-->
     <string name="topic5_par1">
-        Quando se fala de doenças crônicas, a palavra chave é <b>controle</b>. Não sabemos se algum
-        dia será descoberta uma cura para o Lúpus, mas sabemos que é possível organizar a sua vida de
-        forma a viver com qualidade e evitar sofrimento.\n
+        Quando se fala de doenças crônicas, a palavra chave é controle. Não sabemos se algum dia será
+        descoberta uma cura para o Lúpus, mas sabemos que é possível organizar a vida de forma a
+        viver com qualidade e evitar sofrimento.\n
     </string>
     <string name="topic5_par2">
         Para se sentir bem o paciente precisa prestar atenção às restrições que a doença impõe,
@@ -394,12 +377,12 @@ Em condições normais, quando nosso organismo é atacado por invasores o sistem
         diminuir a atividade da doença. Vamos entender melhor como cada tipo funciona:\n
     </string>
     <string name="topic5_2_par2">
-        <b>Anti-inflamatórios</b> são remédios que, como já diz o nome, reduzem as inflamações no corpo e
-        amenizam alguns sintomas, como artrite, febre e dores no peito; estes medicamentos começam a
-        fazer efeito depois de alguns dias de tratamento. Os antiinflamatórios devem ser utilizados
-        com orientação médica pois podem afetar o funcionamento adequado dos rins, e não são os
-        melhores indicados em todos os casos. Por exemplo, durante infecções como a dengue o uso de
-        antiinflamatorios é contra-indicado.\n
+        <b>Antiinflamatórios</b> são remédios que, como já diz o nome, reduzem as inflamações no
+        corpo e amenizam alguns sintomas, como artrite, febre e dores no peito; estes medicamentos
+        começam a fazer efeito depois de alguns dias de tratamento. Os antiinflamatórios devem ser
+        utilizados com orientação médica pois podem afetar o funcionamento adequado dos rins, e não
+        são os melhores indicados em todos os casos. Por exemplo, durante infecções, como a dengue,
+        o uso de antiinflamatórios é contra-indicado.\n
     </string>
     <string name="topic5_2_par3">
         <b>Corticoides</b> são medicamentos produzidos para se comportarem como os hormônios do
@@ -408,10 +391,10 @@ Em condições normais, quando nosso organismo é atacado por invasores o sistem
         basicamente em produzir “mensagens” para o corpo, fazendo com que ele reduza as inflamações
         e pare de mandar anticorpos atacarem as regiões afetadas. O corticoide mais comum de ser
         receitado para combater o Lúpus é a Prednisona ou prednisolona. Eles atuam rapidamente e
-        fazem você se sentir melhor rapidamente. Porém estão associados a uma série de efeitos
+        fazem o paciente se sentir melhor rapidamente. Porém estão associados a uma série de efeitos
         colaterais como ganho de peso, estrias, pressão alta, diabetes, alteração no colesterol,
         perda de massa óssea, fraqueza muscular, catarata. No início podem ser necessárias doses
-        altas de prednisona, que serão diminuídas com a melhora dos sintomas; seu médico vai tentar
+        altas de prednisona, que serão diminuídas com a melhora dos sintomas. Seu médico vai tentar
         manter a dosagem mais baixa o possível.\n
     </string>
     <string name="topic5_2_par4">
@@ -505,9 +488,9 @@ Em condições normais, quando nosso organismo é atacado por invasores o sistem
         Os médicos farão de tudo para apoiá-lo em sua jornada com o Lúpus, porém a escolha de se
         organizar e levar o tratamento a sério é sua, e vai definir os resultados obtidos. O
         importante é não ficar parado esperando que as mudanças aconteçam, seja um agente de mudança!
-        Se não pode comparecer a uma consulta ou exame, remarque. Se está com algum problema com
-        seus remédios ou sentiu algo diferente em seu corpo, avise seu médico.  Tenha  consciência
-        de que você é responsável pelo sucesso do seu tratamento. \n
+        Se for possível comparecer a uma consulta ou exame, é necessário remarcar. Se houver com
+        algum problema com seus remédios ou sentiu algo diferente em seu corpo, o médico deve ser
+        avisado.  Você é responsável pelo sucesso do seu tratamento.\n
     </string>
 
     <!--Topic 5.5 texts-->
@@ -517,9 +500,9 @@ Em condições normais, quando nosso organismo é atacado por invasores o sistem
         seu corpo.\n
     </string>
     <string name="topic5_5_par2">
-        Tenha sempre o contato do seu médico à mão, caso passe a sentir que seus sintomas estão
-        piorando, ou esteja sentindo algum sintoma novo, ligue comunicando e, se necessário, marque
-        uma consulta.\n
+        O contato do seu médico deve estar sempre à mão, caso passe a sentir que seus sintomas estão
+        piorando, ou esteja sentindo algum sintoma novo, o médico deve ser comunicado e, se
+        necessário, uma consulta deve ser marcada.\n
     </string>
     <string name="topic5_5_par3">
         Não faça alterações na sua medicação por conta própria, mesmo que já tenha passado por uma
@@ -536,9 +519,10 @@ Em condições normais, quando nosso organismo é atacado por invasores o sistem
     </string>
     <string name="topic6_par2">
         Todos nós devemos nos alimentar de forma saudável, fazer nossas atividades, ir ao médico,
-        nas consultas programadas e reagendar novas consultas se não pudermos comparecer. Manter
-        atividades como ler, ouvir música e, se souber, tocar algum instrumento, etc. Cada um é
-        responsável pelas escolhas que toma para a sua vida e pelas consequências dessas escolhas.\n
+        nas consultas programadas e, se não pudermos comparecer, novas consultas deverão ser
+        agendadas. Manter atividades como ler, ouvir música e, se souber, tocar algum instrumento,
+        etc. Cada um é responsável pelas escolhas que toma para a sua vida e pelas consequências
+        dessas escolhas.\n
     </string>
     <string name="topic6_par3">
         Dessa forma, quem convive com Lúpus deve se atentar a alguns pontos específicos para ter um
@@ -549,8 +533,8 @@ Em condições normais, quando nosso organismo é atacado por invasores o sistem
     <!--Topic 6.1 texts-->
     <string name="topic6_1_par1">
         É muito importante entender que para estar saudável e evitar que a doença se manifeste de
-        forma grave, o paciente e o seu médico devem estar sempre se comunicando, com
-        sinceridade e proatividade.\n
+        forma grave, a comunicação entre o médico e o paciente deve ser mantida, com sinceridade e
+        proatividade.\n
     </string>
     <string name="topic6_1_par2">
         Quando for visitar seu médico lembre-se de contar a ele tudo o que achar relevante, sintomas
@@ -567,16 +551,17 @@ Em condições normais, quando nosso organismo é atacado por invasores o sistem
         Algumas dicas para se preparar para as consultas são:\n
     </string>
     <string name="topic6_1_par5">
-        - Anote suas dúvidas antes da consulta para não se esquecer de perguntar nada na hora.\n\n
+        - Suas dúvidas antes da consulta devem ser anotadas, para não se esquecer de perguntar nada
+        na hora.\n\n
         - Se não entendeu algo que seu médico disse, peça para ele explicar novamente de outra forma.\n\n
         - Saiba quais os remédios você está tomando, em que hora e em que dosagem.\n\n
         - Anote qualquer coisa anormal que tenha notado recentemente em seu corpo ou em como se sente
         e informe seu médico.\n\n
-        - Seja sincero sobre como está se sentindo com o tratamento, não tome decisões, baseadas em
-        fatos relatados por outras pessoas que disseram ter tido bons resultados, sem conversar com
-        seu médico.\n\n
-        - Peça instruções do que fazer daqui em diante, caso sua medicação tenha mudado, ou se você
-        precisa fazer algum exame, tenha certeza de que anotou tudo o que precisa fazer.\n\n
+        - Seja sincero sobre como está se sentindo com o tratamento, decisões não devem ser tomadas
+        baseadas em fatos relatados por outras pessoas que disseram ter tido bons resultados, sem
+        conversar com seu médico.\n\n
+        - Instruções do que fazer daqui em diante devem ser pedidas, caso sua medicação tenha mudado,
+        ou se você precisa fazer algum exame, tenha certeza de que anotou tudo o que precisa fazer.\n\n
         - Diga se está tomando todos os remédios. Se não, explique o porquê.\n
     </string>
 
@@ -608,31 +593,31 @@ Em condições normais, quando nosso organismo é atacado por invasores o sistem
 
     <!--Topic 6.3 texts-->
     <string name="topic6_3_par1">
-         Praticar exercícios pode trazer vários benefícios como fortalecimento dos músculos e ossos,
+        Praticar exercícios pode trazer vários benefícios como fortalecimento dos músculos e ossos,
         redução em inflamações, aumento da flexibilidade nas articulações, controle do peso e combate
-        ao stress. Pacientes com Lúpus não são proibidos de se exercitar, muito pelo contrário, basta
-        estar atento aos sinais que o corpo dá, não tente se exercitar se estiver muito cansado ou
-        com dores.\n
+        ao stress. Pacientes com Lúpus não são proibidos de se exercitar, muito pelo contrário,
+        basta estar atento aos sinais que o corpo dá, se estiver muito cansado ou com dores, o
+        exercício deve ser evitado.\n
     </string>
     <string name="topic6_3_par2">
-        Procure fazer uma adaptação gradual à atividade física, se puder orientado por um
-        profissional, e fique atento às suas limitações. Nos períodos de atividade da doença pode
-        ser um pouco mais difícil de praticar esportes, mas sempre há tempo para retomar, ou mudar
-        o tipo de exercício.\n
+        É importante fazer uma adaptação gradual à atividade física,
+        com orientação profissional se possível, e sempre atento às suas limitações. Nos períodos
+        de atividade da doença pode ser um pouco mais difícil de praticar esportes, mas sempre há
+        tempo para retomar, ou mudar o tipo de exercício.\n
     </string>
     <string name="topic6_3_par3">
         Algumas dicas são:\n
     </string>
     <string name="topic6_3_par4">
-        - Se for se exercitar ao ar livre (evitando ao máximo o sol forte) lembre-se de passar protetor
+        - Se for se exercitar ao ar livre (evitando ao máximo o sol forte) deve-se de passar protetor
         solar 20 minutos antes.\n\n
-        - Converse com seu médico sobre o tipo de exercício que pretende praticar e se ele pode causar
-        alguma dor.\n\n
-        - Caso um exercício esteja te deixando muito cansado ou com dores, tente mudar o tipo de
-        exercício, existem vários meios de se exercitar sem causar impactos no corpo, como dançando,
+        - O médico deve ser informado sobre o tipo de exercício que você pretende praticar e se ele
+        pode causar alguma dor.\n\n
+        - Sempre é possível  mudar o tipo de exercício caso este esteja te deixando muito cansado ou
+        com dores. Existem vários meios de se exercitar sem causar impactos no corpo, como dançando,
         praticando ioga, natação, etc\n\n
-        - Pense no que vai comer antes do exercício, para não estar com o estômago muito cheio e nem
-        muito vazio durante a atividade.\n
+        - Deve-se pensar no que se vai comer antes do exercício, para não estar com o estômago muito
+        cheio e nem muito vazio durante a atividade.\n
     </string>
 
     <!--Topic 6.4 texts-->
@@ -649,8 +634,8 @@ Em condições normais, quando nosso organismo é atacado por invasores o sistem
         com Lúpus não necessariamente vão contrair a doença, a chance de isso acontecer é pequena.\n
     </string>
     <string name="topic6_4_par3">
-        Caso uma gravidez esteja nos seus planos, converse desde cedo sobre isso com seu médico, e
-        juntos vocês vão analisar a melhor opção.\n
+        Caso uma gravidez esteja nos seus planos, é importante conversar sobre isso desde cedo com
+        seu médico, e juntos vocês vão analisar a melhor opção.\n
     </string>
 
     <!--Topic 6.5 texts-->
@@ -661,8 +646,8 @@ Em condições normais, quando nosso organismo é atacado por invasores o sistem
         as vacinas com vírus vivos atenuados como as da febre amarela, varicela, rotavírus e Sabin.\n
     </string>
     <string name="topic6_5_par2">
-        Antes de decidir tomar qualquer vacina sempre consulte o seu médico se a vacina é recomendada
-        para pacientes com Lúpus.\n
+        Antes de decidir tomar qualquer vacina sempre seu médico deverá ser consultado sobre se a
+        vacina é recomendada para pacientes com Lúpus.\n
     </string>
 
     <!--Topic 6.6 texts-->
@@ -695,17 +680,35 @@ Em condições normais, quando nosso organismo é atacado por invasores o sistem
         principalmente se não for planejada. Portanto, caso não esteja planejando ter um bebê e mesmo
         que conheça seu parceiro, sempre mantenha relações sexuais com camisinha. Anticoncepcionais
         podem ser utilizados pelas pacientes com Lúpus mas vai depender da atividade de doença e da
-        presença de anticorpos antifosfolípideos. Pergunte ao seu médico.\n
+        presença de anticorpos antifosfolípideos. Seu médico deve ser consultado.\n
     </string>
     <string name="topic6_7_par3">
-        Resumindo, todos nós devemos nos preocupar em ter uma vida saudável, consumir álcool com
-        moderação, não fumar, não se envolver com drogas e ter precaução nas nossas relações sexuais,
-        mas para pacientes com Lúpus as consequências podem ser mais graves.\n
+        Resumindo, todos nós devemos nos preocupar em ter uma vida saudável, se consumir álcool,
+        fazê-lo com moderação, não fumar, não se envolver com drogas e ter precaução nas nossas
+        relações sexuais, mas para pacientes com Lúpus as consequências podem ser mais graves.\n
     </string>
     <string name="topic6_7_par4">
         Evitando fragilizar o corpo o paciente com Lúpus diminui as chances de uma doença que já é
         difícil de cuidar, ficar ainda pior de lidar. \n
     </string>
+
+    <string name="hint_gender">Gênero</string>
+    <string name="hint_name">Nome Completo</string>
+    <string name="hint_type">Tipo de usuário</string>
+    <string name="male">Masculino</string>
+    <string name="female">Feminino</string>
+    <string name="gender_other">Outra ident.</string>
+    <string name="type_other">Outro tipo</string>
+    <string name="parent">Familiar</string>
+    <string name="patient">Paciente</string>
+    <string name="hint_age">Idade</string>
+    <string name="hint_signup">Primeira vez usando o app?</string>
+    <string name="signup">Cadastre-se aqui</string>
+    <string name="hint_login">Entrar</string>
+    <string name="hint_register">Entrar</string>
+    <string name="signin">Cadastre-se aqui</string>
+    <string name="hint_selectuser">Selecione seu usuário na lista abaixo</string>
+    <string name="register_activity">Registre-se</string>
     <string name="logout">Sair</string>
     <string name="cloud_greeting_1">Olá,</string>
     <string name="cloud_greeting_2">!</string>

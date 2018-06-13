@@ -6,6 +6,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -15,6 +16,8 @@ import com.adroitandroid.chipcloud.ChipCloud;
 import com.adroitandroid.chipcloud.ChipListener;
 import com.example.grqueiroz.lupus_tcc.manager.NavigationStackManager;
 import com.example.grqueiroz.lupus_tcc.manager.UserManager;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.Arrays;
@@ -28,11 +31,15 @@ public class CloudActivity extends AppCompatActivity {
     private ActionBarDrawerToggle mToggle;
     private DbHandler db;
     private FirebaseAnalytics mFirebaseAnalytics;
+    private Tracker mTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cloud);
+
+        initAnalytics();
+        sendAnalyticsScreenView();
 
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
@@ -44,10 +51,7 @@ public class CloudActivity extends AppCompatActivity {
 
         final User loggedUser = UserManager.getLoggedUser();
 
-        mFirebaseAnalytics.setUserId(loggedUser.getShaid());
-        mFirebaseAnalytics.setUserProperty("idade", loggedUser.getAgeGroup());
-        mFirebaseAnalytics.setUserProperty("gênero", loggedUser.getGender());
-        mFirebaseAnalytics.setUserProperty("tipo", loggedUser.getType());
+        setFirebaseUserProperties(loggedUser);
 
         new ChipCloud.Configure()
                 .chipCloud(chipCloud)
@@ -55,9 +59,8 @@ public class CloudActivity extends AppCompatActivity {
                 .chipListener(new ChipListener() {
                     @Override
                     public void chipSelected(int index) {
-                        Bundle params = new Bundle();
-                        params.putString("selected_word", tags[index]);
-                        mFirebaseAnalytics.logEvent("Cloud_Selected", params);
+                        sendEvents(tags[index], loggedUser);
+
                         navigate(Repository.tagTopicMap.get(tags[index]));
                     }
                     @Override
@@ -128,6 +131,8 @@ public class CloudActivity extends AppCompatActivity {
     }
 
     public void navigate(String topicId){
+        NavigationStackManager.removeVideoEntries();
+
         Bundle bundle = new Bundle();
         bundle.putString("topicId", topicId);
         Intent intent = new Intent();
@@ -164,5 +169,37 @@ public class CloudActivity extends AppCompatActivity {
         else {
             super.onBackPressed();
         }
+    }
+
+    private void initAnalytics() {
+        // Obtain the shared Tracker instance.
+        AnalyticsApplication application = (AnalyticsApplication) getApplication();
+        mTracker = application.getDefaultTracker();
+    }
+
+    public void sendAnalyticsScreenView() {
+        mTracker.setScreenName("Nuvem de Palavras");
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+    }
+
+
+    private void setFirebaseUserProperties(User loggedUser) {
+        mFirebaseAnalytics.setUserId(loggedUser.getShaid());
+        mFirebaseAnalytics.setUserProperty("idade", loggedUser.getAgeGroup());
+        mFirebaseAnalytics.setUserProperty("gênero", loggedUser.getGender());
+        mFirebaseAnalytics.setUserProperty("tipo", loggedUser.getType());
+    }
+
+    private void sendEvents(String tag, User loggedUser) {
+        Bundle params = new Bundle();
+        params.putString("selected_word", tag);
+        mFirebaseAnalytics.logEvent("Cloud_Selected", params);
+
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Nuvem - " + tag)
+                .setAction(loggedUser.getGender())
+                .setLabel(loggedUser.getType())
+                .setValue(Long.valueOf(loggedUser.getAge()))
+                .build());
     }
 }

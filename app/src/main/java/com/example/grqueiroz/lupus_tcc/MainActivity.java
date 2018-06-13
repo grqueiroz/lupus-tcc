@@ -8,12 +8,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.example.grqueiroz.lupus_tcc.entity.Session;
 import com.example.grqueiroz.lupus_tcc.entity.TitleContent;
 import com.example.grqueiroz.lupus_tcc.manager.NavigationStackManager;
 import com.example.grqueiroz.lupus_tcc.manager.UserManager;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,12 +24,16 @@ public class MainActivity extends AppCompatActivity {
     private DbHandler db;
     private User loggedUser;
     private FirebaseAnalytics mFirebaseAnalytics;
+    private Tracker mTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+
+        initAnalytics();
+        sendAnalyticsScreenView();
 
         setContentView(R.layout.activity_main);
 
@@ -46,26 +51,16 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        mFirebaseAnalytics.setUserId(loggedUser.getShaid());
-        mFirebaseAnalytics.setUserProperty("idade", loggedUser.getAgeGroup());
-        mFirebaseAnalytics.setUserProperty("gênero", loggedUser.getGender());
-        mFirebaseAnalytics.setUserProperty("tipo", loggedUser.getType());
-
-//        //disparando evento da home
-//        FirebaseAnalytics mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
-//        Bundle params = new Bundle();
-//        mFirebaseAnalytics.setUserProperty("idade", loggedUser.getAge());
-//        mFirebaseAnalytics.setUserProperty("gênero", loggedUser.getGender());
-//        mFirebaseAnalytics.setUserProperty("tipo", loggedUser.getType());
-//        mFirebaseAnalytics.setUserId(loggedUser.getShaid());
-//        mFirebaseAnalytics.logEvent("View_Home", params);
+        setFirebaseUserProperties();
 
         Bundle bundle = getIntent().getExtras();
 
         if(bundle == null || bundle.getString("topicId") == null){
             navigateToCloud();
         } else {
-            navigate(bundle.getString("topicId"));
+            if (!"video".equals(NavigationStackManager.getPresentSession())) {
+                navigate(bundle.getString("topicId"));
+            }
         }
 
         mDrawerLayout = findViewById(R.id.drawer_layout);
@@ -123,6 +118,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void setFirebaseUserProperties() {
+        mFirebaseAnalytics.setUserId(loggedUser.getShaid());
+        mFirebaseAnalytics.setUserProperty("idade", loggedUser.getAgeGroup());
+        mFirebaseAnalytics.setUserProperty("gênero", loggedUser.getGender());
+        mFirebaseAnalytics.setUserProperty("tipo", loggedUser.getType());
+    }
+
     public void navigateToCloud(){
         Intent intent = new Intent();
         intent.setClass(MainActivity.this, CloudActivity.class);
@@ -139,19 +141,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void navigate(String topicId) {
-        Bundle params = new Bundle();
-        params.putString("topic_name", getTopicNameById(topicId));
-        mFirebaseAnalytics.logEvent("View_Topic", params);
+            NavigationStackManager.removeVideoEntries();
 
-        TopicFragment fragment = TopicFragment.newInstance(topicId);
-        NavigationStackManager.stackSession(topicId);
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
+            sendEvents(topicId);
+            NavigationStackManager.stackSession(topicId);
+
+            TopicFragment fragment = TopicFragment.newInstance(topicId);
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
     }
 
     private void navigateBack(String topicId){
-        Bundle params = new Bundle();
-        params.putString("topic_name", getTopicNameById(topicId));
-        mFirebaseAnalytics.logEvent("View_Topic", params);
+        sendEvents(topicId);
+
         TopicFragment fragment = TopicFragment.newInstance(topicId);
         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
     }
@@ -174,6 +175,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        NavigationStackManager.removeVideoEntries();
+
         NavigationStackManager.popPresentSession();
         if (!NavigationStackManager.isStackEmpty()) {
             navigateBack(NavigationStackManager.getPresentSession());
@@ -181,5 +184,30 @@ public class MainActivity extends AppCompatActivity {
         else {
             navigateToCloud();
         }
+    }
+
+    private void initAnalytics() {
+        // Obtain the shared Tracker instance.
+        AnalyticsApplication application = (AnalyticsApplication) getApplication();
+        mTracker = application.getDefaultTracker();
+    }
+
+    public void sendAnalyticsScreenView() {
+        mTracker.setScreenName("Atividade Principal");
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+    }
+
+
+    private void sendEvents(String topicId) {
+        Bundle params = new Bundle();
+        params.putString("topic_name", getTopicNameById(topicId));
+        mFirebaseAnalytics.logEvent("View_Topic", params);
+
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory(getTopicNameById(topicId))
+                .setAction(loggedUser.getGender())
+                .setLabel(loggedUser.getType())
+                .setValue(Long.valueOf(loggedUser.getAge()))
+                .build());
     }
 }

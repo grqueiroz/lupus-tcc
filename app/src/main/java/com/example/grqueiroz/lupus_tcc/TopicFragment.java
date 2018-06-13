@@ -28,6 +28,8 @@ import com.example.grqueiroz.lupus_tcc.manager.NavigationStackManager;
 import com.example.grqueiroz.lupus_tcc.manager.PreCachingLayoutManager;
 import com.example.grqueiroz.lupus_tcc.manager.UserManager;
 import com.example.grqueiroz.lupus_tcc.util.DeviceUtils;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.google.android.youtube.player.YouTubeStandalonePlayer;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
@@ -37,8 +39,10 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class TopicFragment extends Fragment {
     private static final String ARGUMENT_ID = "ARGUMENT_ID";
-    Session session;
-    Adapter adapter;
+    private Session session;
+    private Adapter adapter;
+    private Tracker mTracker;
+
 
     public static TopicFragment newInstance(String sessionId) {
         TopicFragment fragment = new TopicFragment();
@@ -56,6 +60,8 @@ public class TopicFragment extends Fragment {
         String sessionId = this.getArguments().getString(ARGUMENT_ID);
         session = Repository.getSession(sessionId);
         getActivity().setTitle(session.getMainTopicTitle());
+
+        initAnalytics();
 
         PreCachingLayoutManager layoutManager = new PreCachingLayoutManager(getActivity());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -143,15 +149,10 @@ public class TopicFragment extends Fragment {
                     public void onClick(View v) {
                         User loggedUser = UserManager.getLoggedUser();
 
-                        FirebaseAnalytics mFirebaseAnalytics = FirebaseAnalytics.getInstance(getContext());
-                        Bundle params = new Bundle();
-                        mFirebaseAnalytics.setUserProperty("idade", loggedUser.getAgeGroup());
-                        mFirebaseAnalytics.setUserProperty("gênero", loggedUser.getGender());
-                        mFirebaseAnalytics.setUserProperty("tipo", loggedUser.getType());
-                        params.putString("video_topic", getTopicNameById(session.getId()));
-                        mFirebaseAnalytics.setUserId(loggedUser.getShaid());
-                        mFirebaseAnalytics.logEvent("View_Video", params);
-                        Intent intent = YouTubeStandalonePlayer.createVideoIntent(getActivity(), "aaaaaaaateste", ((VideoContent) content).getUrl(), 0, true, false);
+                        NavigationStackManager.stackSession("video");
+
+                        sendViewVideoEvent(loggedUser);
+                        Intent intent = YouTubeStandalonePlayer.createVideoIntent(getActivity(), "", ((VideoContent) content).getUrl(), 0, true, false);
                         startActivity(intent);
                     }
                 });
@@ -176,19 +177,55 @@ public class TopicFragment extends Fragment {
         private void navigate(String topicId) {
             User loggedUser = UserManager.getLoggedUser();
 
-            FirebaseAnalytics mFirebaseAnalytics = FirebaseAnalytics.getInstance(getContext());
-            Bundle params = new Bundle();
-            mFirebaseAnalytics.setUserProperty("idade", loggedUser.getAgeGroup());
-            mFirebaseAnalytics.setUserProperty("gênero", loggedUser.getGender());
-            mFirebaseAnalytics.setUserProperty("tipo", loggedUser.getType());
-            params.putString("topic_name", getTopicNameById(topicId));
-            mFirebaseAnalytics.setUserId(loggedUser.getShaid());
-            mFirebaseAnalytics.logEvent("View_Topic", params);
+            sendEvents(topicId, loggedUser);
 
             TopicFragment fragment = TopicFragment.newInstance(topicId);
             NavigationStackManager.stackSession(topicId);
             getFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
         }
+    }
+
+    private void initAnalytics() {
+        // Obtain the shared Tracker instance.
+        AnalyticsApplication application = (AnalyticsApplication) getActivity().getApplication();
+        mTracker = application.getDefaultTracker();
+    }
+
+    private void sendEvents(String topicId, User loggedUser) {
+        FirebaseAnalytics mFirebaseAnalytics = FirebaseAnalytics.getInstance(getContext());
+        Bundle params = new Bundle();
+        mFirebaseAnalytics.setUserProperty("idade", loggedUser.getAgeGroup());
+        mFirebaseAnalytics.setUserProperty("gênero", loggedUser.getGender());
+        mFirebaseAnalytics.setUserProperty("tipo", loggedUser.getType());
+        params.putString("topic_name", getTopicNameById(topicId));
+        mFirebaseAnalytics.setUserId(loggedUser.getShaid());
+        mFirebaseAnalytics.logEvent("View_Topic", params);
+
+
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory(getTopicNameById(topicId))
+                .setAction(loggedUser.getGender())
+                .setLabel(loggedUser.getType())
+                .setValue(Long.valueOf(loggedUser.getAge()))
+                .build());
+    }
+
+    private void sendViewVideoEvent(User loggedUser) {
+        FirebaseAnalytics mFirebaseAnalytics = FirebaseAnalytics.getInstance(getContext());
+        Bundle params = new Bundle();
+        mFirebaseAnalytics.setUserProperty("idade", loggedUser.getAgeGroup());
+        mFirebaseAnalytics.setUserProperty("gênero", loggedUser.getGender());
+        mFirebaseAnalytics.setUserProperty("tipo", loggedUser.getType());
+        params.putString("video_topic", getTopicNameById(session.getId()));
+        mFirebaseAnalytics.setUserId(loggedUser.getShaid());
+        mFirebaseAnalytics.logEvent("View_Video", params);
+
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Video - " + getTopicNameById(session.getId()))
+                .setAction(loggedUser.getGender())
+                .setLabel(loggedUser.getType())
+                .setValue(Long.valueOf(loggedUser.getAge()))
+                .build());
     }
 
     abstract class AdapterViewHolder extends RecyclerView.ViewHolder {

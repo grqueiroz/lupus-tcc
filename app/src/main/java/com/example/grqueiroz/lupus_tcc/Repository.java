@@ -18,26 +18,26 @@ import java.util.Map;
  */
 
 public class Repository {
-    private static List<Session> sessionList = new ArrayList<>();
-    public static HashMap<String, String> tagTopicMap = new HashMap<>();
+        private static List<Session> sessionList = new ArrayList<>();
+        public static HashMap<String, String> tagTopicMap = new HashMap<>();
 
-    //Topic 1
-    static {
-        ArrayList<Content> contentList = new ArrayList<>();
-        contentList.add(new TitleContent(R.string.title_topic1));
-        contentList.add(new TextContent(R.string.topic1_par1));
-        contentList.add(new TextContent(R.string.topic1_par2));
-        contentList.add(new ImageContent(R.drawable.t1f1));
-        contentList.add(new TextContent(R.string.topic1_par3));
-        contentList.add(new TextContent(R.string.topic1_par4));
-        contentList.add(new ImageContent(R.drawable.t1f2));
-        contentList.add(new CardContent("topic2", new ImageContent(R.drawable.t2f1), new TextContent(R.string.title_card_topic2)));
-        contentList.add(new CardContent("topic3", new ImageContent(R.drawable.t3f1), new TextContent(R.string.title_card_topic3)));
-        contentList.add(new CardContent("topic4", new ImageContent(R.drawable.t4f1), new TextContent(R.string.title_card_topic4)));
-        contentList.add(new CardContent("topic5", new ImageContent(R.drawable.t5f1), new TextContent(R.string.title_card_topic5)));
-        contentList.add(new CardContent("topic6", new ImageContent(R.drawable.t6f1), new TextContent(R.string.title_card_topic6)));
-        sessionList.add(new Session("topic1", R.string.title_topic1, contentList, "url"));
-    }
+        //Topic 1
+        static {
+            ArrayList<Content> contentList = new ArrayList<>();
+            contentList.add(new TitleContent(R.string.title_topic1));
+            contentList.add(new TextContent(R.string.topic1_par1));
+            contentList.add(new TextContent(R.string.topic1_par2));
+            contentList.add(new ImageContent(R.drawable.t1f1));
+            contentList.add(new TextContent(R.string.topic1_par3));
+            contentList.add(new TextContent(R.string.topic1_par4));
+            contentList.add(new ImageContent(R.drawable.t1f2));
+            contentList.add(new CardContent("topic2", new ImageContent(R.drawable.t2f1), new TextContent(R.string.title_card_topic2)));
+            contentList.add(new CardContent("topic3", new ImageContent(R.drawable.t3f1), new TextContent(R.string.title_card_topic3)));
+            contentList.add(new CardContent("topic4", new ImageContent(R.drawable.t4f1), new TextContent(R.string.title_card_topic4)));
+            contentList.add(new CardContent("topic5", new ImageContent(R.drawable.t5f1), new TextContent(R.string.title_card_topic5)));
+            contentList.add(new CardContent("topic6", new ImageContent(R.drawable.t6f1), new TextContent(R.string.title_card_topic6)));
+            sessionList.add(new Session("topic1", R.string.title_topic1, contentList, "url"));
+        }
 
     //Topic 2
     static {
@@ -503,6 +503,7 @@ public class Repository {
         tagTopicMap.put("Vacinas", "topic6_5");
         tagTopicMap.put("Infecções", "topic6_6");
         tagTopicMap.put("E se piorar?", "topic5_5");
+        tagTopicMap.put("Meu Corpo", "topic4");
 
     }
 

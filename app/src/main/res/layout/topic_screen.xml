@@ -28,8 +28,8 @@
             android:clipChildren="false"
             android:clipToPadding="false"
             app:layoutManager="LinearLayoutManager"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="8dp" />
+            tools:layout_editor_absoluteX="8sp"
+            tools:layout_editor_absoluteY="8sp" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
